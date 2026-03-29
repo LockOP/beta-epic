@@ -18,9 +18,11 @@ export const executeHttp = async (
   const method  = String(httpExpr.method ?? 'GET').toUpperCase();
   const url     = String(evaluateExpression(httpExpr.url as Parameters<typeof evaluateExpression>[0], ctx) ?? httpExpr.url);
 
-  // Resolve headers
+  // Resolve headers — Content-Type is only added when a body will be sent,
+  // to avoid triggering a CORS preflight on simple GET/HEAD requests.
   const headerExprs = httpExpr.headers ?? {};
-  const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+  const hasBody = httpExpr.data !== undefined && method !== 'GET' && method !== 'HEAD';
+  const headers: Record<string, string> = hasBody ? { 'Content-Type': 'application/json' } : {};
   for (const [k, v] of Object.entries(headerExprs)) {
     headers[k] = String(evaluateExpression(v as Parameters<typeof evaluateExpression>[0], ctx) ?? '');
   }
