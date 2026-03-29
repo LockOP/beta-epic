@@ -154,3 +154,28 @@ export {
   InputGroupInput,
   InputGroupTextarea,
 }
+
+export const InputGroupContext = {
+  InputGroup: `
+  sub-components: InputGroupAddon, InputGroupButton, InputGroupText, InputGroupInput, InputGroupTextarea
+  InputGroupAddon: align?: "inline-start"* | "inline-end" | "block-start" | "block-end"
+  InputGroupButton: type?: string = "button", variant?: string = "ghost", size?: "xs"* | "sm" | "icon-xs" | "icon-sm"
+  children: yes
+  + all native <div> props
+  `.trim(),
+  InputGroupAddon: `
+  InputGroupAddon: align?: "inline-start"* | "inline-end" | "block-start" | "block-end"
+  `.trim(),
+  InputGroupButton: `
+  InputGroupButton: type?: string = "button", variant?: string = "ghost", size?: "xs"* | "sm" | "icon-xs" | "icon-sm"
+  `.trim(),
+  InputGroupText: `
+  Sub-component of InputGroup.
+  `.trim(),
+  InputGroupInput: `
+  Sub-component of InputGroup.
+  `.trim(),
+  InputGroupTextarea: `
+  Sub-component of InputGroup.
+  `.trim(),
+}

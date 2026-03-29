@@ -26,3 +26,11 @@ function Separator({
 }
 
 export { Separator }
+
+export const SeparatorContext = {
+  Separator: `
+  orientation?: "horizontal"* | "vertical"
+  decorative?: boolean = true
+  + all native <div> props
+  `.trim(),
+}

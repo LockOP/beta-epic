@@ -132,3 +132,32 @@ export {
   DrawerTitle,
   DrawerDescription,
 }
+
+export const DrawerContext = {
+  Drawer: `
+  sub-components: DrawerTrigger, DrawerContent, DrawerHeader, DrawerFooter, DrawerTitle, DrawerDescription, DrawerClose
+  direction?: "top" | "right" | "bottom" | "left"
+  children: yes
+  `.trim(),
+  DrawerTrigger: `
+  Sub-component of Drawer.
+  `.trim(),
+  DrawerContent: `
+  Sub-component of Drawer.
+  `.trim(),
+  DrawerHeader: `
+  Sub-component of Drawer.
+  `.trim(),
+  DrawerFooter: `
+  Sub-component of Drawer.
+  `.trim(),
+  DrawerTitle: `
+  Sub-component of Drawer.
+  `.trim(),
+  DrawerDescription: `
+  Sub-component of Drawer.
+  `.trim(),
+  DrawerClose: `
+  Sub-component of Drawer.
+  `.trim(),
+}

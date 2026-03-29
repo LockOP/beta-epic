@@ -42,3 +42,17 @@ function HoverCardContent({
 }
 
 export { HoverCard, HoverCardTrigger, HoverCardContent }
+
+export const HoverCardContext = {
+  HoverCard: `
+  sub-components: HoverCardTrigger, HoverCardContent
+  HoverCardContent: align?: string = "center", sideOffset?: number = 4
+  children: yes
+  `.trim(),
+  HoverCardTrigger: `
+  Sub-component of HoverCard.
+  `.trim(),
+  HoverCardContent: `
+  HoverCardContent: align?: string = "center", sideOffset?: number = 4
+  `.trim(),
+}

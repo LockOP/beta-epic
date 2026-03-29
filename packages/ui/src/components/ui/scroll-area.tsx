@@ -53,3 +53,14 @@ function ScrollBar({
 }
 
 export { ScrollArea, ScrollBar }
+
+export const ScrollAreaContext = {
+  ScrollArea: `
+  sub-components: ScrollBar
+  ScrollBar: orientation?: "vertical"* | "horizontal"
+  children: yes
+  `.trim(),
+  ScrollBar: `
+  ScrollBar: orientation?: "vertical"* | "horizontal"
+  `.trim(),
+}

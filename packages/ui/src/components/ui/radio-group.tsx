@@ -42,3 +42,16 @@ function RadioGroupItem({
 }
 
 export { RadioGroup, RadioGroupItem }
+
+export const RadioGroupContext = {
+  RadioGroup: `
+  sub-components: RadioGroupItem
+  value?: string
+  onValueChange?: (value: string) => void
+  orientation?: "horizontal" | "vertical"
+  children: yes
+  `.trim(),
+  RadioGroupItem: `
+  Sub-component of RadioGroup.
+  `.trim(),
+}

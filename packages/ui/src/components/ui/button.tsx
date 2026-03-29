@@ -65,3 +65,17 @@ function Button({
 }
 
 export { Button, buttonVariants }
+
+/**
+ * Manually-maintained context string for AI engine config generation.
+ * Format: element, variants (default marked with *), own props, native props passthrough.
+ */
+export const ButtonContext = {
+  Button: `
+  variant: "default"* | "destructive" | "outline" | "secondary" | "ghost" | "link"
+  size: "default"* | "xs" | "sm" | "lg" | "icon" | "icon-xs" | "icon-sm" | "icon-lg"
+  asChild?: boolean = false
+  children: yes
+  + all native <button> props (onClick, disabled, type, form, name, value, …)
+  `.trim(),
+}

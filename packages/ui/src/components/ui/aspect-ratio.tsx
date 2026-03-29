@@ -9,3 +9,10 @@ function AspectRatio({
 }
 
 export { AspectRatio }
+
+export const AspectRatioContext = {
+  AspectRatio: `
+  ratio?: number
+  children: yes
+  `.trim(),
+}

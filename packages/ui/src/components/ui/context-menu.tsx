@@ -261,3 +261,50 @@ export {
   ContextMenuSubTrigger,
   ContextMenuRadioGroup,
 }
+
+export const ContextMenuContext = {
+  ContextMenu: `
+  sub-components: ContextMenuTrigger, ContextMenuContent, ContextMenuItem, ContextMenuCheckboxItem, ContextMenuRadioItem, ContextMenuLabel, ContextMenuSeparator, ContextMenuShortcut, ContextMenuGroup, ContextMenuSub, ContextMenuSubContent, ContextMenuSubTrigger, ContextMenuRadioGroup
+  ContextMenuItem: inset?: boolean, variant?: "default"* | "destructive"
+  children: yes
+  `.trim(),
+  ContextMenuTrigger: `
+  Sub-component of ContextMenu.
+  `.trim(),
+  ContextMenuContent: `
+  Sub-component of ContextMenu.
+  `.trim(),
+  ContextMenuItem: `
+  ContextMenuItem: inset?: boolean, variant?: "default"* | "destructive"
+  `.trim(),
+  ContextMenuCheckboxItem: `
+  Sub-component of ContextMenu.
+  `.trim(),
+  ContextMenuRadioItem: `
+  Sub-component of ContextMenu.
+  `.trim(),
+  ContextMenuLabel: `
+  Sub-component of ContextMenu.
+  `.trim(),
+  ContextMenuSeparator: `
+  Sub-component of ContextMenu.
+  `.trim(),
+  ContextMenuShortcut: `
+  Sub-component of ContextMenu.
+  `.trim(),
+  ContextMenuGroup: `
+  Sub-component of ContextMenu.
+  `.trim(),
+  ContextMenuSub: `
+  Sub-component of ContextMenu.
+  `.trim(),
+  ContextMenuSubContent: `
+  Sub-component of ContextMenu.
+  `.trim(),
+  ContextMenuSubTrigger: `
+  Sub-component of ContextMenu.
+  `.trim(),
+  ContextMenuRadioGroup: `
+  Sub-component of ContextMenu.
+  `.trim(),
+}

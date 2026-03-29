@@ -24,3 +24,14 @@ function KbdGroup({ className, ...props }: React.ComponentProps<"div">) {
 }
 
 export { Kbd, KbdGroup }
+
+export const KbdContext = {
+  Kbd: `
+  sub-components: KbdGroup
+  children: yes
+  + all native <kbd> props
+  `.trim(),
+  KbdGroup: `
+  Sub-component of Kbd.
+  `.trim(),
+}

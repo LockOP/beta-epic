@@ -85,3 +85,21 @@ function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
 }
 
 export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator }
+
+export const InputOTPContext = {
+  InputOTP: `
+  sub-components: InputOTPGroup, InputOTPSlot, InputOTPSeparator
+  maxLength: number (required)
+  containerClassName?: string
+  children: yes
+  `.trim(),
+  InputOTPGroup: `
+  Sub-component of InputOTP.
+  `.trim(),
+  InputOTPSlot: `
+  Sub-component of InputOTP.
+  `.trim(),
+  InputOTPSeparator: `
+  Sub-component of InputOTP.
+  `.trim(),
+}

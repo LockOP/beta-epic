@@ -197,3 +197,35 @@ export {
   AlertDialogTitle,
   AlertDialogTrigger,
 }
+
+export const AlertDialogContext = {
+  AlertDialog: `
+  sub-components: AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogFooter, AlertDialogTitle, AlertDialogDescription, AlertDialogAction, AlertDialogCancel
+  AlertDialogContent: size?: "default"* | "sm"
+  children: yes
+  `.trim(),
+  AlertDialogTrigger: `
+  Sub-component of AlertDialog.
+  `.trim(),
+  AlertDialogContent: `
+  AlertDialogContent: size?: "default"* | "sm"
+  `.trim(),
+  AlertDialogHeader: `
+  Sub-component of AlertDialog.
+  `.trim(),
+  AlertDialogFooter: `
+  Sub-component of AlertDialog.
+  `.trim(),
+  AlertDialogTitle: `
+  Sub-component of AlertDialog.
+  `.trim(),
+  AlertDialogDescription: `
+  Sub-component of AlertDialog.
+  `.trim(),
+  AlertDialogAction: `
+  Sub-component of AlertDialog.
+  `.trim(),
+  AlertDialogCancel: `
+  Sub-component of AlertDialog.
+  `.trim(),
+}

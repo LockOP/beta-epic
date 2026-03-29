@@ -50,3 +50,18 @@ function NativeSelectOptGroup({
 }
 
 export { NativeSelect, NativeSelectOptGroup, NativeSelectOption }
+
+export const NativeSelectContext = {
+  NativeSelect: `
+  sub-components: NativeSelectOptGroup, NativeSelectOption
+  size?: "default"* | "sm"
+  children: yes
+  + all native <select> props (value, onChange, disabled, multiple, …)
+  `.trim(),
+  NativeSelectOptGroup: `
+  Sub-component of NativeSelect.
+  `.trim(),
+  NativeSelectOption: `
+  Sub-component of NativeSelect.
+  `.trim(),
+}

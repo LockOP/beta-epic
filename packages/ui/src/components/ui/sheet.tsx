@@ -145,3 +145,32 @@ export {
   SheetTitle,
   SheetDescription,
 }
+
+export const SheetContext = {
+  Sheet: `
+  sub-components: SheetTrigger, SheetContent, SheetHeader, SheetFooter, SheetTitle, SheetDescription, SheetClose
+  SheetContent: side?: "top" | "right"* | "bottom" | "left", showCloseButton?: boolean = true
+  children: yes
+  `.trim(),
+  SheetTrigger: `
+  Sub-component of Sheet.
+  `.trim(),
+  SheetContent: `
+  SheetContent: side?: "top" | "right"* | "bottom" | "left", showCloseButton?: boolean = true
+  `.trim(),
+  SheetHeader: `
+  Sub-component of Sheet.
+  `.trim(),
+  SheetFooter: `
+  Sub-component of Sheet.
+  `.trim(),
+  SheetTitle: `
+  Sub-component of Sheet.
+  `.trim(),
+  SheetDescription: `
+  Sub-component of Sheet.
+  `.trim(),
+  SheetClose: `
+  Sub-component of Sheet.
+  `.trim(),
+}

@@ -21,7 +21,7 @@ type CarouselProps = {
   setApi?: (api: CarouselApi) => void
 }
 
-type CarouselContextProps = {
+type CarouselStateContextProps = {
   carouselRef: ReturnType<typeof useEmblaCarousel>[0]
   api: ReturnType<typeof useEmblaCarousel>[1]
   scrollPrev: () => void
@@ -30,10 +30,10 @@ type CarouselContextProps = {
   canScrollNext: boolean
 } & CarouselProps
 
-const CarouselContext = React.createContext<CarouselContextProps | null>(null)
+const CarouselStateContext = React.createContext<CarouselStateContextProps | null>(null)
 
 function useCarousel() {
-  const context = React.useContext(CarouselContext)
+  const context = React.useContext(CarouselStateContext)
 
   if (!context) {
     throw new Error("useCarousel must be used within a <Carousel />")
@@ -105,7 +105,7 @@ function Carousel({
   }, [api, onSelect])
 
   return (
-    <CarouselContext.Provider
+    <CarouselStateContext.Provider
       value={{
         carouselRef,
         api: api,
@@ -128,7 +128,7 @@ function Carousel({
       >
         {children}
       </div>
-    </CarouselContext.Provider>
+    </CarouselStateContext.Provider>
   )
 }
 
@@ -239,4 +239,26 @@ export {
   CarouselPrevious,
   CarouselNext,
   useCarousel,
+}
+
+export const CarouselContext = {
+  Carousel: `
+  sub-components: CarouselContent, CarouselItem, CarouselPrevious, CarouselNext
+  orientation?: "horizontal"* | "vertical"
+  CarouselPrevious/Next: variant?: string = "outline", size?: string = "icon-sm"
+  children: yes
+  + all native <div> props
+  `.trim(),
+  CarouselContent: `
+  Sub-component of Carousel.
+  `.trim(),
+  CarouselItem: `
+  Sub-component of Carousel.
+  `.trim(),
+  CarouselPrevious: `
+  CarouselPrevious/Next: variant?: string = "outline", size?: string = "icon-sm"
+  `.trim(),
+  CarouselNext: `
+  Sub-component of Carousel.
+  `.trim(),
 }

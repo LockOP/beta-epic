@@ -194,3 +194,42 @@ export {
   ItemHeader,
   ItemFooter,
 }
+
+export const ItemContext = {
+  Item: `
+  sub-components: ItemMedia, ItemContent, ItemActions, ItemGroup, ItemSeparator, ItemTitle, ItemDescription, ItemHeader, ItemFooter
+  variant?: "default"* | "outline" | "muted"
+  size?: "default"* | "sm" | "xs"
+  asChild?: boolean = false
+  ItemMedia: variant?: "default"* | "icon" | "image"
+  children: yes
+  + all native <div> props
+  `.trim(),
+  ItemMedia: `
+  ItemMedia: variant?: "default"* | "icon" | "image"
+  `.trim(),
+  ItemContent: `
+  Sub-component of Item.
+  `.trim(),
+  ItemActions: `
+  Sub-component of Item.
+  `.trim(),
+  ItemGroup: `
+  Sub-component of Item.
+  `.trim(),
+  ItemSeparator: `
+  Sub-component of Item.
+  `.trim(),
+  ItemTitle: `
+  Sub-component of Item.
+  `.trim(),
+  ItemDescription: `
+  Sub-component of Item.
+  `.trim(),
+  ItemHeader: `
+  Sub-component of Item.
+  `.trim(),
+  ItemFooter: `
+  Sub-component of Item.
+  `.trim(),
+}

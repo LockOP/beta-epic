@@ -220,3 +220,18 @@ function CalendarDayButton({
 }
 
 export { Calendar, CalendarDayButton }
+
+export const CalendarContext = {
+  Calendar: `
+  sub-components: CalendarDayButton
+  showOutsideDays?: boolean = true
+  captionLayout?: string = "label"
+  buttonVariant?: string
+  mode?: "single" | "multiple" | "range"
+  selected?: Date | Date[] | DateRange
+  onSelect?: (date) => void
+  `.trim(),
+  CalendarDayButton: `
+  Sub-component of Calendar.
+  `.trim(),
+}

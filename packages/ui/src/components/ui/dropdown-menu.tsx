@@ -267,3 +267,51 @@ export {
   DropdownMenuSubTrigger,
   DropdownMenuSubContent,
 }
+
+export const DropdownMenuContext = {
+  DropdownMenu: `
+  sub-components: DropdownMenuTrigger, DropdownMenuContent, DropdownMenuGroup, DropdownMenuLabel, DropdownMenuItem, DropdownMenuCheckboxItem, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubTrigger, DropdownMenuSubContent
+  DropdownMenuContent: align?: string = "start", sideOffset?: number = 4
+  DropdownMenuItem: inset?: boolean, variant?: "default"* | "destructive"
+  children: yes
+  `.trim(),
+  DropdownMenuTrigger: `
+  Sub-component of DropdownMenu.
+  `.trim(),
+  DropdownMenuContent: `
+  DropdownMenuContent: align?: string = "start", sideOffset?: number = 4
+  `.trim(),
+  DropdownMenuGroup: `
+  Sub-component of DropdownMenu.
+  `.trim(),
+  DropdownMenuLabel: `
+  Sub-component of DropdownMenu.
+  `.trim(),
+  DropdownMenuItem: `
+  DropdownMenuItem: inset?: boolean, variant?: "default"* | "destructive"
+  `.trim(),
+  DropdownMenuCheckboxItem: `
+  Sub-component of DropdownMenu.
+  `.trim(),
+  DropdownMenuRadioGroup: `
+  Sub-component of DropdownMenu.
+  `.trim(),
+  DropdownMenuRadioItem: `
+  Sub-component of DropdownMenu.
+  `.trim(),
+  DropdownMenuSeparator: `
+  Sub-component of DropdownMenu.
+  `.trim(),
+  DropdownMenuShortcut: `
+  Sub-component of DropdownMenu.
+  `.trim(),
+  DropdownMenuSub: `
+  Sub-component of DropdownMenu.
+  `.trim(),
+  DropdownMenuSubTrigger: `
+  Sub-component of DropdownMenu.
+  `.trim(),
+  DropdownMenuSubContent: `
+  Sub-component of DropdownMenu.
+  `.trim(),
+}

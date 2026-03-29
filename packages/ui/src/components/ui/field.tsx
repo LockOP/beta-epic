@@ -236,3 +236,39 @@ export {
   FieldContent,
   FieldTitle,
 }
+
+export const FieldContext = {
+  Field: `
+  sub-components: FieldLabel, FieldDescription, FieldError, FieldGroup, FieldLegend, FieldSeparator, FieldSet, FieldContent, FieldTitle
+  orientation?: "vertical"* | "horizontal" | "responsive"
+  children: yes
+  + all native <div> props
+  `.trim(),
+  FieldLabel: `
+  Sub-component of Field.
+  `.trim(),
+  FieldDescription: `
+  Sub-component of Field.
+  `.trim(),
+  FieldError: `
+  Sub-component of Field.
+  `.trim(),
+  FieldGroup: `
+  Sub-component of Field.
+  `.trim(),
+  FieldLegend: `
+  Sub-component of Field.
+  `.trim(),
+  FieldSeparator: `
+  Sub-component of Field.
+  `.trim(),
+  FieldSet: `
+  Sub-component of Field.
+  `.trim(),
+  FieldContent: `
+  Sub-component of Field.
+  `.trim(),
+  FieldTitle: `
+  Sub-component of Field.
+  `.trim(),
+}

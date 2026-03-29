@@ -31,3 +31,12 @@ function Switch({
 }
 
 export { Switch }
+
+export const SwitchContext = {
+  Switch: `
+  size?: "default"* | "sm"
+  checked?: boolean
+  onCheckedChange?: (checked: boolean) => void
+  disabled?: boolean
+  `.trim(),
+}

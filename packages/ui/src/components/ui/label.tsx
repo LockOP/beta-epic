@@ -22,3 +22,11 @@ function Label({
 }
 
 export { Label }
+
+export const LabelContext = {
+  Label: `
+  htmlFor?: string
+  children: yes
+  + all native <label> props
+  `.trim(),
+}

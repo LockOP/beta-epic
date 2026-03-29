@@ -61,3 +61,11 @@ export function DataTable<TData extends Record<string, unknown>>({
     </Table>
   )
 }
+
+export const DataTableContext = {
+  DataTable: `
+  data: T[] (required)
+  columns: ColumnDef<T>[] (required)
+  emptyMessage?: ReactNode = "No results."
+  `.trim(),
+}

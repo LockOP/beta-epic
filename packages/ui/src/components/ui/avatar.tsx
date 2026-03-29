@@ -110,3 +110,26 @@ export {
   AvatarGroupCount,
   AvatarBadge,
 }
+
+export const AvatarContext = {
+  Avatar: `
+  sub-components: AvatarImage, AvatarFallback, AvatarGroup, AvatarGroupCount, AvatarBadge
+  size?: "default"* | "sm" | "lg"
+  children: yes
+  `.trim(),
+  AvatarImage: `
+  Sub-component of Avatar.
+  `.trim(),
+  AvatarFallback: `
+  Sub-component of Avatar.
+  `.trim(),
+  AvatarGroup: `
+  Sub-component of Avatar.
+  `.trim(),
+  AvatarGroupCount: `
+  Sub-component of Avatar.
+  `.trim(),
+  AvatarBadge: `
+  Sub-component of Avatar.
+  `.trim(),
+}

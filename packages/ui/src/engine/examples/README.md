@@ -28,3 +28,4 @@ Each file shows DSL config alongside the equivalent JavaScript/JSX.
 | [22-page-wizard.md](./22-page-wizard.md) | Full page: multi-step wizard with per-step selectors, session-persisted step, `$switch` routing |
 | [23-page-settings.md](./23-page-settings.md) | Full page: tabbed settings with three selector scopes, localStorage for appearance, API save per tab |
 | [24-config-ref.md](./24-config-ref.md) | `$subConfig` — reusable config fragments, pre-compilation substitution, `subConfigProps`, usable anywhere |
+| [25-args.md](./25-args.md) | `$arg` — raw handler argument access by index and dot-path |

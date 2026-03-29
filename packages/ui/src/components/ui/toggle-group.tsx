@@ -7,7 +7,7 @@ import { ToggleGroup as ToggleGroupPrimitive } from "radix-ui"
 import { cn } from "../../lib/utils"
 import { toggleVariants } from "./toggle"
 
-const ToggleGroupContext = React.createContext<
+const ToggleGroupStateContext = React.createContext<
   VariantProps<typeof toggleVariants> & {
     spacing?: number
     orientation?: "horizontal" | "vertical"
@@ -46,11 +46,11 @@ function ToggleGroup({
       )}
       {...props}
     >
-      <ToggleGroupContext.Provider
+      <ToggleGroupStateContext.Provider
         value={{ variant, size, spacing, orientation }}
       >
         {children}
-      </ToggleGroupContext.Provider>
+      </ToggleGroupStateContext.Provider>
     </ToggleGroupPrimitive.Root>
   )
 }
@@ -63,7 +63,7 @@ function ToggleGroupItem({
   ...props
 }: React.ComponentProps<typeof ToggleGroupPrimitive.Item> &
   VariantProps<typeof toggleVariants>) {
-  const context = React.useContext(ToggleGroupContext)
+  const context = React.useContext(ToggleGroupStateContext)
 
   return (
     <ToggleGroupPrimitive.Item
@@ -87,3 +87,17 @@ function ToggleGroupItem({
 }
 
 export { ToggleGroup, ToggleGroupItem }
+
+export const ToggleGroupContext = {
+  ToggleGroup: `
+  sub-components: ToggleGroupItem
+  type: "single" | "multiple" (required)
+  value?: string | string[]
+  onValueChange?: (value: string | string[]) => void
+  orientation?: "horizontal"* | "vertical"
+  children: yes
+  `.trim(),
+  ToggleGroupItem: `
+  Sub-component of ToggleGroup.
+  `.trim(),
+}

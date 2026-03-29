@@ -17,3 +17,10 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
 }
 
 export { Input }
+
+export const InputContext = {
+  Input: `
+  type?: string
+  + all native <input> props (value, onChange, placeholder, disabled, readOnly, …)
+  `.trim(),
+}

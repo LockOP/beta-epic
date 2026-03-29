@@ -23,14 +23,14 @@ export type ChartConfig = Record<
   )
 >
 
-type ChartContextProps = {
+type ChartStateContextProps = {
   config: ChartConfig
 }
 
-const ChartContext = React.createContext<ChartContextProps | null>(null)
+const ChartStateContext = React.createContext<ChartStateContextProps | null>(null)
 
 function useChart() {
-  const context = React.useContext(ChartContext)
+  const context = React.useContext(ChartStateContext)
 
   if (!context) {
     throw new Error("useChart must be used within a <ChartContainer />")
@@ -60,7 +60,7 @@ function ChartContainer({
   const chartId = `chart-${id ?? uniqueId.replace(/:/g, "")}`
 
   return (
-    <ChartContext.Provider value={{ config }}>
+    <ChartStateContext.Provider value={{ config }}>
       <div
         data-slot="chart"
         data-chart={chartId}
@@ -77,7 +77,7 @@ function ChartContainer({
           {children}
         </RechartsPrimitive.ResponsiveContainer>
       </div>
-    </ChartContext.Provider>
+    </ChartStateContext.Provider>
   )
 }
 
@@ -370,4 +370,29 @@ export {
   ChartLegend,
   ChartLegendContent,
   ChartStyle,
+}
+
+export const ChartContext = {
+  ChartContainer: `
+  sub-components: ChartTooltip, ChartTooltipContent, ChartLegend, ChartLegendContent, ChartStyle
+  config: ChartConfig (required)
+  ChartTooltipContent: hideLabel?: boolean = false, hideIndicator?: boolean = false, indicator?: "line" | "dot"* | "dashed"
+  children: yes
+  + all native <div> props
+  `.trim(),
+  ChartTooltip: `
+  Sub-component of ChartContainer.
+  `.trim(),
+  ChartTooltipContent: `
+  ChartTooltipContent: hideLabel?: boolean = false, hideIndicator?: boolean = false, indicator?: "line" | "dot"* | "dashed"
+  `.trim(),
+  ChartLegend: `
+  Sub-component of ChartContainer.
+  `.trim(),
+  ChartLegendContent: `
+  Sub-component of ChartContainer.
+  `.trim(),
+  ChartStyle: `
+  Sub-component of ChartContainer.
+  `.trim(),
 }

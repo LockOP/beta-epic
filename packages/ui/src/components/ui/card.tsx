@@ -101,3 +101,30 @@ export {
   CardDescription,
   CardContent,
 }
+
+export const CardContext = {
+  Card: `
+  sub-components: CardHeader, CardTitle, CardDescription, CardContent, CardFooter, CardAction
+  size?: "default"* | "sm"
+  children: yes
+  + all native <div> props
+  `.trim(),
+  CardHeader: `
+  Sub-component of Card.
+  `.trim(),
+  CardTitle: `
+  Sub-component of Card.
+  `.trim(),
+  CardDescription: `
+  Sub-component of Card.
+  `.trim(),
+  CardContent: `
+  Sub-component of Card.
+  `.trim(),
+  CardFooter: `
+  Sub-component of Card.
+  `.trim(),
+  CardAction: `
+  Sub-component of Card.
+  `.trim(),
+}

@@ -128,3 +128,13 @@ export function JsonViewer({
     </div>
   );
 }
+
+export const JsonViewerContext = {
+  JsonViewer: `
+  data: unknown (required)
+  name?: string = "root"
+  collapsed?: boolean | number = 1
+  enableClipboard?: boolean = true
+  editable?: boolean = false
+  `.trim(),
+}

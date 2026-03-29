@@ -297,3 +297,50 @@ export {
   ComboboxValue,
   useComboboxAnchor,
 }
+
+export const ComboboxContext = {
+  Combobox: `
+  sub-components: ComboboxInput, ComboboxContent, ComboboxList, ComboboxItem, ComboboxGroup, ComboboxLabel, ComboboxEmpty, ComboboxSeparator, ComboboxChips, ComboboxChip, ComboboxTrigger, ComboboxValue
+  showTrigger?: boolean = true
+  showClear?: boolean = false
+  disabled?: boolean = false
+  showRemove?: boolean = true
+  children: yes
+  `.trim(),
+  ComboboxInput: `
+  Sub-component of Combobox.
+  `.trim(),
+  ComboboxContent: `
+  Sub-component of Combobox.
+  `.trim(),
+  ComboboxList: `
+  Sub-component of Combobox.
+  `.trim(),
+  ComboboxItem: `
+  Sub-component of Combobox.
+  `.trim(),
+  ComboboxGroup: `
+  Sub-component of Combobox.
+  `.trim(),
+  ComboboxLabel: `
+  Sub-component of Combobox.
+  `.trim(),
+  ComboboxEmpty: `
+  Sub-component of Combobox.
+  `.trim(),
+  ComboboxSeparator: `
+  Sub-component of Combobox.
+  `.trim(),
+  ComboboxChips: `
+  Sub-component of Combobox.
+  `.trim(),
+  ComboboxChip: `
+  Sub-component of Combobox.
+  `.trim(),
+  ComboboxTrigger: `
+  Sub-component of Combobox.
+  `.trim(),
+  ComboboxValue: `
+  Sub-component of Combobox.
+  `.trim(),
+}

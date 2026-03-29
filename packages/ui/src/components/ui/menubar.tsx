@@ -278,3 +278,53 @@ export {
   MenubarSubTrigger,
   MenubarSubContent,
 }
+
+export const MenubarContext = {
+  Menubar: `
+  sub-components: MenubarMenu, MenubarTrigger, MenubarContent, MenubarGroup, MenubarSeparator, MenubarLabel, MenubarItem, MenubarShortcut, MenubarCheckboxItem, MenubarRadioGroup, MenubarRadioItem, MenubarSub, MenubarSubTrigger, MenubarSubContent
+  MenubarItem: inset?: boolean, variant?: "default"* | "destructive"
+  children: yes
+  `.trim(),
+  MenubarMenu: `
+  Sub-component of Menubar.
+  `.trim(),
+  MenubarTrigger: `
+  Sub-component of Menubar.
+  `.trim(),
+  MenubarContent: `
+  Sub-component of Menubar.
+  `.trim(),
+  MenubarGroup: `
+  Sub-component of Menubar.
+  `.trim(),
+  MenubarSeparator: `
+  Sub-component of Menubar.
+  `.trim(),
+  MenubarLabel: `
+  Sub-component of Menubar.
+  `.trim(),
+  MenubarItem: `
+  MenubarItem: inset?: boolean, variant?: "default"* | "destructive"
+  `.trim(),
+  MenubarShortcut: `
+  Sub-component of Menubar.
+  `.trim(),
+  MenubarCheckboxItem: `
+  Sub-component of Menubar.
+  `.trim(),
+  MenubarRadioGroup: `
+  Sub-component of Menubar.
+  `.trim(),
+  MenubarRadioItem: `
+  Sub-component of Menubar.
+  `.trim(),
+  MenubarSub: `
+  Sub-component of Menubar.
+  `.trim(),
+  MenubarSubTrigger: `
+  Sub-component of Menubar.
+  `.trim(),
+  MenubarSubContent: `
+  Sub-component of Menubar.
+  `.trim(),
+}

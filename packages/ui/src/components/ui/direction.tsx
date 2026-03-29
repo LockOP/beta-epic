@@ -20,3 +20,10 @@ function DirectionProvider({
 const useDirection = Direction.useDirection
 
 export { DirectionProvider, useDirection }
+
+export const DirectionContext = {
+  DirectionProvider: `
+  dir: "ltr" | "rtl"
+  children: yes
+  `.trim(),
+}

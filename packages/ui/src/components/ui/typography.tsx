@@ -105,3 +105,45 @@ export function Muted({
 }: React.ComponentProps<"p">) {
   return <p className={cn("text-sm text-muted-foreground", className)} {...props} />
 }
+
+export const TypographyContext = {
+  Typography: `
+  components: H1, H2, H3, H4, P, Blockquote, InlineCode, Lead, Large, Small, Muted
+  Each renders the appropriate semantic HTML element
+  children: yes
+  + all native element props
+  `.trim(),
+  H1: `
+  Component in Typography family.
+  `.trim(),
+  H2: `
+  Component in Typography family.
+  `.trim(),
+  H3: `
+  Component in Typography family.
+  `.trim(),
+  H4: `
+  Component in Typography family.
+  `.trim(),
+  P: `
+  Component in Typography family.
+  `.trim(),
+  Blockquote: `
+  Component in Typography family.
+  `.trim(),
+  InlineCode: `
+  Component in Typography family.
+  `.trim(),
+  Lead: `
+  Component in Typography family.
+  `.trim(),
+  Large: `
+  Component in Typography family.
+  `.trim(),
+  Small: `
+  Component in Typography family.
+  `.trim(),
+  Muted: `
+  Component in Typography family.
+  `.trim(),
+}

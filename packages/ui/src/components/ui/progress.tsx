@@ -29,3 +29,11 @@ function Progress({
 }
 
 export { Progress }
+
+export const ProgressContext = {
+  Progress: `
+  value?: number
+  max?: number
+  + all native <div> props
+  `.trim(),
+}

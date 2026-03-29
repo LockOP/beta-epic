@@ -193,3 +193,35 @@ export {
   CommandShortcut,
   CommandSeparator,
 }
+
+export const CommandContext = {
+  Command: `
+  sub-components: CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandShortcut, CommandSeparator
+  CommandDialog: title?: string = "Command Palette", description?: string = "Search for a command to run...", showCloseButton?: boolean = false
+  children: yes
+  `.trim(),
+  CommandDialog: `
+  CommandDialog: title?: string = "Command Palette", description?: string = "Search for a command to run...", showCloseButton?: boolean = false
+  `.trim(),
+  CommandInput: `
+  Sub-component of Command.
+  `.trim(),
+  CommandList: `
+  Sub-component of Command.
+  `.trim(),
+  CommandEmpty: `
+  Sub-component of Command.
+  `.trim(),
+  CommandGroup: `
+  Sub-component of Command.
+  `.trim(),
+  CommandItem: `
+  Sub-component of Command.
+  `.trim(),
+  CommandShortcut: `
+  Sub-component of Command.
+  `.trim(),
+  CommandSeparator: `
+  Sub-component of Command.
+  `.trim(),
+}

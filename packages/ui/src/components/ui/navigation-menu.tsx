@@ -162,3 +162,32 @@ export {
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
 }
+
+export const NavigationMenuContext = {
+  NavigationMenu: `
+  sub-components: NavigationMenuList, NavigationMenuItem, NavigationMenuContent, NavigationMenuTrigger, NavigationMenuLink, NavigationMenuIndicator, NavigationMenuViewport
+  viewport?: boolean = true
+  children: yes
+  `.trim(),
+  NavigationMenuList: `
+  Sub-component of NavigationMenu.
+  `.trim(),
+  NavigationMenuItem: `
+  Sub-component of NavigationMenu.
+  `.trim(),
+  NavigationMenuContent: `
+  Sub-component of NavigationMenu.
+  `.trim(),
+  NavigationMenuTrigger: `
+  Sub-component of NavigationMenu.
+  `.trim(),
+  NavigationMenuLink: `
+  Sub-component of NavigationMenu.
+  `.trim(),
+  NavigationMenuIndicator: `
+  Sub-component of NavigationMenu.
+  `.trim(),
+  NavigationMenuViewport: `
+  Sub-component of NavigationMenu.
+  `.trim(),
+}

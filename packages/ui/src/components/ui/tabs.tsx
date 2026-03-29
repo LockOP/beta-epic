@@ -88,3 +88,24 @@ function TabsContent({
 }
 
 export { Tabs, TabsList, TabsTrigger, TabsContent, tabsListVariants }
+
+export const TabsContext = {
+  Tabs: `
+  sub-components: TabsList, TabsTrigger, TabsContent
+  TabsList: variant?: "default"* | "line"
+  value?: string
+  defaultValue?: string
+  onValueChange?: (value: string) => void
+  orientation?: "horizontal"* | "vertical"
+  children: yes
+  `.trim(),
+  TabsList: `
+  TabsList: variant?: "default"* | "line"
+  `.trim(),
+  TabsTrigger: `
+  Sub-component of Tabs.
+  `.trim(),
+  TabsContent: `
+  Sub-component of Tabs.
+  `.trim(),
+}

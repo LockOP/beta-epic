@@ -74,3 +74,21 @@ function AlertAction({ className, ...props }: React.ComponentProps<"div">) {
 }
 
 export { Alert, AlertTitle, AlertDescription, AlertAction }
+
+export const AlertContext = {
+  Alert: `
+  sub-components: AlertTitle, AlertDescription, AlertAction
+  variant: "default"* | "destructive"
+  children: yes
+  + all native <div> props
+  `.trim(),
+  AlertTitle: `
+  Sub-component of Alert.
+  `.trim(),
+  AlertDescription: `
+  Sub-component of Alert.
+  `.trim(),
+  AlertAction: `
+  Sub-component of Alert.
+  `.trim(),
+}

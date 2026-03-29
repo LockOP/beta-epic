@@ -46,3 +46,12 @@ export function DatePicker({
     </Popover>
   )
 }
+
+export const DatePickerContext = {
+  DatePicker: `
+  value?: Date
+  onChange?: (date: Date | undefined) => void
+  placeholder?: string = "Pick a date"
+  disabled?: boolean
+  `.trim(),
+}

@@ -10,7 +10,7 @@ const nav = [
 ];
 
 function ExampleProvider({ children }: { children: ReactNode }) {
-  return <GuiProvider >{children}</GuiProvider>;
+  return <GuiProvider>{children}</GuiProvider>;
 }
 
 function ExampleShell() {
@@ -19,7 +19,9 @@ function ExampleShell() {
       <header className="border-b bg-background/90 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4">
           <div className="flex items-center gap-3">
-            <span className="text-sm font-semibold">@beta-epic/ui example_3</span>
+            <span className="text-sm font-semibold">
+              @beta-epic/ui example_3
+            </span>
             <Badge variant="secondary">Open Library</Badge>
           </div>
           <nav className="flex items-center gap-1">

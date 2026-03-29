@@ -120,3 +120,30 @@ export {
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
 }
+
+export const BreadcrumbContext = {
+  Breadcrumb: `
+  sub-components: BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis
+  asChild?: boolean
+  children: yes
+  + all native <nav> props
+  `.trim(),
+  BreadcrumbList: `
+  Sub-component of Breadcrumb.
+  `.trim(),
+  BreadcrumbItem: `
+  Sub-component of Breadcrumb.
+  `.trim(),
+  BreadcrumbLink: `
+  Sub-component of Breadcrumb.
+  `.trim(),
+  BreadcrumbPage: `
+  Sub-component of Breadcrumb.
+  `.trim(),
+  BreadcrumbSeparator: `
+  Sub-component of Breadcrumb.
+  `.trim(),
+  BreadcrumbEllipsis: `
+  Sub-component of Breadcrumb.
+  `.trim(),
+}

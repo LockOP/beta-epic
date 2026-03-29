@@ -31,3 +31,19 @@ function CollapsibleContent({
 }
 
 export { Collapsible, CollapsibleTrigger, CollapsibleContent }
+
+export const CollapsibleContext = {
+  Collapsible: `
+  sub-components: CollapsibleTrigger, CollapsibleContent
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
+  defaultOpen?: boolean
+  children: yes
+  `.trim(),
+  CollapsibleTrigger: `
+  Sub-component of Collapsible.
+  `.trim(),
+  CollapsibleContent: `
+  Sub-component of Collapsible.
+  `.trim(),
+}

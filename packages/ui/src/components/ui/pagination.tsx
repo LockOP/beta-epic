@@ -127,3 +127,30 @@ export {
   PaginationNext,
   PaginationPrevious,
 }
+
+export const PaginationContext = {
+  Pagination: `
+  sub-components: PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext, PaginationEllipsis
+  PaginationLink: isActive?: boolean
+  children: yes
+  + all native <nav> props
+  `.trim(),
+  PaginationContent: `
+  Sub-component of Pagination.
+  `.trim(),
+  PaginationItem: `
+  Sub-component of Pagination.
+  `.trim(),
+  PaginationLink: `
+  PaginationLink: isActive?: boolean
+  `.trim(),
+  PaginationPrevious: `
+  Sub-component of Pagination.
+  `.trim(),
+  PaginationNext: `
+  Sub-component of Pagination.
+  `.trim(),
+  PaginationEllipsis: `
+  Sub-component of Pagination.
+  `.trim(),
+}

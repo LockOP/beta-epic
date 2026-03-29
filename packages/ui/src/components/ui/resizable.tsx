@@ -48,3 +48,18 @@ function ResizableHandle({
 }
 
 export { ResizableHandle, ResizablePanel, ResizablePanelGroup }
+
+export const ResizableContext = {
+  ResizablePanelGroup: `
+  sub-components: ResizablePanel, ResizableHandle
+  direction: "horizontal" | "vertical" (required)
+  ResizableHandle: withHandle?: boolean
+  children: yes
+  `.trim(),
+  ResizablePanel: `
+  Sub-component of ResizablePanelGroup.
+  `.trim(),
+  ResizableHandle: `
+  ResizableHandle: withHandle?: boolean
+  `.trim(),
+}

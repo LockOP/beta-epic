@@ -87,3 +87,29 @@ export {
   PopoverTitle,
   PopoverTrigger,
 }
+
+export const PopoverContext = {
+  Popover: `
+  sub-components: PopoverTrigger, PopoverAnchor, PopoverContent, PopoverHeader, PopoverTitle, PopoverDescription
+  PopoverContent: align?: string = "center", sideOffset?: number = 4
+  children: yes
+  `.trim(),
+  PopoverTrigger: `
+  Sub-component of Popover.
+  `.trim(),
+  PopoverAnchor: `
+  Sub-component of Popover.
+  `.trim(),
+  PopoverContent: `
+  PopoverContent: align?: string = "center", sideOffset?: number = 4
+  `.trim(),
+  PopoverHeader: `
+  Sub-component of Popover.
+  `.trim(),
+  PopoverTitle: `
+  Sub-component of Popover.
+  `.trim(),
+  PopoverDescription: `
+  Sub-component of Popover.
+  `.trim(),
+}

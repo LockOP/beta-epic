@@ -81,3 +81,19 @@ export {
   ButtonGroupText,
   buttonGroupVariants,
 }
+
+export const ButtonGroupContext = {
+  ButtonGroup: `
+  sub-components: ButtonGroupSeparator, ButtonGroupText
+  orientation: "horizontal"* | "vertical"
+  asChild?: boolean = false
+  children: yes
+  + all native <div> props
+  `.trim(),
+  ButtonGroupSeparator: `
+  Sub-component of ButtonGroup.
+  `.trim(),
+  ButtonGroupText: `
+  Sub-component of ButtonGroup.
+  `.trim(),
+}

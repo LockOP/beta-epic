@@ -88,3 +88,12 @@ const Toaster = ({ ...props }: ToasterProps) => {
 }
 
 export { Toaster }
+
+export const SonnerContext = {
+  Toaster: `
+  position?: "top-left" | "top-center" | "top-right" | "bottom-left" | "bottom-center" | "bottom-right"
+  richColors?: boolean
+  expand?: boolean
+  duration?: number
+  `.trim(),
+}

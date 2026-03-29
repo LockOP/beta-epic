@@ -16,3 +16,9 @@ function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
 }
 
 export { Textarea }
+
+export const TextareaContext = {
+  Textarea: `
+  + all native <textarea> props (value, onChange, placeholder, rows, disabled, readOnly, …)
+  `.trim(),
+}

@@ -166,3 +166,32 @@ export {
   DialogTitle,
   DialogTrigger,
 }
+
+export const DialogContext = {
+  Dialog: `
+  sub-components: DialogTrigger, DialogContent, DialogHeader, DialogFooter, DialogTitle, DialogDescription, DialogClose
+  DialogContent: showCloseButton?: boolean = true
+  children: yes
+  `.trim(),
+  DialogTrigger: `
+  Sub-component of Dialog.
+  `.trim(),
+  DialogContent: `
+  DialogContent: showCloseButton?: boolean = true
+  `.trim(),
+  DialogHeader: `
+  Sub-component of Dialog.
+  `.trim(),
+  DialogFooter: `
+  Sub-component of Dialog.
+  `.trim(),
+  DialogTitle: `
+  Sub-component of Dialog.
+  `.trim(),
+  DialogDescription: `
+  Sub-component of Dialog.
+  `.trim(),
+  DialogClose: `
+  Sub-component of Dialog.
+  `.trim(),
+}

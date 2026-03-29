@@ -57,3 +57,16 @@ function Slider({
 }
 
 export { Slider }
+
+export const SliderContext = {
+  Slider: `
+  value?: number[]
+  defaultValue?: number[]
+  onValueChange?: (value: number[]) => void
+  min?: number = 0
+  max?: number = 100
+  step?: number
+  orientation?: "horizontal" | "vertical"
+  disabled?: boolean
+  `.trim(),
+}

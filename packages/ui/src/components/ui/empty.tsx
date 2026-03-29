@@ -102,3 +102,27 @@ export {
   EmptyContent,
   EmptyMedia,
 }
+
+export const EmptyContext = {
+  Empty: `
+  sub-components: EmptyHeader, EmptyTitle, EmptyDescription, EmptyContent, EmptyMedia
+  EmptyMedia: variant?: "default"* | "icon"
+  children: yes
+  + all native <div> props
+  `.trim(),
+  EmptyHeader: `
+  Sub-component of Empty.
+  `.trim(),
+  EmptyTitle: `
+  Sub-component of Empty.
+  `.trim(),
+  EmptyDescription: `
+  Sub-component of Empty.
+  `.trim(),
+  EmptyContent: `
+  Sub-component of Empty.
+  `.trim(),
+  EmptyMedia: `
+  EmptyMedia: variant?: "default"* | "icon"
+  `.trim(),
+}

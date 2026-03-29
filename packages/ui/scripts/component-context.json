@@ -1,0 +1,7803 @@
+{
+  "MASTER_PROMPT": {
+    "file": "master-prompt.ts",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "MASTER_PROMPT"
+    ]
+  },
+  "OUTPUT_SCHEMA": {
+    "file": "output-schema.ts",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "ChatOutput",
+      "OUTPUT_SCHEMA"
+    ]
+  },
+  "Accordion": {
+    "file": "accordion",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "accordion",
+    "exports": [
+      "Accordion",
+      "AccordionItem",
+      "AccordionTrigger",
+      "AccordionContent"
+    ]
+  },
+  "AccordionItem": {
+    "file": "accordion",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "accordion-item",
+    "exports": [
+      "Accordion",
+      "AccordionItem",
+      "AccordionTrigger",
+      "AccordionContent"
+    ]
+  },
+  "AccordionTrigger": {
+    "file": "accordion",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "accordion-trigger",
+    "exports": [
+      "Accordion",
+      "AccordionItem",
+      "AccordionTrigger",
+      "AccordionContent"
+    ]
+  },
+  "AccordionContent": {
+    "file": "accordion",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "accordion-content",
+    "exports": [
+      "Accordion",
+      "AccordionItem",
+      "AccordionTrigger",
+      "AccordionContent"
+    ]
+  },
+  "AlertDialog": {
+    "file": "alert-dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "alert-dialog",
+    "exports": [
+      "AlertDialog",
+      "AlertDialogAction",
+      "AlertDialogCancel",
+      "AlertDialogContent",
+      "AlertDialogDescription",
+      "AlertDialogFooter",
+      "AlertDialogHeader",
+      "AlertDialogMedia",
+      "AlertDialogOverlay",
+      "AlertDialogPortal",
+      "AlertDialogTitle",
+      "AlertDialogTrigger"
+    ]
+  },
+  "AlertDialogTrigger": {
+    "file": "alert-dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "alert-dialog-trigger",
+    "exports": [
+      "AlertDialog",
+      "AlertDialogAction",
+      "AlertDialogCancel",
+      "AlertDialogContent",
+      "AlertDialogDescription",
+      "AlertDialogFooter",
+      "AlertDialogHeader",
+      "AlertDialogMedia",
+      "AlertDialogOverlay",
+      "AlertDialogPortal",
+      "AlertDialogTitle",
+      "AlertDialogTrigger"
+    ]
+  },
+  "AlertDialogPortal": {
+    "file": "alert-dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "alert-dialog-portal",
+    "exports": [
+      "AlertDialog",
+      "AlertDialogAction",
+      "AlertDialogCancel",
+      "AlertDialogContent",
+      "AlertDialogDescription",
+      "AlertDialogFooter",
+      "AlertDialogHeader",
+      "AlertDialogMedia",
+      "AlertDialogOverlay",
+      "AlertDialogPortal",
+      "AlertDialogTitle",
+      "AlertDialogTrigger"
+    ]
+  },
+  "AlertDialogOverlay": {
+    "file": "alert-dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "alert-dialog-overlay",
+    "exports": [
+      "AlertDialog",
+      "AlertDialogAction",
+      "AlertDialogCancel",
+      "AlertDialogContent",
+      "AlertDialogDescription",
+      "AlertDialogFooter",
+      "AlertDialogHeader",
+      "AlertDialogMedia",
+      "AlertDialogOverlay",
+      "AlertDialogPortal",
+      "AlertDialogTitle",
+      "AlertDialogTrigger"
+    ]
+  },
+  "AlertDialogContent": {
+    "file": "alert-dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "size": {
+        "default": "default",
+        "optional": true
+      }
+    },
+    "dataSlot": "alert-dialog-content",
+    "exports": [
+      "AlertDialog",
+      "AlertDialogAction",
+      "AlertDialogCancel",
+      "AlertDialogContent",
+      "AlertDialogDescription",
+      "AlertDialogFooter",
+      "AlertDialogHeader",
+      "AlertDialogMedia",
+      "AlertDialogOverlay",
+      "AlertDialogPortal",
+      "AlertDialogTitle",
+      "AlertDialogTrigger"
+    ]
+  },
+  "AlertDialogHeader": {
+    "file": "alert-dialog",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "alert-dialog-header",
+    "exports": [
+      "AlertDialog",
+      "AlertDialogAction",
+      "AlertDialogCancel",
+      "AlertDialogContent",
+      "AlertDialogDescription",
+      "AlertDialogFooter",
+      "AlertDialogHeader",
+      "AlertDialogMedia",
+      "AlertDialogOverlay",
+      "AlertDialogPortal",
+      "AlertDialogTitle",
+      "AlertDialogTrigger"
+    ]
+  },
+  "AlertDialogFooter": {
+    "file": "alert-dialog",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "alert-dialog-footer",
+    "exports": [
+      "AlertDialog",
+      "AlertDialogAction",
+      "AlertDialogCancel",
+      "AlertDialogContent",
+      "AlertDialogDescription",
+      "AlertDialogFooter",
+      "AlertDialogHeader",
+      "AlertDialogMedia",
+      "AlertDialogOverlay",
+      "AlertDialogPortal",
+      "AlertDialogTitle",
+      "AlertDialogTrigger"
+    ]
+  },
+  "AlertDialogMedia": {
+    "file": "alert-dialog",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "alert-dialog-media",
+    "exports": [
+      "AlertDialog",
+      "AlertDialogAction",
+      "AlertDialogCancel",
+      "AlertDialogContent",
+      "AlertDialogDescription",
+      "AlertDialogFooter",
+      "AlertDialogHeader",
+      "AlertDialogMedia",
+      "AlertDialogOverlay",
+      "AlertDialogPortal",
+      "AlertDialogTitle",
+      "AlertDialogTrigger"
+    ]
+  },
+  "AlertDialogTitle": {
+    "file": "alert-dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "alert-dialog-title",
+    "exports": [
+      "AlertDialog",
+      "AlertDialogAction",
+      "AlertDialogCancel",
+      "AlertDialogContent",
+      "AlertDialogDescription",
+      "AlertDialogFooter",
+      "AlertDialogHeader",
+      "AlertDialogMedia",
+      "AlertDialogOverlay",
+      "AlertDialogPortal",
+      "AlertDialogTitle",
+      "AlertDialogTrigger"
+    ]
+  },
+  "AlertDialogDescription": {
+    "file": "alert-dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "alert-dialog-description",
+    "exports": [
+      "AlertDialog",
+      "AlertDialogAction",
+      "AlertDialogCancel",
+      "AlertDialogContent",
+      "AlertDialogDescription",
+      "AlertDialogFooter",
+      "AlertDialogHeader",
+      "AlertDialogMedia",
+      "AlertDialogOverlay",
+      "AlertDialogPortal",
+      "AlertDialogTitle",
+      "AlertDialogTrigger"
+    ]
+  },
+  "AlertDialogAction": {
+    "file": "alert-dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "variant": {
+        "default": "default",
+        "optional": true
+      },
+      "size": {
+        "default": "default",
+        "optional": true
+      }
+    },
+    "dataSlot": "alert-dialog-action",
+    "exports": [
+      "AlertDialog",
+      "AlertDialogAction",
+      "AlertDialogCancel",
+      "AlertDialogContent",
+      "AlertDialogDescription",
+      "AlertDialogFooter",
+      "AlertDialogHeader",
+      "AlertDialogMedia",
+      "AlertDialogOverlay",
+      "AlertDialogPortal",
+      "AlertDialogTitle",
+      "AlertDialogTrigger"
+    ]
+  },
+  "AlertDialogCancel": {
+    "file": "alert-dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "variant": {
+        "default": "outline",
+        "optional": true
+      },
+      "size": {
+        "default": "default",
+        "optional": true
+      }
+    },
+    "dataSlot": "alert-dialog-cancel",
+    "exports": [
+      "AlertDialog",
+      "AlertDialogAction",
+      "AlertDialogCancel",
+      "AlertDialogContent",
+      "AlertDialogDescription",
+      "AlertDialogFooter",
+      "AlertDialogHeader",
+      "AlertDialogMedia",
+      "AlertDialogOverlay",
+      "AlertDialogPortal",
+      "AlertDialogTitle",
+      "AlertDialogTrigger"
+    ]
+  },
+  "Alert": {
+    "file": "alert",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "destructive"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "alert",
+    "exports": [
+      "Alert",
+      "AlertTitle",
+      "AlertDescription",
+      "AlertAction"
+    ]
+  },
+  "AlertTitle": {
+    "file": "alert",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "destructive"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "alert-title",
+    "exports": [
+      "Alert",
+      "AlertTitle",
+      "AlertDescription",
+      "AlertAction"
+    ]
+  },
+  "AlertDescription": {
+    "file": "alert",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "destructive"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "alert-description",
+    "exports": [
+      "Alert",
+      "AlertTitle",
+      "AlertDescription",
+      "AlertAction"
+    ]
+  },
+  "AlertAction": {
+    "file": "alert",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "destructive"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "alert-action",
+    "exports": [
+      "Alert",
+      "AlertTitle",
+      "AlertDescription",
+      "AlertAction"
+    ]
+  },
+  "AspectRatio": {
+    "file": "aspect-ratio",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "aspect-ratio",
+    "exports": [
+      "AspectRatio"
+    ]
+  },
+  "Avatar": {
+    "file": "avatar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "size": {
+        "default": "default",
+        "optional": true
+      }
+    },
+    "dataSlot": "avatar",
+    "exports": [
+      "Avatar",
+      "AvatarImage",
+      "AvatarFallback",
+      "AvatarGroup",
+      "AvatarGroupCount",
+      "AvatarBadge"
+    ]
+  },
+  "AvatarImage": {
+    "file": "avatar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "avatar-image",
+    "exports": [
+      "Avatar",
+      "AvatarImage",
+      "AvatarFallback",
+      "AvatarGroup",
+      "AvatarGroupCount",
+      "AvatarBadge"
+    ]
+  },
+  "AvatarFallback": {
+    "file": "avatar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "avatar-fallback",
+    "exports": [
+      "Avatar",
+      "AvatarImage",
+      "AvatarFallback",
+      "AvatarGroup",
+      "AvatarGroupCount",
+      "AvatarBadge"
+    ]
+  },
+  "AvatarBadge": {
+    "file": "avatar",
+    "extendsElement": "span",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "avatar-badge",
+    "exports": [
+      "Avatar",
+      "AvatarImage",
+      "AvatarFallback",
+      "AvatarGroup",
+      "AvatarGroupCount",
+      "AvatarBadge"
+    ]
+  },
+  "AvatarGroup": {
+    "file": "avatar",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "avatar-group",
+    "exports": [
+      "Avatar",
+      "AvatarImage",
+      "AvatarFallback",
+      "AvatarGroup",
+      "AvatarGroupCount",
+      "AvatarBadge"
+    ]
+  },
+  "AvatarGroupCount": {
+    "file": "avatar",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "avatar-group-count",
+    "exports": [
+      "Avatar",
+      "AvatarImage",
+      "AvatarFallback",
+      "AvatarGroup",
+      "AvatarGroupCount",
+      "AvatarBadge"
+    ]
+  },
+  "Badge": {
+    "file": "badge",
+    "extendsElement": "span",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "secondary",
+          "destructive",
+          "outline",
+          "ghost",
+          "link"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {
+      "asChild": {
+        "default": false,
+        "optional": true
+      }
+    },
+    "dataSlot": "badge",
+    "exports": [
+      "Badge"
+    ]
+  },
+  "Breadcrumb": {
+    "file": "breadcrumb",
+    "extendsElement": "nav",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "breadcrumb",
+    "exports": [
+      "Breadcrumb",
+      "BreadcrumbList",
+      "BreadcrumbItem",
+      "BreadcrumbLink",
+      "BreadcrumbPage",
+      "BreadcrumbSeparator",
+      "BreadcrumbEllipsis"
+    ]
+  },
+  "BreadcrumbList": {
+    "file": "breadcrumb",
+    "extendsElement": "ol",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "breadcrumb-list",
+    "exports": [
+      "Breadcrumb",
+      "BreadcrumbList",
+      "BreadcrumbItem",
+      "BreadcrumbLink",
+      "BreadcrumbPage",
+      "BreadcrumbSeparator",
+      "BreadcrumbEllipsis"
+    ]
+  },
+  "BreadcrumbItem": {
+    "file": "breadcrumb",
+    "extendsElement": "li",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "breadcrumb-item",
+    "exports": [
+      "Breadcrumb",
+      "BreadcrumbList",
+      "BreadcrumbItem",
+      "BreadcrumbLink",
+      "BreadcrumbPage",
+      "BreadcrumbSeparator",
+      "BreadcrumbEllipsis"
+    ]
+  },
+  "BreadcrumbLink": {
+    "file": "breadcrumb",
+    "extendsElement": "a",
+    "variants": {},
+    "ownProps": {
+      "asChild": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "breadcrumb-link",
+    "exports": [
+      "Breadcrumb",
+      "BreadcrumbList",
+      "BreadcrumbItem",
+      "BreadcrumbLink",
+      "BreadcrumbPage",
+      "BreadcrumbSeparator",
+      "BreadcrumbEllipsis"
+    ]
+  },
+  "BreadcrumbPage": {
+    "file": "breadcrumb",
+    "extendsElement": "span",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "breadcrumb-page",
+    "exports": [
+      "Breadcrumb",
+      "BreadcrumbList",
+      "BreadcrumbItem",
+      "BreadcrumbLink",
+      "BreadcrumbPage",
+      "BreadcrumbSeparator",
+      "BreadcrumbEllipsis"
+    ]
+  },
+  "BreadcrumbSeparator": {
+    "file": "breadcrumb",
+    "extendsElement": "li",
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "breadcrumb-separator",
+    "exports": [
+      "Breadcrumb",
+      "BreadcrumbList",
+      "BreadcrumbItem",
+      "BreadcrumbLink",
+      "BreadcrumbPage",
+      "BreadcrumbSeparator",
+      "BreadcrumbEllipsis"
+    ]
+  },
+  "BreadcrumbEllipsis": {
+    "file": "breadcrumb",
+    "extendsElement": "span",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "breadcrumb-ellipsis",
+    "exports": [
+      "Breadcrumb",
+      "BreadcrumbList",
+      "BreadcrumbItem",
+      "BreadcrumbLink",
+      "BreadcrumbPage",
+      "BreadcrumbSeparator",
+      "BreadcrumbEllipsis"
+    ]
+  },
+  "ButtonGroup": {
+    "file": "button-group",
+    "extendsElement": "div",
+    "variants": {
+      "orientation": {
+        "options": [
+          "horizontal",
+          "vertical"
+        ],
+        "default": "horizontal"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "button-group",
+    "exports": [
+      "ButtonGroup",
+      "ButtonGroupSeparator",
+      "ButtonGroupText"
+    ]
+  },
+  "ButtonGroupText": {
+    "file": "button-group",
+    "extendsElement": "div",
+    "variants": {
+      "orientation": {
+        "options": [
+          "horizontal",
+          "vertical"
+        ],
+        "default": "horizontal"
+      }
+    },
+    "ownProps": {
+      "asChild": {
+        "default": false,
+        "optional": true
+      }
+    },
+    "dataSlot": null,
+    "exports": [
+      "ButtonGroup",
+      "ButtonGroupSeparator",
+      "ButtonGroupText"
+    ]
+  },
+  "ButtonGroupSeparator": {
+    "file": "button-group",
+    "extendsElement": null,
+    "variants": {
+      "orientation": {
+        "options": [
+          "horizontal",
+          "vertical"
+        ],
+        "default": "horizontal"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "button-group-separator",
+    "exports": [
+      "ButtonGroup",
+      "ButtonGroupSeparator",
+      "ButtonGroupText"
+    ]
+  },
+  "Button": {
+    "file": "button",
+    "extendsElement": "button",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline",
+          "secondary",
+          "ghost",
+          "destructive",
+          "link"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "xs",
+          "sm",
+          "lg",
+          "icon",
+          "\"icon-xs\"",
+          "\"icon-sm\"",
+          "\"icon-lg\""
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {
+      "asChild": {
+        "default": false,
+        "optional": true
+      }
+    },
+    "dataSlot": "button",
+    "exports": [
+      "Button"
+    ]
+  },
+  "Calendar": {
+    "file": "calendar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "classNames": {
+        "default": null,
+        "optional": false
+      },
+      "showOutsideDays": {
+        "default": true,
+        "optional": true
+      },
+      "captionLayout": {
+        "default": "label",
+        "optional": true
+      },
+      "buttonVariant": {
+        "default": "ghost",
+        "optional": true
+      },
+      "locale": {
+        "default": null,
+        "optional": false
+      },
+      "formatters": {
+        "default": null,
+        "optional": false
+      },
+      "components": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "calendar",
+    "exports": [
+      "Calendar",
+      "CalendarDayButton"
+    ]
+  },
+  "CalendarDayButton": {
+    "file": "calendar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "day": {
+        "default": null,
+        "optional": false
+      },
+      "modifiers": {
+        "default": null,
+        "optional": false
+      },
+      "locale": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": null,
+    "exports": [
+      "Calendar",
+      "CalendarDayButton"
+    ]
+  },
+  "Card": {
+    "file": "card",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {
+      "size": {
+        "default": "default",
+        "optional": true
+      }
+    },
+    "dataSlot": "card",
+    "exports": [
+      "Card",
+      "CardHeader",
+      "CardFooter",
+      "CardTitle",
+      "CardAction",
+      "CardDescription",
+      "CardContent"
+    ]
+  },
+  "CardHeader": {
+    "file": "card",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "card-header",
+    "exports": [
+      "Card",
+      "CardHeader",
+      "CardFooter",
+      "CardTitle",
+      "CardAction",
+      "CardDescription",
+      "CardContent"
+    ]
+  },
+  "CardTitle": {
+    "file": "card",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "card-title",
+    "exports": [
+      "Card",
+      "CardHeader",
+      "CardFooter",
+      "CardTitle",
+      "CardAction",
+      "CardDescription",
+      "CardContent"
+    ]
+  },
+  "CardDescription": {
+    "file": "card",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "card-description",
+    "exports": [
+      "Card",
+      "CardHeader",
+      "CardFooter",
+      "CardTitle",
+      "CardAction",
+      "CardDescription",
+      "CardContent"
+    ]
+  },
+  "CardAction": {
+    "file": "card",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "card-action",
+    "exports": [
+      "Card",
+      "CardHeader",
+      "CardFooter",
+      "CardTitle",
+      "CardAction",
+      "CardDescription",
+      "CardContent"
+    ]
+  },
+  "CardContent": {
+    "file": "card",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "card-content",
+    "exports": [
+      "Card",
+      "CardHeader",
+      "CardFooter",
+      "CardTitle",
+      "CardAction",
+      "CardDescription",
+      "CardContent"
+    ]
+  },
+  "CardFooter": {
+    "file": "card",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "card-footer",
+    "exports": [
+      "Card",
+      "CardHeader",
+      "CardFooter",
+      "CardTitle",
+      "CardAction",
+      "CardDescription",
+      "CardContent"
+    ]
+  },
+  "Carousel": {
+    "file": "carousel",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {
+      "orientation": {
+        "default": "horizontal",
+        "optional": true
+      },
+      "opts": {
+        "default": null,
+        "optional": false
+      },
+      "setApi": {
+        "default": null,
+        "optional": false
+      },
+      "plugins": {
+        "default": null,
+        "optional": false
+      },
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "carousel",
+    "exports": [
+      "CarouselApi",
+      "Carousel",
+      "CarouselContent",
+      "CarouselItem",
+      "CarouselPrevious",
+      "CarouselNext",
+      "useCarousel"
+    ]
+  },
+  "CarouselContent": {
+    "file": "carousel",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "carousel-content",
+    "exports": [
+      "CarouselApi",
+      "Carousel",
+      "CarouselContent",
+      "CarouselItem",
+      "CarouselPrevious",
+      "CarouselNext",
+      "useCarousel"
+    ]
+  },
+  "CarouselItem": {
+    "file": "carousel",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "carousel-item",
+    "exports": [
+      "CarouselApi",
+      "Carousel",
+      "CarouselContent",
+      "CarouselItem",
+      "CarouselPrevious",
+      "CarouselNext",
+      "useCarousel"
+    ]
+  },
+  "CarouselPrevious": {
+    "file": "carousel",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "variant": {
+        "default": "outline",
+        "optional": true
+      },
+      "size": {
+        "default": "icon-sm",
+        "optional": true
+      }
+    },
+    "dataSlot": "carousel-previous",
+    "exports": [
+      "CarouselApi",
+      "Carousel",
+      "CarouselContent",
+      "CarouselItem",
+      "CarouselPrevious",
+      "CarouselNext",
+      "useCarousel"
+    ]
+  },
+  "CarouselNext": {
+    "file": "carousel",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "variant": {
+        "default": "outline",
+        "optional": true
+      },
+      "size": {
+        "default": "icon-sm",
+        "optional": true
+      }
+    },
+    "dataSlot": "carousel-next",
+    "exports": [
+      "CarouselApi",
+      "Carousel",
+      "CarouselContent",
+      "CarouselItem",
+      "CarouselPrevious",
+      "CarouselNext",
+      "useCarousel"
+    ]
+  },
+  "ChartContainer": {
+    "file": "chart",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {
+      "id": {
+        "default": null,
+        "optional": false
+      },
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "config": {
+        "default": null,
+        "optional": false
+      },
+      "initialDimension": {
+        "default": "INITIAL_DIMENSION",
+        "optional": true
+      }
+    },
+    "dataSlot": "chart",
+    "exports": [
+      "ChartConfig",
+      "ChartContainer",
+      "ChartTooltip",
+      "ChartTooltipContent",
+      "ChartLegend",
+      "ChartLegendContent",
+      "ChartStyle"
+    ]
+  },
+  "ChartTooltipContent": {
+    "file": "chart",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {
+      "active": {
+        "default": null,
+        "optional": false
+      },
+      "payload": {
+        "default": null,
+        "optional": false
+      },
+      "indicator": {
+        "default": "dot",
+        "optional": true
+      },
+      "hideLabel": {
+        "default": false,
+        "optional": true
+      },
+      "hideIndicator": {
+        "default": false,
+        "optional": true
+      },
+      "label": {
+        "default": null,
+        "optional": false
+      },
+      "labelFormatter": {
+        "default": null,
+        "optional": false
+      },
+      "labelClassName": {
+        "default": null,
+        "optional": false
+      },
+      "formatter": {
+        "default": null,
+        "optional": false
+      },
+      "color": {
+        "default": null,
+        "optional": false
+      },
+      "nameKey": {
+        "default": null,
+        "optional": false
+      },
+      "labelKey": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": null,
+    "exports": [
+      "ChartConfig",
+      "ChartContainer",
+      "ChartTooltip",
+      "ChartTooltipContent",
+      "ChartLegend",
+      "ChartLegendContent",
+      "ChartStyle"
+    ]
+  },
+  "ChartLegendContent": {
+    "file": "chart",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {
+      "hideIcon": {
+        "default": false,
+        "optional": true
+      },
+      "payload": {
+        "default": null,
+        "optional": false
+      },
+      "verticalAlign": {
+        "default": "bottom",
+        "optional": true
+      },
+      "nameKey": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": null,
+    "exports": [
+      "ChartConfig",
+      "ChartContainer",
+      "ChartTooltip",
+      "ChartTooltipContent",
+      "ChartLegend",
+      "ChartLegendContent",
+      "ChartStyle"
+    ]
+  },
+  "Checkbox": {
+    "file": "checkbox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "checkbox",
+    "exports": [
+      "Checkbox"
+    ]
+  },
+  "Collapsible": {
+    "file": "collapsible",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "collapsible",
+    "exports": [
+      "Collapsible",
+      "CollapsibleTrigger",
+      "CollapsibleContent"
+    ]
+  },
+  "CollapsibleTrigger": {
+    "file": "collapsible",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "collapsible-trigger",
+    "exports": [
+      "Collapsible",
+      "CollapsibleTrigger",
+      "CollapsibleContent"
+    ]
+  },
+  "CollapsibleContent": {
+    "file": "collapsible",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "collapsible-content",
+    "exports": [
+      "Collapsible",
+      "CollapsibleTrigger",
+      "CollapsibleContent"
+    ]
+  },
+  "ComboboxValue": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "combobox-value",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "ComboboxTrigger": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "combobox-trigger",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "ComboboxClear": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "combobox-clear",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "ComboboxInput": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "disabled": {
+        "default": false,
+        "optional": true
+      },
+      "showTrigger": {
+        "default": true,
+        "optional": true
+      },
+      "showClear": {
+        "default": false,
+        "optional": true
+      }
+    },
+    "dataSlot": "input-group-button",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "ComboboxContent": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "side": {
+        "default": "bottom",
+        "optional": true
+      },
+      "sideOffset": {
+        "default": 6,
+        "optional": true
+      },
+      "align": {
+        "default": "start",
+        "optional": true
+      },
+      "alignOffset": {
+        "default": 0,
+        "optional": true
+      },
+      "anchor": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "combobox-content",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "ComboboxList": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "combobox-list",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "ComboboxItem": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "combobox-item",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "ComboboxGroup": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "combobox-group",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "ComboboxLabel": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "combobox-label",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "ComboboxCollection": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "combobox-collection",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "ComboboxEmpty": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "combobox-empty",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "ComboboxSeparator": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "combobox-separator",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "ComboboxChips": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "combobox-chips",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "ComboboxChip": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "showRemove": {
+        "default": true,
+        "optional": true
+      }
+    },
+    "dataSlot": "combobox-chip",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "ComboboxChipsInput": {
+    "file": "combobox",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "combobox-chip-input",
+    "exports": [
+      "Combobox",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxGroup",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxEmpty",
+      "ComboboxSeparator",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "useComboboxAnchor"
+    ]
+  },
+  "Command": {
+    "file": "command",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "command",
+    "exports": [
+      "Command",
+      "CommandDialog",
+      "CommandInput",
+      "CommandList",
+      "CommandEmpty",
+      "CommandGroup",
+      "CommandItem",
+      "CommandShortcut",
+      "CommandSeparator"
+    ]
+  },
+  "CommandDialog": {
+    "file": "command",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "title": {
+        "default": "Command Palette",
+        "optional": true
+      },
+      "description": {
+        "default": "Search for a command to run...",
+        "optional": true
+      },
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "showCloseButton": {
+        "default": false,
+        "optional": true
+      }
+    },
+    "dataSlot": null,
+    "exports": [
+      "Command",
+      "CommandDialog",
+      "CommandInput",
+      "CommandList",
+      "CommandEmpty",
+      "CommandGroup",
+      "CommandItem",
+      "CommandShortcut",
+      "CommandSeparator"
+    ]
+  },
+  "CommandInput": {
+    "file": "command",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "command-input-wrapper",
+    "exports": [
+      "Command",
+      "CommandDialog",
+      "CommandInput",
+      "CommandList",
+      "CommandEmpty",
+      "CommandGroup",
+      "CommandItem",
+      "CommandShortcut",
+      "CommandSeparator"
+    ]
+  },
+  "CommandList": {
+    "file": "command",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "command-list",
+    "exports": [
+      "Command",
+      "CommandDialog",
+      "CommandInput",
+      "CommandList",
+      "CommandEmpty",
+      "CommandGroup",
+      "CommandItem",
+      "CommandShortcut",
+      "CommandSeparator"
+    ]
+  },
+  "CommandEmpty": {
+    "file": "command",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "command-empty",
+    "exports": [
+      "Command",
+      "CommandDialog",
+      "CommandInput",
+      "CommandList",
+      "CommandEmpty",
+      "CommandGroup",
+      "CommandItem",
+      "CommandShortcut",
+      "CommandSeparator"
+    ]
+  },
+  "CommandGroup": {
+    "file": "command",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "command-group",
+    "exports": [
+      "Command",
+      "CommandDialog",
+      "CommandInput",
+      "CommandList",
+      "CommandEmpty",
+      "CommandGroup",
+      "CommandItem",
+      "CommandShortcut",
+      "CommandSeparator"
+    ]
+  },
+  "CommandSeparator": {
+    "file": "command",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "command-separator",
+    "exports": [
+      "Command",
+      "CommandDialog",
+      "CommandInput",
+      "CommandList",
+      "CommandEmpty",
+      "CommandGroup",
+      "CommandItem",
+      "CommandShortcut",
+      "CommandSeparator"
+    ]
+  },
+  "CommandItem": {
+    "file": "command",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "command-item",
+    "exports": [
+      "Command",
+      "CommandDialog",
+      "CommandInput",
+      "CommandList",
+      "CommandEmpty",
+      "CommandGroup",
+      "CommandItem",
+      "CommandShortcut",
+      "CommandSeparator"
+    ]
+  },
+  "CommandShortcut": {
+    "file": "command",
+    "extendsElement": "span",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "command-shortcut",
+    "exports": [
+      "Command",
+      "CommandDialog",
+      "CommandInput",
+      "CommandList",
+      "CommandEmpty",
+      "CommandGroup",
+      "CommandItem",
+      "CommandShortcut",
+      "CommandSeparator"
+    ]
+  },
+  "ContextMenu": {
+    "file": "context-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "context-menu",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "ContextMenuTrigger": {
+    "file": "context-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "context-menu-trigger",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "ContextMenuGroup": {
+    "file": "context-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "context-menu-group",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "ContextMenuPortal": {
+    "file": "context-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "context-menu-portal",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "ContextMenuSub": {
+    "file": "context-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "context-menu-sub",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "ContextMenuRadioGroup": {
+    "file": "context-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "context-menu-radio-group",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "ContextMenuContent": {
+    "file": "context-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "context-menu-content",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "ContextMenuItem": {
+    "file": "context-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "inset": {
+        "default": null,
+        "optional": false
+      },
+      "variant": {
+        "default": "default",
+        "optional": true
+      }
+    },
+    "dataSlot": "context-menu-item",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "ContextMenuSubTrigger": {
+    "file": "context-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "inset": {
+        "default": null,
+        "optional": false
+      },
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "context-menu-sub-trigger",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "ContextMenuSubContent": {
+    "file": "context-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "context-menu-sub-content",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "ContextMenuCheckboxItem": {
+    "file": "context-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "checked": {
+        "default": null,
+        "optional": false
+      },
+      "inset": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "context-menu-checkbox-item",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "ContextMenuRadioItem": {
+    "file": "context-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "inset": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "context-menu-radio-item",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "ContextMenuLabel": {
+    "file": "context-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "inset": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "context-menu-label",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "ContextMenuSeparator": {
+    "file": "context-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "context-menu-separator",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "ContextMenuShortcut": {
+    "file": "context-menu",
+    "extendsElement": "span",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "context-menu-shortcut",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuContent",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuGroup",
+      "ContextMenuPortal",
+      "ContextMenuSub",
+      "ContextMenuSubContent",
+      "ContextMenuSubTrigger",
+      "ContextMenuRadioGroup"
+    ]
+  },
+  "DataTable": {
+    "file": "data-table",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "columns": {
+        "default": null,
+        "optional": false
+      },
+      "data": {
+        "default": null,
+        "optional": false
+      },
+      "emptyMessage": {
+        "default": "No results.",
+        "optional": true
+      }
+    },
+    "dataSlot": null,
+    "exports": [
+      "DataTable",
+      "DataTableColumn",
+      "DataTableProps"
+    ]
+  },
+  "DatePicker": {
+    "file": "date-picker",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "value": {
+        "default": null,
+        "optional": false
+      },
+      "onChange": {
+        "default": null,
+        "optional": false
+      },
+      "placeholder": {
+        "default": "Pick a date",
+        "optional": true
+      },
+      "disabled": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": null,
+    "exports": [
+      "DatePicker",
+      "DatePickerProps"
+    ]
+  },
+  "Dialog": {
+    "file": "dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dialog",
+    "exports": [
+      "Dialog",
+      "DialogClose",
+      "DialogContent",
+      "DialogDescription",
+      "DialogFooter",
+      "DialogHeader",
+      "DialogOverlay",
+      "DialogPortal",
+      "DialogTitle",
+      "DialogTrigger"
+    ]
+  },
+  "DialogTrigger": {
+    "file": "dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dialog-trigger",
+    "exports": [
+      "Dialog",
+      "DialogClose",
+      "DialogContent",
+      "DialogDescription",
+      "DialogFooter",
+      "DialogHeader",
+      "DialogOverlay",
+      "DialogPortal",
+      "DialogTitle",
+      "DialogTrigger"
+    ]
+  },
+  "DialogPortal": {
+    "file": "dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dialog-portal",
+    "exports": [
+      "Dialog",
+      "DialogClose",
+      "DialogContent",
+      "DialogDescription",
+      "DialogFooter",
+      "DialogHeader",
+      "DialogOverlay",
+      "DialogPortal",
+      "DialogTitle",
+      "DialogTrigger"
+    ]
+  },
+  "DialogClose": {
+    "file": "dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dialog-close",
+    "exports": [
+      "Dialog",
+      "DialogClose",
+      "DialogContent",
+      "DialogDescription",
+      "DialogFooter",
+      "DialogHeader",
+      "DialogOverlay",
+      "DialogPortal",
+      "DialogTitle",
+      "DialogTrigger"
+    ]
+  },
+  "DialogOverlay": {
+    "file": "dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dialog-overlay",
+    "exports": [
+      "Dialog",
+      "DialogClose",
+      "DialogContent",
+      "DialogDescription",
+      "DialogFooter",
+      "DialogHeader",
+      "DialogOverlay",
+      "DialogPortal",
+      "DialogTitle",
+      "DialogTrigger"
+    ]
+  },
+  "DialogContent": {
+    "file": "dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "showCloseButton": {
+        "default": true,
+        "optional": true
+      }
+    },
+    "dataSlot": "dialog-content",
+    "exports": [
+      "Dialog",
+      "DialogClose",
+      "DialogContent",
+      "DialogDescription",
+      "DialogFooter",
+      "DialogHeader",
+      "DialogOverlay",
+      "DialogPortal",
+      "DialogTitle",
+      "DialogTrigger"
+    ]
+  },
+  "DialogHeader": {
+    "file": "dialog",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dialog-header",
+    "exports": [
+      "Dialog",
+      "DialogClose",
+      "DialogContent",
+      "DialogDescription",
+      "DialogFooter",
+      "DialogHeader",
+      "DialogOverlay",
+      "DialogPortal",
+      "DialogTitle",
+      "DialogTrigger"
+    ]
+  },
+  "DialogFooter": {
+    "file": "dialog",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {
+      "showCloseButton": {
+        "default": false,
+        "optional": true
+      },
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "dialog-footer",
+    "exports": [
+      "Dialog",
+      "DialogClose",
+      "DialogContent",
+      "DialogDescription",
+      "DialogFooter",
+      "DialogHeader",
+      "DialogOverlay",
+      "DialogPortal",
+      "DialogTitle",
+      "DialogTrigger"
+    ]
+  },
+  "DialogTitle": {
+    "file": "dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dialog-title",
+    "exports": [
+      "Dialog",
+      "DialogClose",
+      "DialogContent",
+      "DialogDescription",
+      "DialogFooter",
+      "DialogHeader",
+      "DialogOverlay",
+      "DialogPortal",
+      "DialogTitle",
+      "DialogTrigger"
+    ]
+  },
+  "DialogDescription": {
+    "file": "dialog",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dialog-description",
+    "exports": [
+      "Dialog",
+      "DialogClose",
+      "DialogContent",
+      "DialogDescription",
+      "DialogFooter",
+      "DialogHeader",
+      "DialogOverlay",
+      "DialogPortal",
+      "DialogTitle",
+      "DialogTrigger"
+    ]
+  },
+  "DirectionProvider": {
+    "file": "direction",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "dir": {
+        "default": null,
+        "optional": false
+      },
+      "direction": {
+        "default": null,
+        "optional": false
+      },
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": null,
+    "exports": [
+      "DirectionProvider",
+      "useDirection"
+    ]
+  },
+  "Drawer": {
+    "file": "drawer",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "drawer",
+    "exports": [
+      "Drawer",
+      "DrawerPortal",
+      "DrawerOverlay",
+      "DrawerTrigger",
+      "DrawerClose",
+      "DrawerContent",
+      "DrawerHeader",
+      "DrawerFooter",
+      "DrawerTitle",
+      "DrawerDescription"
+    ]
+  },
+  "DrawerTrigger": {
+    "file": "drawer",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "drawer-trigger",
+    "exports": [
+      "Drawer",
+      "DrawerPortal",
+      "DrawerOverlay",
+      "DrawerTrigger",
+      "DrawerClose",
+      "DrawerContent",
+      "DrawerHeader",
+      "DrawerFooter",
+      "DrawerTitle",
+      "DrawerDescription"
+    ]
+  },
+  "DrawerPortal": {
+    "file": "drawer",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "drawer-portal",
+    "exports": [
+      "Drawer",
+      "DrawerPortal",
+      "DrawerOverlay",
+      "DrawerTrigger",
+      "DrawerClose",
+      "DrawerContent",
+      "DrawerHeader",
+      "DrawerFooter",
+      "DrawerTitle",
+      "DrawerDescription"
+    ]
+  },
+  "DrawerClose": {
+    "file": "drawer",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "drawer-close",
+    "exports": [
+      "Drawer",
+      "DrawerPortal",
+      "DrawerOverlay",
+      "DrawerTrigger",
+      "DrawerClose",
+      "DrawerContent",
+      "DrawerHeader",
+      "DrawerFooter",
+      "DrawerTitle",
+      "DrawerDescription"
+    ]
+  },
+  "DrawerOverlay": {
+    "file": "drawer",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "drawer-overlay",
+    "exports": [
+      "Drawer",
+      "DrawerPortal",
+      "DrawerOverlay",
+      "DrawerTrigger",
+      "DrawerClose",
+      "DrawerContent",
+      "DrawerHeader",
+      "DrawerFooter",
+      "DrawerTitle",
+      "DrawerDescription"
+    ]
+  },
+  "DrawerContent": {
+    "file": "drawer",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "drawer-portal",
+    "exports": [
+      "Drawer",
+      "DrawerPortal",
+      "DrawerOverlay",
+      "DrawerTrigger",
+      "DrawerClose",
+      "DrawerContent",
+      "DrawerHeader",
+      "DrawerFooter",
+      "DrawerTitle",
+      "DrawerDescription"
+    ]
+  },
+  "DrawerHeader": {
+    "file": "drawer",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "drawer-header",
+    "exports": [
+      "Drawer",
+      "DrawerPortal",
+      "DrawerOverlay",
+      "DrawerTrigger",
+      "DrawerClose",
+      "DrawerContent",
+      "DrawerHeader",
+      "DrawerFooter",
+      "DrawerTitle",
+      "DrawerDescription"
+    ]
+  },
+  "DrawerFooter": {
+    "file": "drawer",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "drawer-footer",
+    "exports": [
+      "Drawer",
+      "DrawerPortal",
+      "DrawerOverlay",
+      "DrawerTrigger",
+      "DrawerClose",
+      "DrawerContent",
+      "DrawerHeader",
+      "DrawerFooter",
+      "DrawerTitle",
+      "DrawerDescription"
+    ]
+  },
+  "DrawerTitle": {
+    "file": "drawer",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "drawer-title",
+    "exports": [
+      "Drawer",
+      "DrawerPortal",
+      "DrawerOverlay",
+      "DrawerTrigger",
+      "DrawerClose",
+      "DrawerContent",
+      "DrawerHeader",
+      "DrawerFooter",
+      "DrawerTitle",
+      "DrawerDescription"
+    ]
+  },
+  "DrawerDescription": {
+    "file": "drawer",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "drawer-description",
+    "exports": [
+      "Drawer",
+      "DrawerPortal",
+      "DrawerOverlay",
+      "DrawerTrigger",
+      "DrawerClose",
+      "DrawerContent",
+      "DrawerHeader",
+      "DrawerFooter",
+      "DrawerTitle",
+      "DrawerDescription"
+    ]
+  },
+  "DropdownMenu": {
+    "file": "dropdown-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dropdown-menu",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "DropdownMenuPortal": {
+    "file": "dropdown-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dropdown-menu-portal",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "DropdownMenuTrigger": {
+    "file": "dropdown-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dropdown-menu-trigger",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "DropdownMenuContent": {
+    "file": "dropdown-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "align": {
+        "default": "start",
+        "optional": true
+      },
+      "sideOffset": {
+        "default": 4,
+        "optional": true
+      }
+    },
+    "dataSlot": "dropdown-menu-content",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "DropdownMenuGroup": {
+    "file": "dropdown-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dropdown-menu-group",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "DropdownMenuItem": {
+    "file": "dropdown-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "inset": {
+        "default": null,
+        "optional": false
+      },
+      "variant": {
+        "default": "default",
+        "optional": true
+      }
+    },
+    "dataSlot": "dropdown-menu-item",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "DropdownMenuCheckboxItem": {
+    "file": "dropdown-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "checked": {
+        "default": null,
+        "optional": false
+      },
+      "inset": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "dropdown-menu-checkbox-item",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "DropdownMenuRadioGroup": {
+    "file": "dropdown-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dropdown-menu-radio-group",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "DropdownMenuRadioItem": {
+    "file": "dropdown-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "inset": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "dropdown-menu-radio-item",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "DropdownMenuLabel": {
+    "file": "dropdown-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "inset": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "dropdown-menu-label",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "DropdownMenuSeparator": {
+    "file": "dropdown-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dropdown-menu-separator",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "DropdownMenuShortcut": {
+    "file": "dropdown-menu",
+    "extendsElement": "span",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dropdown-menu-shortcut",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "DropdownMenuSub": {
+    "file": "dropdown-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dropdown-menu-sub",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "DropdownMenuSubTrigger": {
+    "file": "dropdown-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "inset": {
+        "default": null,
+        "optional": false
+      },
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "dropdown-menu-sub-trigger",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "DropdownMenuSubContent": {
+    "file": "dropdown-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "dropdown-menu-sub-content",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuPortal",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuLabel",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ]
+  },
+  "Empty": {
+    "file": "empty",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "empty",
+    "exports": [
+      "Empty",
+      "EmptyHeader",
+      "EmptyTitle",
+      "EmptyDescription",
+      "EmptyContent",
+      "EmptyMedia"
+    ]
+  },
+  "EmptyHeader": {
+    "file": "empty",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "empty-header",
+    "exports": [
+      "Empty",
+      "EmptyHeader",
+      "EmptyTitle",
+      "EmptyDescription",
+      "EmptyContent",
+      "EmptyMedia"
+    ]
+  },
+  "EmptyMedia": {
+    "file": "empty",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "empty-icon",
+    "exports": [
+      "Empty",
+      "EmptyHeader",
+      "EmptyTitle",
+      "EmptyDescription",
+      "EmptyContent",
+      "EmptyMedia"
+    ]
+  },
+  "EmptyTitle": {
+    "file": "empty",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "empty-title",
+    "exports": [
+      "Empty",
+      "EmptyHeader",
+      "EmptyTitle",
+      "EmptyDescription",
+      "EmptyContent",
+      "EmptyMedia"
+    ]
+  },
+  "EmptyDescription": {
+    "file": "empty",
+    "extendsElement": "p",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "empty-description",
+    "exports": [
+      "Empty",
+      "EmptyHeader",
+      "EmptyTitle",
+      "EmptyDescription",
+      "EmptyContent",
+      "EmptyMedia"
+    ]
+  },
+  "EmptyContent": {
+    "file": "empty",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "empty-content",
+    "exports": [
+      "Empty",
+      "EmptyHeader",
+      "EmptyTitle",
+      "EmptyDescription",
+      "EmptyContent",
+      "EmptyMedia"
+    ]
+  },
+  "FieldSet": {
+    "file": "field",
+    "extendsElement": "fieldset",
+    "variants": {
+      "orientation": {
+        "options": [
+          "vertical",
+          "horizontal",
+          "responsive"
+        ],
+        "default": "vertical"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "field-set",
+    "exports": [
+      "Field",
+      "FieldLabel",
+      "FieldDescription",
+      "FieldError",
+      "FieldGroup",
+      "FieldLegend",
+      "FieldSeparator",
+      "FieldSet",
+      "FieldContent",
+      "FieldTitle"
+    ]
+  },
+  "FieldLegend": {
+    "file": "field",
+    "extendsElement": "legend",
+    "variants": {
+      "orientation": {
+        "options": [
+          "vertical",
+          "horizontal",
+          "responsive"
+        ],
+        "default": "vertical"
+      }
+    },
+    "ownProps": {
+      "variant": {
+        "default": "legend",
+        "optional": true
+      }
+    },
+    "dataSlot": "field-legend",
+    "exports": [
+      "Field",
+      "FieldLabel",
+      "FieldDescription",
+      "FieldError",
+      "FieldGroup",
+      "FieldLegend",
+      "FieldSeparator",
+      "FieldSet",
+      "FieldContent",
+      "FieldTitle"
+    ]
+  },
+  "FieldGroup": {
+    "file": "field",
+    "extendsElement": "div",
+    "variants": {
+      "orientation": {
+        "options": [
+          "vertical",
+          "horizontal",
+          "responsive"
+        ],
+        "default": "vertical"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "field-group",
+    "exports": [
+      "Field",
+      "FieldLabel",
+      "FieldDescription",
+      "FieldError",
+      "FieldGroup",
+      "FieldLegend",
+      "FieldSeparator",
+      "FieldSet",
+      "FieldContent",
+      "FieldTitle"
+    ]
+  },
+  "Field": {
+    "file": "field",
+    "extendsElement": "div",
+    "variants": {
+      "orientation": {
+        "options": [
+          "vertical",
+          "horizontal",
+          "responsive"
+        ],
+        "default": "vertical"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "field",
+    "exports": [
+      "Field",
+      "FieldLabel",
+      "FieldDescription",
+      "FieldError",
+      "FieldGroup",
+      "FieldLegend",
+      "FieldSeparator",
+      "FieldSet",
+      "FieldContent",
+      "FieldTitle"
+    ]
+  },
+  "FieldContent": {
+    "file": "field",
+    "extendsElement": "div",
+    "variants": {
+      "orientation": {
+        "options": [
+          "vertical",
+          "horizontal",
+          "responsive"
+        ],
+        "default": "vertical"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "field-content",
+    "exports": [
+      "Field",
+      "FieldLabel",
+      "FieldDescription",
+      "FieldError",
+      "FieldGroup",
+      "FieldLegend",
+      "FieldSeparator",
+      "FieldSet",
+      "FieldContent",
+      "FieldTitle"
+    ]
+  },
+  "FieldLabel": {
+    "file": "field",
+    "extendsElement": null,
+    "variants": {
+      "orientation": {
+        "options": [
+          "vertical",
+          "horizontal",
+          "responsive"
+        ],
+        "default": "vertical"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "field-label",
+    "exports": [
+      "Field",
+      "FieldLabel",
+      "FieldDescription",
+      "FieldError",
+      "FieldGroup",
+      "FieldLegend",
+      "FieldSeparator",
+      "FieldSet",
+      "FieldContent",
+      "FieldTitle"
+    ]
+  },
+  "FieldTitle": {
+    "file": "field",
+    "extendsElement": "div",
+    "variants": {
+      "orientation": {
+        "options": [
+          "vertical",
+          "horizontal",
+          "responsive"
+        ],
+        "default": "vertical"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "field-label",
+    "exports": [
+      "Field",
+      "FieldLabel",
+      "FieldDescription",
+      "FieldError",
+      "FieldGroup",
+      "FieldLegend",
+      "FieldSeparator",
+      "FieldSet",
+      "FieldContent",
+      "FieldTitle"
+    ]
+  },
+  "FieldDescription": {
+    "file": "field",
+    "extendsElement": "p",
+    "variants": {
+      "orientation": {
+        "options": [
+          "vertical",
+          "horizontal",
+          "responsive"
+        ],
+        "default": "vertical"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "field-description",
+    "exports": [
+      "Field",
+      "FieldLabel",
+      "FieldDescription",
+      "FieldError",
+      "FieldGroup",
+      "FieldLegend",
+      "FieldSeparator",
+      "FieldSet",
+      "FieldContent",
+      "FieldTitle"
+    ]
+  },
+  "FieldSeparator": {
+    "file": "field",
+    "extendsElement": "div",
+    "variants": {
+      "orientation": {
+        "options": [
+          "vertical",
+          "horizontal",
+          "responsive"
+        ],
+        "default": "vertical"
+      }
+    },
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "field-separator",
+    "exports": [
+      "Field",
+      "FieldLabel",
+      "FieldDescription",
+      "FieldError",
+      "FieldGroup",
+      "FieldLegend",
+      "FieldSeparator",
+      "FieldSet",
+      "FieldContent",
+      "FieldTitle"
+    ]
+  },
+  "FieldError": {
+    "file": "field",
+    "extendsElement": "div",
+    "variants": {
+      "orientation": {
+        "options": [
+          "vertical",
+          "horizontal",
+          "responsive"
+        ],
+        "default": "vertical"
+      }
+    },
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "errors": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "field-error",
+    "exports": [
+      "Field",
+      "FieldLabel",
+      "FieldDescription",
+      "FieldError",
+      "FieldGroup",
+      "FieldLegend",
+      "FieldSeparator",
+      "FieldSet",
+      "FieldContent",
+      "FieldTitle"
+    ]
+  },
+  "HoverCard": {
+    "file": "hover-card",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "hover-card",
+    "exports": [
+      "HoverCard",
+      "HoverCardTrigger",
+      "HoverCardContent"
+    ]
+  },
+  "HoverCardTrigger": {
+    "file": "hover-card",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "hover-card-trigger",
+    "exports": [
+      "HoverCard",
+      "HoverCardTrigger",
+      "HoverCardContent"
+    ]
+  },
+  "HoverCardContent": {
+    "file": "hover-card",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "align": {
+        "default": "center",
+        "optional": true
+      },
+      "sideOffset": {
+        "default": 4,
+        "optional": true
+      }
+    },
+    "dataSlot": "hover-card-portal",
+    "exports": [
+      "HoverCard",
+      "HoverCardTrigger",
+      "HoverCardContent"
+    ]
+  },
+  "InputGroup": {
+    "file": "input-group",
+    "extendsElement": "div",
+    "variants": {
+      "align": {
+        "options": [
+          "\"inline-start\"",
+          "\"inline-end\"",
+          "\"block-start\"",
+          "\"block-end\""
+        ],
+        "default": "inline-start"
+      },
+      "size": {
+        "options": [
+          "xs",
+          "sm",
+          "\"icon-xs\"",
+          "\"icon-sm\""
+        ],
+        "default": "xs"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "input-group",
+    "exports": [
+      "InputGroup",
+      "InputGroupAddon",
+      "InputGroupButton",
+      "InputGroupText",
+      "InputGroupInput",
+      "InputGroupTextarea"
+    ]
+  },
+  "InputGroupAddon": {
+    "file": "input-group",
+    "extendsElement": "div",
+    "variants": {
+      "align": {
+        "options": [
+          "\"inline-start\"",
+          "\"inline-end\"",
+          "\"block-start\"",
+          "\"block-end\""
+        ],
+        "default": "inline-start"
+      },
+      "size": {
+        "options": [
+          "xs",
+          "sm",
+          "\"icon-xs\"",
+          "\"icon-sm\""
+        ],
+        "default": "xs"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "input-group-addon",
+    "exports": [
+      "InputGroup",
+      "InputGroupAddon",
+      "InputGroupButton",
+      "InputGroupText",
+      "InputGroupInput",
+      "InputGroupTextarea"
+    ]
+  },
+  "InputGroupButton": {
+    "file": "input-group",
+    "extendsElement": null,
+    "variants": {
+      "align": {
+        "options": [
+          "\"inline-start\"",
+          "\"inline-end\"",
+          "\"block-start\"",
+          "\"block-end\""
+        ],
+        "default": "inline-start"
+      },
+      "size": {
+        "options": [
+          "xs",
+          "sm",
+          "\"icon-xs\"",
+          "\"icon-sm\""
+        ],
+        "default": "xs"
+      }
+    },
+    "ownProps": {
+      "type": {
+        "default": "button",
+        "optional": true
+      },
+      "variant": {
+        "default": "ghost",
+        "optional": true
+      }
+    },
+    "dataSlot": null,
+    "exports": [
+      "InputGroup",
+      "InputGroupAddon",
+      "InputGroupButton",
+      "InputGroupText",
+      "InputGroupInput",
+      "InputGroupTextarea"
+    ]
+  },
+  "InputGroupText": {
+    "file": "input-group",
+    "extendsElement": "span",
+    "variants": {
+      "align": {
+        "options": [
+          "\"inline-start\"",
+          "\"inline-end\"",
+          "\"block-start\"",
+          "\"block-end\""
+        ],
+        "default": "inline-start"
+      },
+      "size": {
+        "options": [
+          "xs",
+          "sm",
+          "\"icon-xs\"",
+          "\"icon-sm\""
+        ],
+        "default": "xs"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "InputGroup",
+      "InputGroupAddon",
+      "InputGroupButton",
+      "InputGroupText",
+      "InputGroupInput",
+      "InputGroupTextarea"
+    ]
+  },
+  "InputGroupInput": {
+    "file": "input-group",
+    "extendsElement": "input",
+    "variants": {
+      "align": {
+        "options": [
+          "\"inline-start\"",
+          "\"inline-end\"",
+          "\"block-start\"",
+          "\"block-end\""
+        ],
+        "default": "inline-start"
+      },
+      "size": {
+        "options": [
+          "xs",
+          "sm",
+          "\"icon-xs\"",
+          "\"icon-sm\""
+        ],
+        "default": "xs"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "input-group-control",
+    "exports": [
+      "InputGroup",
+      "InputGroupAddon",
+      "InputGroupButton",
+      "InputGroupText",
+      "InputGroupInput",
+      "InputGroupTextarea"
+    ]
+  },
+  "InputGroupTextarea": {
+    "file": "input-group",
+    "extendsElement": "textarea",
+    "variants": {
+      "align": {
+        "options": [
+          "\"inline-start\"",
+          "\"inline-end\"",
+          "\"block-start\"",
+          "\"block-end\""
+        ],
+        "default": "inline-start"
+      },
+      "size": {
+        "options": [
+          "xs",
+          "sm",
+          "\"icon-xs\"",
+          "\"icon-sm\""
+        ],
+        "default": "xs"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "input-group-control",
+    "exports": [
+      "InputGroup",
+      "InputGroupAddon",
+      "InputGroupButton",
+      "InputGroupText",
+      "InputGroupInput",
+      "InputGroupTextarea"
+    ]
+  },
+  "InputOTP": {
+    "file": "input-otp",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "containerClassName": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "input-otp",
+    "exports": [
+      "InputOTP",
+      "InputOTPGroup",
+      "InputOTPSlot",
+      "InputOTPSeparator"
+    ]
+  },
+  "InputOTPGroup": {
+    "file": "input-otp",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "input-otp-group",
+    "exports": [
+      "InputOTP",
+      "InputOTPGroup",
+      "InputOTPSlot",
+      "InputOTPSeparator"
+    ]
+  },
+  "InputOTPSlot": {
+    "file": "input-otp",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {
+      "index": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "input-otp-slot",
+    "exports": [
+      "InputOTP",
+      "InputOTPGroup",
+      "InputOTPSlot",
+      "InputOTPSeparator"
+    ]
+  },
+  "InputOTPSeparator": {
+    "file": "input-otp",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "input-otp-separator",
+    "exports": [
+      "InputOTP",
+      "InputOTPGroup",
+      "InputOTPSlot",
+      "InputOTPSeparator"
+    ]
+  },
+  "Input": {
+    "file": "input",
+    "extendsElement": "input",
+    "variants": {},
+    "ownProps": {
+      "type": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "input",
+    "exports": [
+      "Input"
+    ]
+  },
+  "ItemGroup": {
+    "file": "item",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon",
+          "image"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "xs"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "item-group",
+    "exports": [
+      "Item",
+      "ItemMedia",
+      "ItemContent",
+      "ItemActions",
+      "ItemGroup",
+      "ItemSeparator",
+      "ItemTitle",
+      "ItemDescription",
+      "ItemHeader",
+      "ItemFooter"
+    ]
+  },
+  "ItemSeparator": {
+    "file": "item",
+    "extendsElement": null,
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon",
+          "image"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "xs"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "item-separator",
+    "exports": [
+      "Item",
+      "ItemMedia",
+      "ItemContent",
+      "ItemActions",
+      "ItemGroup",
+      "ItemSeparator",
+      "ItemTitle",
+      "ItemDescription",
+      "ItemHeader",
+      "ItemFooter"
+    ]
+  },
+  "Item": {
+    "file": "item",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon",
+          "image"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "xs"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {
+      "asChild": {
+        "default": false,
+        "optional": true
+      }
+    },
+    "dataSlot": "item",
+    "exports": [
+      "Item",
+      "ItemMedia",
+      "ItemContent",
+      "ItemActions",
+      "ItemGroup",
+      "ItemSeparator",
+      "ItemTitle",
+      "ItemDescription",
+      "ItemHeader",
+      "ItemFooter"
+    ]
+  },
+  "ItemMedia": {
+    "file": "item",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon",
+          "image"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "xs"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "item-media",
+    "exports": [
+      "Item",
+      "ItemMedia",
+      "ItemContent",
+      "ItemActions",
+      "ItemGroup",
+      "ItemSeparator",
+      "ItemTitle",
+      "ItemDescription",
+      "ItemHeader",
+      "ItemFooter"
+    ]
+  },
+  "ItemContent": {
+    "file": "item",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon",
+          "image"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "xs"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "item-content",
+    "exports": [
+      "Item",
+      "ItemMedia",
+      "ItemContent",
+      "ItemActions",
+      "ItemGroup",
+      "ItemSeparator",
+      "ItemTitle",
+      "ItemDescription",
+      "ItemHeader",
+      "ItemFooter"
+    ]
+  },
+  "ItemTitle": {
+    "file": "item",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon",
+          "image"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "xs"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "item-title",
+    "exports": [
+      "Item",
+      "ItemMedia",
+      "ItemContent",
+      "ItemActions",
+      "ItemGroup",
+      "ItemSeparator",
+      "ItemTitle",
+      "ItemDescription",
+      "ItemHeader",
+      "ItemFooter"
+    ]
+  },
+  "ItemDescription": {
+    "file": "item",
+    "extendsElement": "p",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon",
+          "image"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "xs"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "item-description",
+    "exports": [
+      "Item",
+      "ItemMedia",
+      "ItemContent",
+      "ItemActions",
+      "ItemGroup",
+      "ItemSeparator",
+      "ItemTitle",
+      "ItemDescription",
+      "ItemHeader",
+      "ItemFooter"
+    ]
+  },
+  "ItemActions": {
+    "file": "item",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon",
+          "image"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "xs"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "item-actions",
+    "exports": [
+      "Item",
+      "ItemMedia",
+      "ItemContent",
+      "ItemActions",
+      "ItemGroup",
+      "ItemSeparator",
+      "ItemTitle",
+      "ItemDescription",
+      "ItemHeader",
+      "ItemFooter"
+    ]
+  },
+  "ItemHeader": {
+    "file": "item",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon",
+          "image"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "xs"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "item-header",
+    "exports": [
+      "Item",
+      "ItemMedia",
+      "ItemContent",
+      "ItemActions",
+      "ItemGroup",
+      "ItemSeparator",
+      "ItemTitle",
+      "ItemDescription",
+      "ItemHeader",
+      "ItemFooter"
+    ]
+  },
+  "ItemFooter": {
+    "file": "item",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "icon",
+          "image"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "xs"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "item-footer",
+    "exports": [
+      "Item",
+      "ItemMedia",
+      "ItemContent",
+      "ItemActions",
+      "ItemGroup",
+      "ItemSeparator",
+      "ItemTitle",
+      "ItemDescription",
+      "ItemHeader",
+      "ItemFooter"
+    ]
+  },
+  "JsonViewer": {
+    "file": "json-viewer",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "src": {
+        "default": null,
+        "optional": false
+      },
+      "value": {
+        "default": null,
+        "optional": false
+      },
+      "name": {
+        "default": "root",
+        "optional": true
+      },
+      "collapsed": {
+        "default": 1,
+        "optional": true
+      },
+      "contentClassName": {
+        "default": null,
+        "optional": false
+      },
+      "enableClipboard": {
+        "default": true,
+        "optional": true
+      },
+      "editable": {
+        "default": false,
+        "optional": true
+      },
+      "editValue": {
+        "default": null,
+        "optional": false
+      },
+      "onEditValueChange": {
+        "default": null,
+        "optional": false
+      },
+      "error": {
+        "default": null,
+        "optional": false
+      },
+      "title": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": null,
+    "exports": [
+      "JsonViewer",
+      "JsonViewerProps"
+    ]
+  },
+  "Kbd": {
+    "file": "kbd",
+    "extendsElement": "kbd",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "kbd",
+    "exports": [
+      "Kbd",
+      "KbdGroup"
+    ]
+  },
+  "KbdGroup": {
+    "file": "kbd",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "kbd-group",
+    "exports": [
+      "Kbd",
+      "KbdGroup"
+    ]
+  },
+  "Label": {
+    "file": "label",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "label",
+    "exports": [
+      "Label"
+    ]
+  },
+  "Menubar": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "menubar",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarMenu": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "menubar-menu",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarGroup": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "menubar-group",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarPortal": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "menubar-portal",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarRadioGroup": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "menubar-radio-group",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarTrigger": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "menubar-trigger",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarContent": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "align": {
+        "default": "start",
+        "optional": true
+      },
+      "alignOffset": {
+        "default": "-4",
+        "optional": true
+      },
+      "sideOffset": {
+        "default": 8,
+        "optional": true
+      }
+    },
+    "dataSlot": "menubar-content",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarItem": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "inset": {
+        "default": null,
+        "optional": false
+      },
+      "variant": {
+        "default": "default",
+        "optional": true
+      }
+    },
+    "dataSlot": "menubar-item",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarCheckboxItem": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "checked": {
+        "default": null,
+        "optional": false
+      },
+      "inset": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "menubar-checkbox-item",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarRadioItem": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "inset": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "menubar-radio-item",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarLabel": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "inset": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "menubar-label",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarSeparator": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "menubar-separator",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarShortcut": {
+    "file": "menubar",
+    "extendsElement": "span",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "menubar-shortcut",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarSub": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "menubar-sub",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarSubTrigger": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "inset": {
+        "default": null,
+        "optional": false
+      },
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "menubar-sub-trigger",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "MenubarSubContent": {
+    "file": "menubar",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "menubar-sub-content",
+    "exports": [
+      "Menubar",
+      "MenubarPortal",
+      "MenubarMenu",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarGroup",
+      "MenubarSeparator",
+      "MenubarLabel",
+      "MenubarItem",
+      "MenubarShortcut",
+      "MenubarCheckboxItem",
+      "MenubarRadioGroup",
+      "MenubarRadioItem",
+      "MenubarSub",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ]
+  },
+  "NativeSelect": {
+    "file": "native-select",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "size": {
+        "default": "default",
+        "optional": true
+      }
+    },
+    "dataSlot": "native-select-wrapper",
+    "exports": [
+      "NativeSelect",
+      "NativeSelectOptGroup",
+      "NativeSelectOption"
+    ]
+  },
+  "NativeSelectOption": {
+    "file": "native-select",
+    "extendsElement": "option",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "native-select-option",
+    "exports": [
+      "NativeSelect",
+      "NativeSelectOptGroup",
+      "NativeSelectOption"
+    ]
+  },
+  "NativeSelectOptGroup": {
+    "file": "native-select",
+    "extendsElement": "optgroup",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "native-select-optgroup",
+    "exports": [
+      "NativeSelect",
+      "NativeSelectOptGroup",
+      "NativeSelectOption"
+    ]
+  },
+  "NavigationMenu": {
+    "file": "navigation-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "viewport": {
+        "default": true,
+        "optional": true
+      }
+    },
+    "dataSlot": "navigation-menu",
+    "exports": [
+      "NavigationMenu",
+      "NavigationMenuList",
+      "NavigationMenuItem",
+      "NavigationMenuContent",
+      "NavigationMenuTrigger",
+      "NavigationMenuLink",
+      "NavigationMenuIndicator",
+      "NavigationMenuViewport",
+      "navigationMenuTriggerStyle"
+    ]
+  },
+  "NavigationMenuList": {
+    "file": "navigation-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "navigation-menu-list",
+    "exports": [
+      "NavigationMenu",
+      "NavigationMenuList",
+      "NavigationMenuItem",
+      "NavigationMenuContent",
+      "NavigationMenuTrigger",
+      "NavigationMenuLink",
+      "NavigationMenuIndicator",
+      "NavigationMenuViewport",
+      "navigationMenuTriggerStyle"
+    ]
+  },
+  "NavigationMenuItem": {
+    "file": "navigation-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "navigation-menu-item",
+    "exports": [
+      "NavigationMenu",
+      "NavigationMenuList",
+      "NavigationMenuItem",
+      "NavigationMenuContent",
+      "NavigationMenuTrigger",
+      "NavigationMenuLink",
+      "NavigationMenuIndicator",
+      "NavigationMenuViewport",
+      "navigationMenuTriggerStyle"
+    ]
+  },
+  "NavigationMenuTrigger": {
+    "file": "navigation-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "navigation-menu-trigger",
+    "exports": [
+      "NavigationMenu",
+      "NavigationMenuList",
+      "NavigationMenuItem",
+      "NavigationMenuContent",
+      "NavigationMenuTrigger",
+      "NavigationMenuLink",
+      "NavigationMenuIndicator",
+      "NavigationMenuViewport",
+      "navigationMenuTriggerStyle"
+    ]
+  },
+  "NavigationMenuContent": {
+    "file": "navigation-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "navigation-menu-content",
+    "exports": [
+      "NavigationMenu",
+      "NavigationMenuList",
+      "NavigationMenuItem",
+      "NavigationMenuContent",
+      "NavigationMenuTrigger",
+      "NavigationMenuLink",
+      "NavigationMenuIndicator",
+      "NavigationMenuViewport",
+      "navigationMenuTriggerStyle"
+    ]
+  },
+  "NavigationMenuViewport": {
+    "file": "navigation-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "navigation-menu-viewport",
+    "exports": [
+      "NavigationMenu",
+      "NavigationMenuList",
+      "NavigationMenuItem",
+      "NavigationMenuContent",
+      "NavigationMenuTrigger",
+      "NavigationMenuLink",
+      "NavigationMenuIndicator",
+      "NavigationMenuViewport",
+      "navigationMenuTriggerStyle"
+    ]
+  },
+  "NavigationMenuLink": {
+    "file": "navigation-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "navigation-menu-link",
+    "exports": [
+      "NavigationMenu",
+      "NavigationMenuList",
+      "NavigationMenuItem",
+      "NavigationMenuContent",
+      "NavigationMenuTrigger",
+      "NavigationMenuLink",
+      "NavigationMenuIndicator",
+      "NavigationMenuViewport",
+      "navigationMenuTriggerStyle"
+    ]
+  },
+  "NavigationMenuIndicator": {
+    "file": "navigation-menu",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "navigation-menu-indicator",
+    "exports": [
+      "NavigationMenu",
+      "NavigationMenuList",
+      "NavigationMenuItem",
+      "NavigationMenuContent",
+      "NavigationMenuTrigger",
+      "NavigationMenuLink",
+      "NavigationMenuIndicator",
+      "NavigationMenuViewport",
+      "navigationMenuTriggerStyle"
+    ]
+  },
+  "Pagination": {
+    "file": "pagination",
+    "extendsElement": "nav",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "pagination",
+    "exports": [
+      "Pagination",
+      "PaginationContent",
+      "PaginationEllipsis",
+      "PaginationItem",
+      "PaginationLink",
+      "PaginationNext",
+      "PaginationPrevious"
+    ]
+  },
+  "PaginationContent": {
+    "file": "pagination",
+    "extendsElement": "ul",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "pagination-content",
+    "exports": [
+      "Pagination",
+      "PaginationContent",
+      "PaginationEllipsis",
+      "PaginationItem",
+      "PaginationLink",
+      "PaginationNext",
+      "PaginationPrevious"
+    ]
+  },
+  "PaginationItem": {
+    "file": "pagination",
+    "extendsElement": "li",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "pagination-item",
+    "exports": [
+      "Pagination",
+      "PaginationContent",
+      "PaginationEllipsis",
+      "PaginationItem",
+      "PaginationLink",
+      "PaginationNext",
+      "PaginationPrevious"
+    ]
+  },
+  "PaginationLink": {
+    "file": "pagination",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "isActive": {
+        "default": null,
+        "optional": false
+      },
+      "size": {
+        "default": "icon",
+        "optional": true
+      }
+    },
+    "dataSlot": "pagination-link",
+    "exports": [
+      "Pagination",
+      "PaginationContent",
+      "PaginationEllipsis",
+      "PaginationItem",
+      "PaginationLink",
+      "PaginationNext",
+      "PaginationPrevious"
+    ]
+  },
+  "PaginationPrevious": {
+    "file": "pagination",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "text": {
+        "default": "Previous",
+        "optional": true
+      }
+    },
+    "dataSlot": null,
+    "exports": [
+      "Pagination",
+      "PaginationContent",
+      "PaginationEllipsis",
+      "PaginationItem",
+      "PaginationLink",
+      "PaginationNext",
+      "PaginationPrevious"
+    ]
+  },
+  "PaginationNext": {
+    "file": "pagination",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "text": {
+        "default": "Next",
+        "optional": true
+      }
+    },
+    "dataSlot": null,
+    "exports": [
+      "Pagination",
+      "PaginationContent",
+      "PaginationEllipsis",
+      "PaginationItem",
+      "PaginationLink",
+      "PaginationNext",
+      "PaginationPrevious"
+    ]
+  },
+  "PaginationEllipsis": {
+    "file": "pagination",
+    "extendsElement": "span",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "pagination-ellipsis",
+    "exports": [
+      "Pagination",
+      "PaginationContent",
+      "PaginationEllipsis",
+      "PaginationItem",
+      "PaginationLink",
+      "PaginationNext",
+      "PaginationPrevious"
+    ]
+  },
+  "Popover": {
+    "file": "popover",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "popover",
+    "exports": [
+      "Popover",
+      "PopoverAnchor",
+      "PopoverContent",
+      "PopoverDescription",
+      "PopoverHeader",
+      "PopoverTitle",
+      "PopoverTrigger"
+    ]
+  },
+  "PopoverTrigger": {
+    "file": "popover",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "popover-trigger",
+    "exports": [
+      "Popover",
+      "PopoverAnchor",
+      "PopoverContent",
+      "PopoverDescription",
+      "PopoverHeader",
+      "PopoverTitle",
+      "PopoverTrigger"
+    ]
+  },
+  "PopoverContent": {
+    "file": "popover",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "align": {
+        "default": "center",
+        "optional": true
+      },
+      "sideOffset": {
+        "default": 4,
+        "optional": true
+      }
+    },
+    "dataSlot": "popover-content",
+    "exports": [
+      "Popover",
+      "PopoverAnchor",
+      "PopoverContent",
+      "PopoverDescription",
+      "PopoverHeader",
+      "PopoverTitle",
+      "PopoverTrigger"
+    ]
+  },
+  "PopoverAnchor": {
+    "file": "popover",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "popover-anchor",
+    "exports": [
+      "Popover",
+      "PopoverAnchor",
+      "PopoverContent",
+      "PopoverDescription",
+      "PopoverHeader",
+      "PopoverTitle",
+      "PopoverTrigger"
+    ]
+  },
+  "PopoverHeader": {
+    "file": "popover",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "popover-header",
+    "exports": [
+      "Popover",
+      "PopoverAnchor",
+      "PopoverContent",
+      "PopoverDescription",
+      "PopoverHeader",
+      "PopoverTitle",
+      "PopoverTrigger"
+    ]
+  },
+  "PopoverTitle": {
+    "file": "popover",
+    "extendsElement": "h2",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "popover-title",
+    "exports": [
+      "Popover",
+      "PopoverAnchor",
+      "PopoverContent",
+      "PopoverDescription",
+      "PopoverHeader",
+      "PopoverTitle",
+      "PopoverTrigger"
+    ]
+  },
+  "PopoverDescription": {
+    "file": "popover",
+    "extendsElement": "p",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "popover-description",
+    "exports": [
+      "Popover",
+      "PopoverAnchor",
+      "PopoverContent",
+      "PopoverDescription",
+      "PopoverHeader",
+      "PopoverTitle",
+      "PopoverTrigger"
+    ]
+  },
+  "Progress": {
+    "file": "progress",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "value": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "progress",
+    "exports": [
+      "Progress"
+    ]
+  },
+  "RadioGroup": {
+    "file": "radio-group",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "radio-group",
+    "exports": [
+      "RadioGroup",
+      "RadioGroupItem"
+    ]
+  },
+  "RadioGroupItem": {
+    "file": "radio-group",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "radio-group-item",
+    "exports": [
+      "RadioGroup",
+      "RadioGroupItem"
+    ]
+  },
+  "ResizablePanelGroup": {
+    "file": "resizable",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "resizable-panel-group",
+    "exports": [
+      "ResizableHandle",
+      "ResizablePanel",
+      "ResizablePanelGroup"
+    ]
+  },
+  "ResizablePanel": {
+    "file": "resizable",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "resizable-panel",
+    "exports": [
+      "ResizableHandle",
+      "ResizablePanel",
+      "ResizablePanelGroup"
+    ]
+  },
+  "ResizableHandle": {
+    "file": "resizable",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "withHandle": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "resizable-handle",
+    "exports": [
+      "ResizableHandle",
+      "ResizablePanel",
+      "ResizablePanelGroup"
+    ]
+  },
+  "ScrollArea": {
+    "file": "scroll-area",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "scroll-area",
+    "exports": [
+      "ScrollArea",
+      "ScrollBar"
+    ]
+  },
+  "ScrollBar": {
+    "file": "scroll-area",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "orientation": {
+        "default": "vertical",
+        "optional": true
+      }
+    },
+    "dataSlot": "scroll-area-scrollbar",
+    "exports": [
+      "ScrollArea",
+      "ScrollBar"
+    ]
+  },
+  "Select": {
+    "file": "select",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "select",
+    "exports": [
+      "Select",
+      "SelectContent",
+      "SelectGroup",
+      "SelectItem",
+      "SelectLabel",
+      "SelectScrollDownButton",
+      "SelectScrollUpButton",
+      "SelectSeparator",
+      "SelectTrigger",
+      "SelectValue"
+    ]
+  },
+  "SelectGroup": {
+    "file": "select",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "select-group",
+    "exports": [
+      "Select",
+      "SelectContent",
+      "SelectGroup",
+      "SelectItem",
+      "SelectLabel",
+      "SelectScrollDownButton",
+      "SelectScrollUpButton",
+      "SelectSeparator",
+      "SelectTrigger",
+      "SelectValue"
+    ]
+  },
+  "SelectValue": {
+    "file": "select",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "select-value",
+    "exports": [
+      "Select",
+      "SelectContent",
+      "SelectGroup",
+      "SelectItem",
+      "SelectLabel",
+      "SelectScrollDownButton",
+      "SelectScrollUpButton",
+      "SelectSeparator",
+      "SelectTrigger",
+      "SelectValue"
+    ]
+  },
+  "SelectTrigger": {
+    "file": "select",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "size": {
+        "default": "default",
+        "optional": true
+      },
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "select-trigger",
+    "exports": [
+      "Select",
+      "SelectContent",
+      "SelectGroup",
+      "SelectItem",
+      "SelectLabel",
+      "SelectScrollDownButton",
+      "SelectScrollUpButton",
+      "SelectSeparator",
+      "SelectTrigger",
+      "SelectValue"
+    ]
+  },
+  "SelectContent": {
+    "file": "select",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "position": {
+        "default": "item-aligned",
+        "optional": true
+      },
+      "align": {
+        "default": "center",
+        "optional": true
+      }
+    },
+    "dataSlot": "select-content",
+    "exports": [
+      "Select",
+      "SelectContent",
+      "SelectGroup",
+      "SelectItem",
+      "SelectLabel",
+      "SelectScrollDownButton",
+      "SelectScrollUpButton",
+      "SelectSeparator",
+      "SelectTrigger",
+      "SelectValue"
+    ]
+  },
+  "SelectLabel": {
+    "file": "select",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "select-label",
+    "exports": [
+      "Select",
+      "SelectContent",
+      "SelectGroup",
+      "SelectItem",
+      "SelectLabel",
+      "SelectScrollDownButton",
+      "SelectScrollUpButton",
+      "SelectSeparator",
+      "SelectTrigger",
+      "SelectValue"
+    ]
+  },
+  "SelectItem": {
+    "file": "select",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "select-item",
+    "exports": [
+      "Select",
+      "SelectContent",
+      "SelectGroup",
+      "SelectItem",
+      "SelectLabel",
+      "SelectScrollDownButton",
+      "SelectScrollUpButton",
+      "SelectSeparator",
+      "SelectTrigger",
+      "SelectValue"
+    ]
+  },
+  "SelectSeparator": {
+    "file": "select",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "select-separator",
+    "exports": [
+      "Select",
+      "SelectContent",
+      "SelectGroup",
+      "SelectItem",
+      "SelectLabel",
+      "SelectScrollDownButton",
+      "SelectScrollUpButton",
+      "SelectSeparator",
+      "SelectTrigger",
+      "SelectValue"
+    ]
+  },
+  "SelectScrollUpButton": {
+    "file": "select",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "select-scroll-up-button",
+    "exports": [
+      "Select",
+      "SelectContent",
+      "SelectGroup",
+      "SelectItem",
+      "SelectLabel",
+      "SelectScrollDownButton",
+      "SelectScrollUpButton",
+      "SelectSeparator",
+      "SelectTrigger",
+      "SelectValue"
+    ]
+  },
+  "SelectScrollDownButton": {
+    "file": "select",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "select-scroll-down-button",
+    "exports": [
+      "Select",
+      "SelectContent",
+      "SelectGroup",
+      "SelectItem",
+      "SelectLabel",
+      "SelectScrollDownButton",
+      "SelectScrollUpButton",
+      "SelectSeparator",
+      "SelectTrigger",
+      "SelectValue"
+    ]
+  },
+  "Separator": {
+    "file": "separator",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "orientation": {
+        "default": "horizontal",
+        "optional": true
+      },
+      "decorative": {
+        "default": true,
+        "optional": true
+      }
+    },
+    "dataSlot": "separator",
+    "exports": [
+      "Separator"
+    ]
+  },
+  "Sheet": {
+    "file": "sheet",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "sheet",
+    "exports": [
+      "Sheet",
+      "SheetTrigger",
+      "SheetClose",
+      "SheetContent",
+      "SheetHeader",
+      "SheetFooter",
+      "SheetTitle",
+      "SheetDescription"
+    ]
+  },
+  "SheetTrigger": {
+    "file": "sheet",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "sheet-trigger",
+    "exports": [
+      "Sheet",
+      "SheetTrigger",
+      "SheetClose",
+      "SheetContent",
+      "SheetHeader",
+      "SheetFooter",
+      "SheetTitle",
+      "SheetDescription"
+    ]
+  },
+  "SheetClose": {
+    "file": "sheet",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "sheet-close",
+    "exports": [
+      "Sheet",
+      "SheetTrigger",
+      "SheetClose",
+      "SheetContent",
+      "SheetHeader",
+      "SheetFooter",
+      "SheetTitle",
+      "SheetDescription"
+    ]
+  },
+  "SheetPortal": {
+    "file": "sheet",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "sheet-portal",
+    "exports": [
+      "Sheet",
+      "SheetTrigger",
+      "SheetClose",
+      "SheetContent",
+      "SheetHeader",
+      "SheetFooter",
+      "SheetTitle",
+      "SheetDescription"
+    ]
+  },
+  "SheetOverlay": {
+    "file": "sheet",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "sheet-overlay",
+    "exports": [
+      "Sheet",
+      "SheetTrigger",
+      "SheetClose",
+      "SheetContent",
+      "SheetHeader",
+      "SheetFooter",
+      "SheetTitle",
+      "SheetDescription"
+    ]
+  },
+  "SheetContent": {
+    "file": "sheet",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "side": {
+        "default": "right",
+        "optional": true
+      },
+      "showCloseButton": {
+        "default": true,
+        "optional": true
+      }
+    },
+    "dataSlot": "sheet-content",
+    "exports": [
+      "Sheet",
+      "SheetTrigger",
+      "SheetClose",
+      "SheetContent",
+      "SheetHeader",
+      "SheetFooter",
+      "SheetTitle",
+      "SheetDescription"
+    ]
+  },
+  "SheetHeader": {
+    "file": "sheet",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "sheet-header",
+    "exports": [
+      "Sheet",
+      "SheetTrigger",
+      "SheetClose",
+      "SheetContent",
+      "SheetHeader",
+      "SheetFooter",
+      "SheetTitle",
+      "SheetDescription"
+    ]
+  },
+  "SheetFooter": {
+    "file": "sheet",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "sheet-footer",
+    "exports": [
+      "Sheet",
+      "SheetTrigger",
+      "SheetClose",
+      "SheetContent",
+      "SheetHeader",
+      "SheetFooter",
+      "SheetTitle",
+      "SheetDescription"
+    ]
+  },
+  "SheetTitle": {
+    "file": "sheet",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "sheet-title",
+    "exports": [
+      "Sheet",
+      "SheetTrigger",
+      "SheetClose",
+      "SheetContent",
+      "SheetHeader",
+      "SheetFooter",
+      "SheetTitle",
+      "SheetDescription"
+    ]
+  },
+  "SheetDescription": {
+    "file": "sheet",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "sheet-description",
+    "exports": [
+      "Sheet",
+      "SheetTrigger",
+      "SheetClose",
+      "SheetContent",
+      "SheetHeader",
+      "SheetFooter",
+      "SheetTitle",
+      "SheetDescription"
+    ]
+  },
+  "SidebarProvider": {
+    "file": "sidebar",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {
+      "defaultOpen": {
+        "default": true,
+        "optional": true
+      },
+      "openProp": {
+        "default": null,
+        "optional": false
+      },
+      "setOpenProp": {
+        "default": null,
+        "optional": false
+      },
+      "style": {
+        "default": null,
+        "optional": false
+      },
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "sidebar-wrapper",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "Sidebar": {
+    "file": "sidebar",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {
+      "side": {
+        "default": "left",
+        "optional": true
+      },
+      "collapsible": {
+        "default": "offcanvas",
+        "optional": true
+      },
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "dir": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "sidebar",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarTrigger": {
+    "file": "sidebar",
+    "extendsElement": null,
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {
+      "onClick": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "sidebar-trigger",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarRail": {
+    "file": "sidebar",
+    "extendsElement": "button",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "sidebar-rail",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarInset": {
+    "file": "sidebar",
+    "extendsElement": "main",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "sidebar-inset",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarInput": {
+    "file": "sidebar",
+    "extendsElement": null,
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "sidebar-input",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarHeader": {
+    "file": "sidebar",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "sidebar-header",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarFooter": {
+    "file": "sidebar",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "sidebar-footer",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarSeparator": {
+    "file": "sidebar",
+    "extendsElement": null,
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "sidebar-separator",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarContent": {
+    "file": "sidebar",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "sidebar-content",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarGroup": {
+    "file": "sidebar",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "sidebar-group",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarGroupLabel": {
+    "file": "sidebar",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {
+      "asChild": {
+        "default": false,
+        "optional": true
+      }
+    },
+    "dataSlot": "sidebar-group-label",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarGroupAction": {
+    "file": "sidebar",
+    "extendsElement": "button",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {
+      "asChild": {
+        "default": false,
+        "optional": true
+      }
+    },
+    "dataSlot": "sidebar-group-action",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarGroupContent": {
+    "file": "sidebar",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "sidebar-group-content",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarMenu": {
+    "file": "sidebar",
+    "extendsElement": "ul",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "sidebar-menu",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarMenuItem": {
+    "file": "sidebar",
+    "extendsElement": "li",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "sidebar-menu-item",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarMenuButton": {
+    "file": "sidebar",
+    "extendsElement": "button",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {
+      "asChild": {
+        "default": false,
+        "optional": true
+      },
+      "isActive": {
+        "default": false,
+        "optional": true
+      },
+      "tooltip": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "sidebar-menu-button",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarMenuAction": {
+    "file": "sidebar",
+    "extendsElement": "button",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {
+      "asChild": {
+        "default": false,
+        "optional": true
+      },
+      "showOnHover": {
+        "default": false,
+        "optional": true
+      }
+    },
+    "dataSlot": "sidebar-menu-action",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarMenuBadge": {
+    "file": "sidebar",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "sidebar-menu-badge",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarMenuSkeleton": {
+    "file": "sidebar",
+    "extendsElement": "div",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {
+      "showIcon": {
+        "default": false,
+        "optional": true
+      }
+    },
+    "dataSlot": "sidebar-menu-skeleton",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarMenuSub": {
+    "file": "sidebar",
+    "extendsElement": "ul",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "sidebar-menu-sub",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarMenuSubItem": {
+    "file": "sidebar",
+    "extendsElement": "li",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "sidebar-menu-sub-item",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "SidebarMenuSubButton": {
+    "file": "sidebar",
+    "extendsElement": "a",
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {
+      "asChild": {
+        "default": false,
+        "optional": true
+      },
+      "isActive": {
+        "default": false,
+        "optional": true
+      }
+    },
+    "dataSlot": "sidebar-menu-sub-button",
+    "exports": [
+      "Sidebar",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupAction",
+      "SidebarGroupContent",
+      "SidebarGroupLabel",
+      "SidebarHeader",
+      "SidebarInput",
+      "SidebarInset",
+      "SidebarMenu",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuButton",
+      "SidebarMenuItem",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubButton",
+      "SidebarMenuSubItem",
+      "SidebarProvider",
+      "SidebarRail",
+      "SidebarSeparator",
+      "SidebarTrigger",
+      "useSidebar"
+    ]
+  },
+  "Skeleton": {
+    "file": "skeleton",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "skeleton",
+    "exports": [
+      "Skeleton"
+    ]
+  },
+  "Slider": {
+    "file": "slider",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "defaultValue": {
+        "default": null,
+        "optional": false
+      },
+      "value": {
+        "default": null,
+        "optional": false
+      },
+      "min": {
+        "default": 0,
+        "optional": true
+      },
+      "max": {
+        "default": 100,
+        "optional": true
+      }
+    },
+    "dataSlot": "slider",
+    "exports": [
+      "Slider"
+    ]
+  },
+  "Toaster": {
+    "file": "sonner",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "Toaster"
+    ]
+  },
+  "Spinner": {
+    "file": "spinner",
+    "extendsElement": "svg",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "Spinner"
+    ]
+  },
+  "Switch": {
+    "file": "switch",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "size": {
+        "default": "default",
+        "optional": true
+      }
+    },
+    "dataSlot": "switch",
+    "exports": [
+      "Switch"
+    ]
+  },
+  "Table": {
+    "file": "table",
+    "extendsElement": "table",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "table-container",
+    "exports": [
+      "Table",
+      "TableHeader",
+      "TableBody",
+      "TableFooter",
+      "TableHead",
+      "TableRow",
+      "TableCell",
+      "TableCaption"
+    ]
+  },
+  "TableHeader": {
+    "file": "table",
+    "extendsElement": "thead",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "table-header",
+    "exports": [
+      "Table",
+      "TableHeader",
+      "TableBody",
+      "TableFooter",
+      "TableHead",
+      "TableRow",
+      "TableCell",
+      "TableCaption"
+    ]
+  },
+  "TableBody": {
+    "file": "table",
+    "extendsElement": "tbody",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "table-body",
+    "exports": [
+      "Table",
+      "TableHeader",
+      "TableBody",
+      "TableFooter",
+      "TableHead",
+      "TableRow",
+      "TableCell",
+      "TableCaption"
+    ]
+  },
+  "TableFooter": {
+    "file": "table",
+    "extendsElement": "tfoot",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "table-footer",
+    "exports": [
+      "Table",
+      "TableHeader",
+      "TableBody",
+      "TableFooter",
+      "TableHead",
+      "TableRow",
+      "TableCell",
+      "TableCaption"
+    ]
+  },
+  "TableRow": {
+    "file": "table",
+    "extendsElement": "tr",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "table-row",
+    "exports": [
+      "Table",
+      "TableHeader",
+      "TableBody",
+      "TableFooter",
+      "TableHead",
+      "TableRow",
+      "TableCell",
+      "TableCaption"
+    ]
+  },
+  "TableHead": {
+    "file": "table",
+    "extendsElement": "th",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "table-head",
+    "exports": [
+      "Table",
+      "TableHeader",
+      "TableBody",
+      "TableFooter",
+      "TableHead",
+      "TableRow",
+      "TableCell",
+      "TableCaption"
+    ]
+  },
+  "TableCell": {
+    "file": "table",
+    "extendsElement": "td",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "table-cell",
+    "exports": [
+      "Table",
+      "TableHeader",
+      "TableBody",
+      "TableFooter",
+      "TableHead",
+      "TableRow",
+      "TableCell",
+      "TableCaption"
+    ]
+  },
+  "TableCaption": {
+    "file": "table",
+    "extendsElement": "caption",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "table-caption",
+    "exports": [
+      "Table",
+      "TableHeader",
+      "TableBody",
+      "TableFooter",
+      "TableHead",
+      "TableRow",
+      "TableCell",
+      "TableCaption"
+    ]
+  },
+  "Tabs": {
+    "file": "tabs",
+    "extendsElement": null,
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "line"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {
+      "orientation": {
+        "default": "horizontal",
+        "optional": true
+      }
+    },
+    "dataSlot": "tabs",
+    "exports": [
+      "Tabs",
+      "TabsList",
+      "TabsTrigger",
+      "TabsContent"
+    ]
+  },
+  "TabsList": {
+    "file": "tabs",
+    "extendsElement": null,
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "line"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "tabs-list",
+    "exports": [
+      "Tabs",
+      "TabsList",
+      "TabsTrigger",
+      "TabsContent"
+    ]
+  },
+  "TabsTrigger": {
+    "file": "tabs",
+    "extendsElement": null,
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "line"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "tabs-trigger",
+    "exports": [
+      "Tabs",
+      "TabsList",
+      "TabsTrigger",
+      "TabsContent"
+    ]
+  },
+  "TabsContent": {
+    "file": "tabs",
+    "extendsElement": null,
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "line"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "tabs-content",
+    "exports": [
+      "Tabs",
+      "TabsList",
+      "TabsTrigger",
+      "TabsContent"
+    ]
+  },
+  "Textarea": {
+    "file": "textarea",
+    "extendsElement": "textarea",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "textarea",
+    "exports": [
+      "Textarea"
+    ]
+  },
+  "ToggleGroup": {
+    "file": "toggle-group",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "variant": {
+        "default": null,
+        "optional": false
+      },
+      "size": {
+        "default": null,
+        "optional": false
+      },
+      "spacing": {
+        "default": 0,
+        "optional": true
+      },
+      "orientation": {
+        "default": "horizontal",
+        "optional": true
+      },
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "toggle-group",
+    "exports": [
+      "ToggleGroup",
+      "ToggleGroupItem"
+    ]
+  },
+  "ToggleGroupItem": {
+    "file": "toggle-group",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "children": {
+        "default": null,
+        "optional": false
+      },
+      "variant": {
+        "default": "default",
+        "optional": true
+      },
+      "size": {
+        "default": "default",
+        "optional": true
+      }
+    },
+    "dataSlot": "toggle-group-item",
+    "exports": [
+      "ToggleGroup",
+      "ToggleGroupItem"
+    ]
+  },
+  "Toggle": {
+    "file": "toggle",
+    "extendsElement": null,
+    "variants": {
+      "variant": {
+        "options": [
+          "default",
+          "outline"
+        ],
+        "default": "default"
+      },
+      "size": {
+        "options": [
+          "default",
+          "sm",
+          "lg"
+        ],
+        "default": "default"
+      }
+    },
+    "ownProps": {},
+    "dataSlot": "toggle",
+    "exports": [
+      "Toggle"
+    ]
+  },
+  "TooltipProvider": {
+    "file": "tooltip",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "delayDuration": {
+        "default": 0,
+        "optional": true
+      }
+    },
+    "dataSlot": "tooltip-provider",
+    "exports": [
+      "Tooltip",
+      "TooltipContent",
+      "TooltipProvider",
+      "TooltipTrigger"
+    ]
+  },
+  "Tooltip": {
+    "file": "tooltip",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "tooltip",
+    "exports": [
+      "Tooltip",
+      "TooltipContent",
+      "TooltipProvider",
+      "TooltipTrigger"
+    ]
+  },
+  "TooltipTrigger": {
+    "file": "tooltip",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": "tooltip-trigger",
+    "exports": [
+      "Tooltip",
+      "TooltipContent",
+      "TooltipProvider",
+      "TooltipTrigger"
+    ]
+  },
+  "TooltipContent": {
+    "file": "tooltip",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {
+      "sideOffset": {
+        "default": 0,
+        "optional": true
+      },
+      "children": {
+        "default": null,
+        "optional": false
+      }
+    },
+    "dataSlot": "tooltip-content",
+    "exports": [
+      "Tooltip",
+      "TooltipContent",
+      "TooltipProvider",
+      "TooltipTrigger"
+    ]
+  },
+  "H1": {
+    "file": "typography",
+    "extendsElement": "h1",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "H1",
+      "H2",
+      "H3",
+      "H4",
+      "P",
+      "Blockquote",
+      "InlineCode",
+      "Lead",
+      "Large",
+      "Small",
+      "Muted"
+    ]
+  },
+  "H2": {
+    "file": "typography",
+    "extendsElement": "h2",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "H1",
+      "H2",
+      "H3",
+      "H4",
+      "P",
+      "Blockquote",
+      "InlineCode",
+      "Lead",
+      "Large",
+      "Small",
+      "Muted"
+    ]
+  },
+  "H3": {
+    "file": "typography",
+    "extendsElement": "h3",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "H1",
+      "H2",
+      "H3",
+      "H4",
+      "P",
+      "Blockquote",
+      "InlineCode",
+      "Lead",
+      "Large",
+      "Small",
+      "Muted"
+    ]
+  },
+  "H4": {
+    "file": "typography",
+    "extendsElement": "h4",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "H1",
+      "H2",
+      "H3",
+      "H4",
+      "P",
+      "Blockquote",
+      "InlineCode",
+      "Lead",
+      "Large",
+      "Small",
+      "Muted"
+    ]
+  },
+  "P": {
+    "file": "typography",
+    "extendsElement": "p",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "H1",
+      "H2",
+      "H3",
+      "H4",
+      "P",
+      "Blockquote",
+      "InlineCode",
+      "Lead",
+      "Large",
+      "Small",
+      "Muted"
+    ]
+  },
+  "Blockquote": {
+    "file": "typography",
+    "extendsElement": "blockquote",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "H1",
+      "H2",
+      "H3",
+      "H4",
+      "P",
+      "Blockquote",
+      "InlineCode",
+      "Lead",
+      "Large",
+      "Small",
+      "Muted"
+    ]
+  },
+  "InlineCode": {
+    "file": "typography",
+    "extendsElement": "code",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "H1",
+      "H2",
+      "H3",
+      "H4",
+      "P",
+      "Blockquote",
+      "InlineCode",
+      "Lead",
+      "Large",
+      "Small",
+      "Muted"
+    ]
+  },
+  "Lead": {
+    "file": "typography",
+    "extendsElement": "p",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "H1",
+      "H2",
+      "H3",
+      "H4",
+      "P",
+      "Blockquote",
+      "InlineCode",
+      "Lead",
+      "Large",
+      "Small",
+      "Muted"
+    ]
+  },
+  "Large": {
+    "file": "typography",
+    "extendsElement": "div",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "H1",
+      "H2",
+      "H3",
+      "H4",
+      "P",
+      "Blockquote",
+      "InlineCode",
+      "Lead",
+      "Large",
+      "Small",
+      "Muted"
+    ]
+  },
+  "Small": {
+    "file": "typography",
+    "extendsElement": "small",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "H1",
+      "H2",
+      "H3",
+      "H4",
+      "P",
+      "Blockquote",
+      "InlineCode",
+      "Lead",
+      "Large",
+      "Small",
+      "Muted"
+    ]
+  },
+  "Muted": {
+    "file": "typography",
+    "extendsElement": "p",
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "H1",
+      "H2",
+      "H3",
+      "H4",
+      "P",
+      "Blockquote",
+      "InlineCode",
+      "Lead",
+      "Large",
+      "Small",
+      "Muted"
+    ]
+  },
+  "TOOL_DEFINITIONS": {
+    "file": "definitions.ts",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "TOOL_DEFINITIONS"
+    ]
+  },
+  "GuiContext": {
+    "file": "context.ts",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "GuiContextValue",
+      "GuiContext",
+      "useGuiContext"
+    ]
+  },
+  "GuiComponent": {
+    "file": "GuiComponent",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "GuiComponentProps",
+      "GuiComponent"
+    ]
+  },
+  "GuiProvider": {
+    "file": "GuiProvider",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "GuiProviderProps",
+      "GuiProvider"
+    ]
+  },
+  "DslNode": {
+    "file": "render",
+    "extendsElement": null,
+    "variants": {},
+    "ownProps": {},
+    "dataSlot": null,
+    "exports": [
+      "DslNode"
+    ]
+  }
+}

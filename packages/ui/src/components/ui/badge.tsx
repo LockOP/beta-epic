@@ -47,3 +47,12 @@ function Badge({
 }
 
 export { Badge, badgeVariants }
+
+export const BadgeContext = {
+  Badge: `
+  variant: "default"* | "secondary" | "destructive" | "outline" | "ghost" | "link"
+  asChild?: boolean = false
+  children: yes
+  + all native <span> props
+  `.trim(),
+}

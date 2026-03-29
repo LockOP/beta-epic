@@ -44,3 +44,14 @@ function Toggle({
 }
 
 export { Toggle, toggleVariants }
+
+export const ToggleContext = {
+  Toggle: `
+  variant?: "default"* | "outline"
+  size?: "default"* | "sm" | "lg"
+  pressed?: boolean
+  onPressedChange?: (pressed: boolean) => void
+  children: yes
+  + all native <button> props
+  `.trim(),
+}

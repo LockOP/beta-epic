@@ -190,3 +190,41 @@ export {
   SelectTrigger,
   SelectValue,
 }
+
+export const SelectContext = {
+  Select: `
+  sub-components: SelectTrigger, SelectValue, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectSeparator, SelectScrollUpButton, SelectScrollDownButton
+  SelectTrigger: size?: "default"* | "sm"
+  SelectContent: position?: "item-aligned" | "popper", align?: string = "center"
+  value?: string
+  onValueChange?: (value: string) => void
+  children: yes
+  `.trim(),
+  SelectTrigger: `
+  SelectTrigger: size?: "default"* | "sm"
+  `.trim(),
+  SelectValue: `
+  Sub-component of Select.
+  `.trim(),
+  SelectContent: `
+  SelectContent: position?: "item-aligned" | "popper", align?: string = "center"
+  `.trim(),
+  SelectGroup: `
+  Sub-component of Select.
+  `.trim(),
+  SelectItem: `
+  Sub-component of Select.
+  `.trim(),
+  SelectLabel: `
+  Sub-component of Select.
+  `.trim(),
+  SelectSeparator: `
+  Sub-component of Select.
+  `.trim(),
+  SelectScrollUpButton: `
+  Sub-component of Select.
+  `.trim(),
+  SelectScrollDownButton: `
+  Sub-component of Select.
+  `.trim(),
+}

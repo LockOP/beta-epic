@@ -8,3 +8,9 @@ function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
 }
 
 export { Spinner }
+
+export const SpinnerContext = {
+  Spinner: `
+  + all native <svg> props (className for size/color)
+  `.trim(),
+}

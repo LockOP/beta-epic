@@ -79,3 +79,22 @@ function AccordionContent({
 }
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+
+export const AccordionContext = {
+  Accordion: `
+  sub-components: AccordionItem, AccordionTrigger, AccordionContent
+  type: "single" | "multiple"
+  collapsible?: boolean
+  children: yes
+  + all native <div> props
+  `.trim(),
+  AccordionItem: `
+  Sub-component of Accordion.
+  `.trim(),
+  AccordionTrigger: `
+  Sub-component of Accordion.
+  `.trim(),
+  AccordionContent: `
+  Sub-component of Accordion.
+  `.trim(),
+}

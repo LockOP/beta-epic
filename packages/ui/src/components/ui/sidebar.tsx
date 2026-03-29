@@ -31,7 +31,7 @@ const SIDEBAR_WIDTH_MOBILE = "18rem"
 const SIDEBAR_WIDTH_ICON = "3rem"
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"
 
-type SidebarContextProps = {
+type SidebarStateContextProps = {
   state: "expanded" | "collapsed"
   open: boolean
   setOpen: (open: boolean) => void
@@ -41,10 +41,10 @@ type SidebarContextProps = {
   toggleSidebar: () => void
 }
 
-const SidebarContext = React.createContext<SidebarContextProps | null>(null)
+const SidebarStateContext = React.createContext<SidebarStateContextProps | null>(null)
 
 function useSidebar() {
-  const context = React.useContext(SidebarContext)
+  const context = React.useContext(SidebarStateContext)
   if (!context) {
     throw new Error("useSidebar must be used within a SidebarProvider.")
   }
@@ -112,7 +112,7 @@ function SidebarProvider({
   // This makes it easier to style the sidebar with Tailwind classes.
   const state = open ? "expanded" : "collapsed"
 
-  const contextValue = React.useMemo<SidebarContextProps>(
+  const contextValue = React.useMemo<SidebarStateContextProps>(
     () => ({
       state,
       open,
@@ -126,7 +126,7 @@ function SidebarProvider({
   )
 
   return (
-    <SidebarContext.Provider value={contextValue}>
+    <SidebarStateContext.Provider value={contextValue}>
       <div
         data-slot="sidebar-wrapper"
         style={
@@ -144,7 +144,7 @@ function SidebarProvider({
       >
         {children}
       </div>
-    </SidebarContext.Provider>
+    </SidebarStateContext.Provider>
   )
 }
 
@@ -699,4 +699,80 @@ export {
   SidebarSeparator,
   SidebarTrigger,
   useSidebar,
+}
+
+export const SidebarContext = {
+  Sidebar: `
+  sub-components: SidebarProvider, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarInput, SidebarInset, SidebarMenu, SidebarMenuAction, SidebarMenuBadge, SidebarMenuButton, SidebarMenuItem, SidebarMenuSkeleton, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem, SidebarRail, SidebarSeparator, SidebarTrigger
+  SidebarProvider: defaultOpen?: boolean = true, open?: boolean, onOpenChange?: (open: boolean) => void
+  Sidebar: side?: "left"* | "right", variant?: "sidebar"* | "floating" | "inset", collapsible?: "offcanvas"* | "icon" | "none"
+  SidebarMenuButton: isActive?: boolean = false, tooltip?: string, showOnHover?: boolean = false, variant?: "default"* | "outline"
+  children: yes
+  `.trim(),
+  SidebarProvider: `
+  SidebarProvider: defaultOpen?: boolean = true, open?: boolean, onOpenChange?: (open: boolean) => void
+  `.trim(),
+  SidebarContent: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarFooter: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarGroup: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarGroupAction: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarGroupContent: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarGroupLabel: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarHeader: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarInput: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarInset: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarMenu: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarMenuAction: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarMenuBadge: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarMenuButton: `
+  SidebarMenuButton: isActive?: boolean = false, tooltip?: string, showOnHover?: boolean = false, variant?: "default"* | "outline"
+  `.trim(),
+  SidebarMenuItem: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarMenuSkeleton: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarMenuSub: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarMenuSubButton: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarMenuSubItem: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarRail: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarSeparator: `
+  Sub-component of Sidebar.
+  `.trim(),
+  SidebarTrigger: `
+  Sub-component of Sidebar.
+  `.trim(),
 }

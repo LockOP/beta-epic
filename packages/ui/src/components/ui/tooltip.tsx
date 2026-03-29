@@ -55,3 +55,21 @@ function TooltipContent({
 }
 
 export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger }
+
+export const TooltipContext = {
+  Tooltip: `
+  sub-components: TooltipProvider, TooltipTrigger, TooltipContent
+  TooltipProvider: delayDuration?: number = 0
+  TooltipContent: sideOffset?: number = 0
+  children: yes
+  `.trim(),
+  TooltipProvider: `
+  TooltipProvider: delayDuration?: number = 0
+  `.trim(),
+  TooltipTrigger: `
+  Sub-component of Tooltip.
+  `.trim(),
+  TooltipContent: `
+  TooltipContent: sideOffset?: number = 0
+  `.trim(),
+}

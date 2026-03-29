@@ -11,3 +11,9 @@ function Skeleton({ className, ...props }: React.ComponentProps<"div">) {
 }
 
 export { Skeleton }
+
+export const SkeletonContext = {
+  Skeleton: `
+  + all native <div> props (className for sizing)
+  `.trim(),
+}

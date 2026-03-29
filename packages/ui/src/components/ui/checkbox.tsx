@@ -31,3 +31,12 @@ function Checkbox({
 }
 
 export { Checkbox }
+
+export const CheckboxContext = {
+  Checkbox: `
+  checked?: boolean | "indeterminate"
+  onCheckedChange?: (checked: boolean | "indeterminate") => void
+  disabled?: boolean
+  + all native checkbox props
+  `.trim(),
+}

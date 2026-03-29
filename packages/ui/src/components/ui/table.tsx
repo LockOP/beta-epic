@@ -114,3 +114,32 @@ export {
   TableCell,
   TableCaption,
 }
+
+export const TableContext = {
+  Table: `
+  sub-components: TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption
+  children: yes
+  + all native <table> props
+  `.trim(),
+  TableHeader: `
+  Sub-component of Table.
+  `.trim(),
+  TableBody: `
+  Sub-component of Table.
+  `.trim(),
+  TableFooter: `
+  Sub-component of Table.
+  `.trim(),
+  TableHead: `
+  Sub-component of Table.
+  `.trim(),
+  TableRow: `
+  Sub-component of Table.
+  `.trim(),
+  TableCell: `
+  Sub-component of Table.
+  `.trim(),
+  TableCaption: `
+  Sub-component of Table.
+  `.trim(),
+}
