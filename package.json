@@ -1,0 +1,20 @@
+{
+  "name": "beta-epic",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "node ./scripts/dev.mjs",
+    "build": "turbo build",
+    "typecheck": "turbo typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.17",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@10.33.0"
+}
