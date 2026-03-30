@@ -8,11 +8,8 @@
     "over": { "$ref": "page.store:users" },
     "as": "user",
     "return": {
-      "component": "ListItem",
-      "props": {
-        "label": { "$ref": "var:user.name" },
-        "sub":   { "$ref": "var:user.email" }
-      }
+      "component": "P",
+      "children": [{ "$ref": "var:user.name" }]
     }
   }
 }
@@ -20,7 +17,7 @@
 
 ```jsx
 state.users.map(user => (
-  <ListItem label={user.name} sub={user.email} />
+  <P>{user.name}</P>
 ))
 ```
 

@@ -72,18 +72,17 @@ Selectors are declared on any `ComponentNode` and flow downward to descendants o
     "over": { "$ref": "page.store:products" },
     "as": "product",
     "return": {
-      "component": "Row",
-      "props": {
-        "label": { "$ref": "var:product.name" },
-        "price": { "$ref": "var:product.price" }
-      }
+      "component": "P",
+      "children": [
+        { "$ref": "var:product.name" }
+      ]
     }
   }
 }
 ```
 
 ```js
-products.map(product => <Row label={product.name} price={product.price} />)
+products.map(product => <P>{product.name}</P>)
 ```
 
 The name comes from the `"as"` field. It lives in `var:`, not `page.store:`.
@@ -97,14 +96,14 @@ The name comes from the `"as"` field. It lives in `var:`, not `page.store:`.
     "displayName": { "$nullish": { "value": { "$ref": "page.store:user.name" }, "default": "Guest" } }
   },
   "children": [
-    { "component": "Text", "props": { "content": { "$ref": "var:displayName" } } }
+    { "component": "P", "children": [{ "$ref": "var:displayName" }] }
   ]
 }
 ```
 
 ```js
 const displayName = state.user?.name ?? "Guest"
-<Card><Text content={displayName} /></Card>
+<Card><P>{displayName}</P></Card>
 ```
 
 `env` block values are declared on a node and available in `var:` to that node and all its children.

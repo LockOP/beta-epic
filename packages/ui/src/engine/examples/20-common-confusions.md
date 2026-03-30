@@ -10,18 +10,16 @@ Side-by-side patterns that are easy to mix up.
 // WRONG — $fn in a prop tries to call fetchUser synchronously
 // If fetchUser is async it returns a Promise object, not the user
 {
-  "component": "Text",
-  "props": {
-    "content": { "$fn": "fetchUser", "args": [1] }
-  }
+  "component": "P",
+  "children": [{ "$fn": "fetchUser", "args": [1] }]
 }
 ```
 
 ```json
 // RIGHT — async work in an effect, result stored in state, prop reads state
 {
-  "component": "Text",
-  "props": { "content": { "$ref": "page.store:user.name" } },
+  "component": "P",
+  "children": [{ "$ref": "page.store:user.name" }],
   "effects": [{
     "deps": [],
     "run": [{
@@ -124,8 +122,8 @@ Side-by-side patterns that are easy to mix up.
     "over": { "$ref": "page.store:items" },
     "as": "item",
     "return": {
-      "component": "Row",
-      "props": { "label": { "$ref": "page.store:item.name" } }
+      "component": "P",
+      "children": [{ "$ref": "page.store:item.name" }]
     }
   }
 }
@@ -138,8 +136,8 @@ Side-by-side patterns that are easy to mix up.
     "over": { "$ref": "page.store:items" },
     "as": "item",
     "return": {
-      "component": "Row",
-      "props": { "label": { "$ref": "var:item.name" } }
+      "component": "P",
+      "children": [{ "$ref": "var:item.name" }]
     }
   }
 }
@@ -275,8 +273,8 @@ Use E when: the call should fire reactively when state changes (with optional de
 ```json
 // In an expression (prop value) — evaluates immediately at render time
 {
-  "component": "Text",
-  "props": { "content": { "$ref": "page.store:name" } }
+  "component": "P",
+  "children": [{ "$ref": "page.store:name" }]
 }
 ```
 

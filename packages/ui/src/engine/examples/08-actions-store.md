@@ -146,7 +146,7 @@ state.data    = null
 
 ```json
 {
-  "component": "TextInput",
+  "component": "Input",
   "props": {
     "value": { "$ref": "page.store:query" },
     "onChange": {
@@ -159,7 +159,7 @@ state.data    = null
 ```
 
 ```jsx
-<TextInput
+<Input
   value={state.query}
   onChange={(e) => setState(prev => ({ ...prev, query: e.target.value }))}
 />

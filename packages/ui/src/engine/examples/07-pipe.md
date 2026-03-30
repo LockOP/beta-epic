@@ -141,8 +141,8 @@ Same result as the `$pipe` version above — but reads inside-out. Use `$pipe` w
 ```json
 {
   "component": "Badge",
-  "props": {
-    "label": {
+  "children": [
+    {
       "$pipe": [
         { "$ref": "page.store:unreadCount" },
         { "$clamp": { "value": "$$", "min": 0, "max": 99 } },
@@ -150,14 +150,14 @@ Same result as the `$pipe` version above — but reads inside-out. Use `$pipe` w
         { "$if": { "cond": { "$gte": { "a": { "$ref": "page.store:unreadCount" }, "b": 99 } }, "then": { "$concat": ["$$", "+"] }, "else": "$$" } }
       ]
     }
-  }
+  ]
 }
 ```
 
 ```js
 const clamped = Math.min(Math.max(state.unreadCount, 0), 99)
 const label   = state.unreadCount >= 99 ? `${clamped}+` : String(clamped)
-<Badge label={label} />
+<Badge>{label}</Badge>
 ```
 
 ---
@@ -178,7 +178,7 @@ const label   = state.unreadCount >= 99 ? `${clamped}+` : String(clamped)
     }
   },
   "children": [
-    { "component": "Text", "props": { "content": { "$ref": "var:displayPrice" } } }
+    { "component": "P", "children": [{ "$ref": "var:displayPrice" }] }
   ]
 }
 ```
@@ -186,6 +186,6 @@ const label   = state.unreadCount >= 99 ? `${clamped}+` : String(clamped)
 ```jsx
 const displayPrice = "$" + String(Math.round(state.product.price * 1.1))
 <Card>
-  <Text content={displayPrice} />
+  <P>{displayPrice}</P>
 </Card>
 ```

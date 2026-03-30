@@ -39,18 +39,18 @@ formatDate(state.createdAt, "DD MMM YYYY")
 
 ```json
 {
-  "component": "Text",
-  "props": {
-    "content": {
+  "component": "P",
+  "children": [
+    {
       "$fn": "formatDate",
       "args": [{ "$ref": "page.store:createdAt" }, "DD MMM YYYY"]
     }
-  }
+  ]
 }
 ```
 
 ```jsx
-<Text content={formatDate(state.createdAt, "DD MMM YYYY")} />
+<P>{formatDate(state.createdAt, "DD MMM YYYY")}</P>
 ```
 
 ---
@@ -167,12 +167,12 @@ state.isSearching = false
 
 ```json
 // WRONG — $fn cannot call an async function from a prop
-{ "component": "Text", "props": { "content": { "$fn": "fetchUser", "args": [1] } } }
+{ "component": "P", "children": [{ "$fn": "fetchUser", "args": [1] }] }
 
 // RIGHT — async work in an effect, result stored in state, prop reads state
 {
-  "component": "Text",
-  "props": { "content": { "$ref": "page.store:user.name" } },
+  "component": "P",
+  "children": [{ "$ref": "page.store:user.name" }],
   "effects": [{
     "deps": [],
     "run": [{

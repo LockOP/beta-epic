@@ -31,7 +31,7 @@ Reference by name wherever that value belongs:
 
 ```json
 {
-  "component": "Stack",
+  "component": "Card",
   "children": [
     { "$subConfig": "productCard" },
     { "$subConfig": "productCard" }
@@ -43,7 +43,7 @@ Before compilation this becomes:
 
 ```json
 {
-  "component": "Stack",
+  "component": "Card",
   "children": [
     { "component": "Card", "children": [...] },
     { "component": "Card", "children": [...] }
@@ -62,23 +62,34 @@ Pass values into the fragment via `subConfigProps`. Each value is a DSL ref or e
 ```json
 {
   "component": "Card",
-  "props": {
-    "title":    { "$ref": "var:title" },
-    "subtitle": { "$ref": "var:subtitle" }
-  },
   "children": [
     {
-      "component": "Text",
-      "props": {
-        "content": { "$fn": "formatCurrency", "args": [{ "$ref": "var:price" }, "USD"] }
-      }
+      "component": "CardHeader",
+      "children": [
+        { "component": "CardTitle", "children": [{ "$ref": "var:title" }] },
+        { "component": "CardDescription", "children": [{ "$ref": "var:subtitle" }] }
+      ]
     },
     {
-      "component": "Button",
-      "props": {
-        "label":    "Add to cart",
-        "disabled": { "$not": { "$ref": "var:inStock" } }
-      }
+      "component": "CardContent",
+      "children": [
+        {
+          "component": "P",
+          "children": [{ "$fn": "formatCurrency", "args": [{ "$ref": "var:price" }, "USD"] }]
+        }
+      ]
+    },
+    {
+      "component": "CardFooter",
+      "children": [
+        {
+          "component": "Button",
+          "props": {
+            "disabled": { "$not": { "$ref": "var:inStock" } }
+          },
+          "children": ["Add to cart"]
+        }
+      ]
     }
   ]
 }
@@ -106,25 +117,21 @@ After substitution, the engine sees the full `productCard` node with `var:title`
 
 Because substitution happens before compilation, `$subConfig` can sit anywhere a DSL value is valid.
 
-**As a prop value:**
+**As child content:**
 
 ```json
 {
   "component": "Button",
-  "props": {
-    "label": { "$subConfig": "saveLabelExpr" }
-  }
+  "children": [{ "$subConfig": "saveLabelExpr" }]
 }
 ```
 
-**As a prop value (expression position):**
+**As another child expression position:**
 
 ```json
 {
-  "component": "Button",
-  "props": {
-    "label": { "$subConfig": "saveLabelExpr" }
-  }
+  "component": "Badge",
+  "children": [{ "$subConfig": "saveLabelExpr" }]
 }
 ```
 
@@ -185,7 +192,7 @@ Fragments are full node definitions — they can carry `selectors`, `env`, and n
 
 ```json
 {
-  "component": "Row",
+  "component": "Card",
   "selectors": {
     "initials": {
       "$pipe": [
@@ -202,9 +209,9 @@ Fragments are full node definitions — they can carry `selectors`, `env`, and n
     }
   },
   "children": [
-    { "component": "Avatar", "props": { "initials": { "$ref": "selectors:initials" } } },
-    { "component": "Text",   "props": { "content":  { "$ref": "var:name" } } },
-    { "component": "Text",   "props": { "content":  { "$ref": "var:email" }, "variant": "caption" } }
+    { "component": "Badge", "props": { "variant": "outline" }, "children": [{ "$ref": "selectors:initials" }] },
+    { "component": "P", "children": [{ "$ref": "var:name" }] },
+    { "component": "Muted", "children": [{ "$ref": "var:email" }] }
   ]
 }
 ```
@@ -221,16 +228,15 @@ Fragments are full node definitions — they can carry `selectors`, `env`, and n
 {
   "kpiTile": {
     "component": "Card",
-    "props": { "variant": "stat" },
     "children": [
-      { "component": "Text",  "props": { "content": { "$ref": "var:label" }, "variant": "caption" } },
-      { "component": "Text",  "props": { "content": { "$ref": "var:value" }, "variant": "display" } },
+      { "component": "Muted", "children": [{ "$ref": "var:label" }] },
+      { "component": "Large", "children": [{ "$ref": "var:value" }] },
       {
         "component": "Badge",
         "props": {
-          "label": { "$ref": "var:trend" },
-          "color": { "$if": { "cond": { "$ref": "var:positive" }, "then": "green", "else": "red" } }
-        }
+          "variant": { "$if": { "cond": { "$ref": "var:positive" }, "then": "default", "else": "destructive" } }
+        },
+        "children": [{ "$ref": "var:trend" }]
       }
     ]
   }

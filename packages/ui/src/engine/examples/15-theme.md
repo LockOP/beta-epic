@@ -165,7 +165,7 @@ Dark mode is a host-app concern — the DSL stores the preference and delegates 
 ```json
 // DSL config
 {
-  "component": "Stack",
+  "component": "Card",
   "selectors": {
     "isDark": { "$eq": { "a": { "$ref": "page.store:colorScheme" }, "b": "dark" } }
   },
@@ -182,15 +182,12 @@ Dark mode is a host-app concern — the DSL stores the preference and delegates 
   ],
   "children": [
     {
+      "component": "P",
+      "children": ["Theme preference"]
+    },
+    {
       "component": "Button",
       "props": {
-        "label": {
-          "$if": {
-            "cond": { "$ref": "selectors:isDark" },
-            "then": "Light mode",
-            "else": "Dark mode"
-          }
-        },
         "variant": "ghost",
         "onClick": {
           "$action": [
@@ -207,7 +204,16 @@ Dark mode is a host-app concern — the DSL stores the preference and delegates 
             }
           ]
         }
-      }
+      },
+      "children": [
+        {
+          "$if": {
+            "cond": { "$ref": "selectors:isDark" },
+            "then": "Light mode",
+            "else": "Dark mode"
+          }
+        }
+      ]
     }
   ]
 }

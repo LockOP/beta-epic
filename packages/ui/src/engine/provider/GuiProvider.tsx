@@ -5,6 +5,7 @@ import { GuiContext } from './context';
 import { defaultComponentRegistry } from '../defaults/component-registry';
 import { defaultFnRegistry } from '../defaults/fn-registry';
 import { defaultHookRegistry } from '../defaults/hook-registry';
+import { DEFAULT_DARK_TOKENS, DEFAULT_LIGHT_TOKENS } from '../defaults/theme-tokens';
 import type { ComponentType, Registries, ToastVariant } from '../types';
 import { toast, ToastProvider } from '../../components/ui/toast';
 
@@ -49,13 +50,14 @@ export interface GuiProviderProps {
 
   // ── Theme ─────────────────────────────────────────────────────────────────
   /**
-   * Theme tokens split by mode.
-   * - `light` tokens are always applied.
-   * - `dark` tokens override under `.dark` (any ancestor with that class).
-   *   Omitted dark tokens are auto-generated: HSL colours have their lightness
-   *   inverted, non-colour values (radius, etc.) are copied unchanged.
+   * Theme token overrides split by mode.
+   * - `light` overrides the built-in light defaults.
+   * - `dark` overrides the built-in dark defaults under `.dark`.
    */
-  theme?: { light: Record<string, string>; dark?: Partial<Record<string, string>> };
+  theme?: {
+    light?: Partial<Record<string, string>>
+    dark?: Partial<Record<string, string>>
+  };
 }
 
 const useDefaultNavigate = (): ((to: string) => void) =>
@@ -100,41 +102,47 @@ const useDefaultToast = (): ((message: string, variant?: ToastVariant) => void) 
   }, []);
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Component
-// ─────────────────────────────────────────────────────────────────────────────
-
-// ─────────────────────────────────────────────────────────────────────────────
 // Theme helpers
 // ─────────────────────────────────────────────────────────────────────────────
 
-/** Matches "H S% L%" HSL channel strings (no hsl() wrapper). */
-const HSL_RE = /^\d+(\.\d+)?\s+\d+(\.\d+)?%\s+\d+(\.\d+)?%$/
-
-function isHslColor(value: string): boolean {
-  return HSL_RE.test(value.trim())
-}
-
-function invertLightness(hsl: string): string {
-  const [h, s, l] = hsl.trim().split(/\s+/)
-  return `${h} ${s} ${Math.round(100 - parseFloat(l))}%`
-}
-
-/** Build a resolved dark token map, auto-filling anything not provided. */
-function resolveDarkTokens(
-  light: Record<string, string>,
-  userDark: Partial<Record<string, string>> = {},
-): Record<string, string> {
-  const dark: Record<string, string> = {}
-  for (const [key, value] of Object.entries(light)) {
-    dark[key] = key in userDark
-      ? userDark[key]!
-      : isHslColor(value) ? invertLightness(value) : value
-  }
-  return dark
-}
-
 function toCssVars(tokens: Record<string, string>): string {
   return Object.entries(tokens).map(([k, v]) => `  --${k}: ${v};`).join('\n')
+}
+
+function mergeThemeTokens(
+  defaults: Record<string, string>,
+  overrides?: Partial<Record<string, string>>,
+): Record<string, string> {
+  const merged = { ...defaults }
+
+  if (!overrides) {
+    return merged
+  }
+
+  for (const [key, value] of Object.entries(overrides)) {
+    if (value !== undefined) {
+      merged[key] = value
+    }
+  }
+
+  return merged
+}
+
+/** Scoped base styles equivalent to the @layer base block in index.css */
+function buildBaseCSS(scopeId: string): string {
+  const root = `[data-epic-root="${scopeId}"]`
+  return [
+    `${root} *, ${root} *::before, ${root} *::after {`,
+    `  border-color: hsl(var(--border));`,
+    `}`,
+    `${root} {`,
+    `  background-color: hsl(var(--background));`,
+    `  color: hsl(var(--foreground));`,
+    `  -webkit-font-smoothing: antialiased;`,
+    `  -moz-osx-font-smoothing: grayscale;`,
+    `  font-feature-settings: "rlig" 1, "calt" 1;`,
+    `}`,
+  ].join('\n')
 }
 
 export const GuiProvider: React.FC<GuiProviderProps> = ({
@@ -194,12 +202,16 @@ export const GuiProvider: React.FC<GuiProviderProps> = ({
   }), [registries, baseUrl, getToken, handleNavigate, handleToast, globalStore]);
 
   // ── Theme injection ───────────────────────────────────────────────────────
+  // Default tokens are always applied; the `theme` prop overrides on top.
+  // Base styles (border-color, bg, text, font-smoothing) are also injected
+  // so the consumer app needs no index.css setup.
   const themeCSS = useMemo(() => {
-    if (!theme) return null
-    const dark = resolveDarkTokens(theme.light, theme.dark)
+    const light = mergeThemeTokens(DEFAULT_LIGHT_TOKENS, theme?.light)
+    const dark = mergeThemeTokens(DEFAULT_DARK_TOKENS, theme?.dark)
     return [
-      `[data-epic-root="${scopeId}"] {\n${toCssVars(theme.light)}\n}`,
+      `[data-epic-root="${scopeId}"] {\n${toCssVars(light)}\n}`,
       `.dark [data-epic-root="${scopeId}"] {\n${toCssVars(dark)}\n}`,
+      buildBaseCSS(scopeId),
     ].join('\n')
   }, [theme, scopeId])
 

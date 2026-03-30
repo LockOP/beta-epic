@@ -170,11 +170,12 @@ const displayData = {
         "over": { "$entries": { "$ref": "page.store:settings" } },
         "as": "entry",
         "return": {
-          "component": "SettingRow",
-          "props": {
-            "label": { "$get": { "from": { "$ref": "var:entry" }, "key": "0" } },
-            "value": { "$get": { "from": { "$ref": "var:entry" }, "key": "1" } }
-          }
+          "component": "P",
+          "children": [
+            { "$get": { "from": { "$ref": "var:entry" }, "key": "0" } },
+            ": ",
+            { "$get": { "from": { "$ref": "var:entry" }, "key": "1" } }
+          ]
         }
       }
     }

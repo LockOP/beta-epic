@@ -9,14 +9,17 @@ function NavigationMenu({
   className,
   children,
   viewport = true,
+  collapsed,
   ...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.Root> & {
   viewport?: boolean
+  collapsed?: boolean
 }) {
   return (
     <NavigationMenuPrimitive.Root
       data-slot="navigation-menu"
       data-viewport={viewport}
+      data-collapsed={collapsed ? "true" : undefined}
       className={cn(
         "group/navigation-menu relative flex max-w-max flex-1 items-center justify-center",
         className
@@ -108,7 +111,7 @@ function NavigationMenuViewport({
       <NavigationMenuPrimitive.Viewport
         data-slot="navigation-menu-viewport"
         className={cn(
-          "origin-top-center relative mt-1.5 h-(--radix-navigation-menu-viewport-height) w-full overflow-hidden rounded-lg bg-popover text-popover-foreground shadow ring-1 ring-foreground/10 duration-100 md:w-(--radix-navigation-menu-viewport-width) data-[state=open]:animate-in data-[state=open]:zoom-in-90 data-[state=closed]:animate-out data-[state=closed]:zoom-out-90",
+          "origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-lg bg-popover text-popover-foreground shadow ring-1 ring-foreground/10 duration-100 md:w-[var(--radix-navigation-menu-viewport-width)] data-[state=open]:animate-in data-[state=open]:zoom-in-90 data-[state=closed]:animate-out data-[state=closed]:zoom-out-90",
           className
         )}
         {...props}
@@ -167,9 +170,10 @@ export const NavigationMenuContext = {
   NavigationMenu: `
   sub-components: NavigationMenuList, NavigationMenuItem, NavigationMenuContent, NavigationMenuTrigger, NavigationMenuLink, NavigationMenuIndicator, NavigationMenuViewport
   viewport?: boolean = true
+  collapsed?: boolean = false
   children: yes
   ---
-  example config: { component: "NavigationMenu", props: { viewport: true }, children: [{ component: "NavigationMenuList", children: ["Content"] }] }
+  example config: { component: "NavigationMenu", props: { viewport: true, collapsed: false }, children: [{ component: "NavigationMenuList", children: ["Content"] }] }
   `.trim(),
   NavigationMenuList: `
   Sub-component of NavigationMenu.

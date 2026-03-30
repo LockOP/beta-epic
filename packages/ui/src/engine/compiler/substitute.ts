@@ -50,11 +50,14 @@ const substituteNode = (node: ComponentNode, refs: RefConfigs): ComponentNode =>
     }));
   }
   if (node.children) {
-    result.children = node.children.map(child => substituteChild(child, refs));
+    result.children = normalizeChildren(node.children).map(child => substituteChild(child, refs));
   }
 
   return result;
 };
+
+const normalizeChildren = (children: ComponentNode['children'] | ChildNode): ChildNode[] =>
+  Array.isArray(children) ? children : [children];
 
 const substituteChild = (child: ChildNode, refs: RefConfigs): ChildNode => {
   if (child === null || child === undefined) return child;

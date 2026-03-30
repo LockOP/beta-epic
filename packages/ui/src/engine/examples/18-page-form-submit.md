@@ -121,53 +121,42 @@ Multi-field form with inline validation, derived `canSubmit`, optimistic UI, err
   "children": [
     {
       "component": "Field",
-      "props": {
-        "label": "Name",
-        "error": {
-          "$if": {
-            "cond": {
-              "$and": [
-                { "$gt": { "a": { "$length": { "$ref": "page.store:form.name" } }, "b": 0 } },
-                { "$not": { "$ref": "selectors:nameValid" } }
-              ]
-            },
-            "then": "Name is required",
-            "else": null
-          }
-        }
-      },
       "children": [
+        { "component": "FieldLabel", "children": ["Name"] },
         {
-          "component": "TextInput",
+          "component": "Input",
           "props": {
             "value": { "$ref": "page.store:form.name" },
             "onChange": {
               "$action": [{ "type": "page.store.update", "path": "form.name", "payload": { "$ref": "event.value" } }]
             }
           }
+        },
+        {
+          "component": "FieldError",
+          "children": [
+            {
+              "$if": {
+                "cond": {
+                  "$and": [
+                    { "$gt": { "a": { "$length": { "$ref": "page.store:form.name" } }, "b": 0 } },
+                    { "$not": { "$ref": "selectors:nameValid" } }
+                  ]
+                },
+                "then": "Name is required",
+                "else": null
+              }
+            }
+          ]
         }
       ]
     },
     {
       "component": "Field",
-      "props": {
-        "label": "Email",
-        "error": {
-          "$if": {
-            "cond": {
-              "$and": [
-                { "$gt": { "a": { "$length": { "$ref": "page.store:form.email" } }, "b": 0 } },
-                { "$not": { "$ref": "selectors:emailValid" } }
-              ]
-            },
-            "then": "Enter a valid email",
-            "else": null
-          }
-        }
-      },
       "children": [
+        { "component": "FieldLabel", "children": ["Email"] },
         {
-          "component": "TextInput",
+          "component": "Input",
           "props": {
             "value": { "$ref": "page.store:form.email" },
             "type":  "email",
@@ -175,13 +164,30 @@ Multi-field form with inline validation, derived `canSubmit`, optimistic UI, err
               "$action": [{ "type": "page.store.update", "path": "form.email", "payload": { "$ref": "event.value" } }]
             }
           }
+        },
+        {
+          "component": "FieldError",
+          "children": [
+            {
+              "$if": {
+                "cond": {
+                  "$and": [
+                    { "$gt": { "a": { "$length": { "$ref": "page.store:form.email" } }, "b": 0 } },
+                    { "$not": { "$ref": "selectors:emailValid" } }
+                  ]
+                },
+                "then": "Enter a valid email",
+                "else": null
+              }
+            }
+          ]
         }
       ]
     },
     {
       "component": "Field",
-      "props": { "label": "Message" },
       "children": [
+        { "component": "FieldLabel", "children": ["Message"] },
         {
           "component": "Textarea",
           "props": {
@@ -197,17 +203,18 @@ Multi-field form with inline validation, derived `canSubmit`, optimistic UI, err
     {
       "component": "Button",
       "props": {
-        "label": {
+        "type":     "submit",
+        "disabled": { "$not": { "$ref": "selectors:canSubmit" } }
+      },
+      "children": [
+        {
           "$if": {
             "cond": { "$ref": "page.store:submitting" },
             "then": "Sending…",
             "else": "Send message"
           }
-        },
-        "type":     "submit",
-        "disabled": { "$not": { "$ref": "selectors:canSubmit" } },
-        "loading":  { "$ref": "page.store:submitting" }
-      }
+        }
+      ]
     }
   ]
 }

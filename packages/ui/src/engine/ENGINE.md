@@ -113,10 +113,10 @@ interface ComponentNode {
 
 ### component
 
-Maps to a registered React component. Unknown names throw at render time.
+Maps to a registered React component. Unknown names are DSL validation errors and should be caught before rendering.
 
 ```json
-{ "component": "Button", "props": { "label": "Click me" } }
+{ "component": "Button", "children": ["Click me"] }
 ```
 
 ### props
@@ -125,11 +125,12 @@ Each prop value is an `Expression` — either a literal or a DSL operator.
 
 ```json
 {
-  "component": "Text",
+  "component": "Button",
   "props": {
-    "content": { "$ref": "page.store:username" },
-    "color": { "$if": { "cond": { "$ref": "page.store:isError" }, "then": "red", "else": "black" } }
-  }
+    "disabled": { "$ref": "page.store:isSaving" },
+    "variant": { "$if": { "cond": { "$ref": "page.store:isError" }, "then": "destructive", "else": "default" } }
+  },
+  "children": ["Save"]
 }
 ```
 
@@ -139,15 +140,25 @@ An array of `ChildNode` items. Each item is either a static `ComponentNode`, a `
 
 ```json
 {
-  "component": "List",
+  "component": "ItemGroup",
   "children": [
     {
       "$map": {
         "over": { "$ref": "page.store:items" },
         "as": "item",
         "return": {
-          "component": "ListItem",
-          "props": { "label": { "$ref": "var:item.name" } }
+          "component": "Item",
+          "children": [
+            {
+              "component": "ItemContent",
+              "children": [
+                {
+                  "component": "ItemTitle",
+                  "children": [{ "$ref": "var:item.name" }]
+                }
+              ]
+            }
+          ]
         }
       }
     }
@@ -168,7 +179,7 @@ Declares local variables available within this node's subtree via `var:`. Values
     }
   },
   "children": [
-    { "component": "Text", "props": { "content": { "$ref": "var:fullName" } } }
+    { "component": "P", "children": [{ "$ref": "var:fullName" }] }
   ]
 }
 ```
@@ -527,7 +538,7 @@ Derived values declared on a `ComponentNode` via `selectors`. They are computed 
 
 ```json
 {
-  "component": "Stack",
+  "component": "ItemGroup",
   "selectors": {
     "filteredItems": {
       "$filter": {
@@ -1201,8 +1212,7 @@ Selectors are evaluated once per state change using a dependency graph. If a sel
 
 ```json
 {
-  "component": "Stack",
-  "props": { "direction": "row" },
+  "component": "ItemGroup",
   "children": [
     {
       "component": "Toggle",
@@ -1216,10 +1226,8 @@ Selectors are evaluated once per state change using a dependency graph. If a sel
       }
     },
     {
-      "component": "Text",
-      "props": {
-        "content": { "$if": { "cond": { "$ref": "page.store:on" }, "then": "On", "else": "Off" } }
-      }
+      "component": "P",
+      "children": [{ "$if": { "cond": { "$ref": "page.store:on" }, "then": "On", "else": "Off" } }]
     }
   ]
 }
@@ -1229,41 +1237,40 @@ Selectors are evaluated once per state change using a dependency graph. If a sel
 
 ```json
 {
-  "component": "Stack",
-  "props": { "direction": "row" },
+  "component": "ItemGroup",
   "children": [
     {
       "component": "Button",
       "props": {
-        "label": "-",
         "disabled": { "$eq": { "a": { "$ref": "page.store:count" }, "b": 0 } },
         "onClick": {
           "$action": [
             { "type": "page.store.update", "path": "count", "payload": { "$sub": [{ "$ref": "page.store:count" }, 1] } }
           ]
         }
-      }
+      },
+      "children": ["-"]
     },
-    { "component": "Text", "props": { "content": { "$string": { "$ref": "page.store:count" } } } },
+    { "component": "P", "children": [{ "$string": { "$ref": "page.store:count" } }] },
     {
       "component": "Button",
       "props": {
-        "label": "+",
         "onClick": {
           "$action": [
             { "type": "page.store.update", "path": "count", "payload": { "$add": [{ "$ref": "page.store:count" }, 1] } }
           ]
         }
-      }
+      },
+      "children": ["+"]
     },
     {
       "component": "Button",
       "props": {
-        "label": "Reset",
         "variant": "ghost",
         "disabled": { "$eq": { "a": { "$ref": "page.store:count" }, "b": 0 } },
         "onClick": { "$action": [{ "type": "page.store.reset", "path": "count" }] }
-      }
+      },
+      "children": ["Reset"]
     }
   ]
 }
@@ -1273,7 +1280,7 @@ Selectors are evaluated once per state change using a dependency graph. If a sel
 
 ```json
 {
-  "component": "Stack",
+  "component": "ItemGroup",
   "effects": [
     {
       "deps": [],
@@ -1302,17 +1309,31 @@ Selectors are evaluated once per state change using a dependency graph. If a sel
         "else": {
           "$if": {
             "cond": { "$neq": { "a": { "$ref": "page.store:error" }, "b": null } },
-            "then": { "component": "ErrorBanner", "props": { "message": { "$ref": "page.store:error" } } },
+            "then": { "component": "P", "children": [{ "$ref": "page.store:error" }] },
             "else": {
-              "component": "List",
+              "component": "ItemGroup",
               "children": [
                 {
                   "$map": {
                     "over": { "$ref": "page.store:users" },
                     "as": "user",
                     "return": {
-                      "component": "ListItem",
-                      "props": { "label": { "$ref": "var:user.name" }, "sub": { "$ref": "var:user.email" } }
+                      "component": "Item",
+                      "children": [
+                        {
+                          "component": "ItemContent",
+                          "children": [
+                            {
+                              "component": "ItemTitle",
+                              "children": [{ "$ref": "var:user.name" }]
+                            },
+                            {
+                              "component": "ItemDescription",
+                              "children": [{ "$ref": "var:user.email" }]
+                            }
+                          ]
+                        }
+                      ]
                     }
                   }
                 }
@@ -1328,11 +1349,11 @@ Selectors are evaluated once per state change using a dependency graph. If a sel
 
 ### 18.4 — Searchable filtered list with selectors
 
-`selectors` are declared on the root `Stack` component node — they flow down to all children but are invisible above this node.
+`selectors` are declared on the root `ItemGroup` component node — they flow down to all children but are invisible above this node.
 
 ```json
 {
-  "component": "Stack",
+  "component": "ItemGroup",
   "selectors": {
     "filteredProducts": {
       "$filter": {
@@ -1357,7 +1378,7 @@ Selectors are evaluated once per state change using a dependency graph. If a sel
   },
   "children": [
     {
-      "component": "SearchInput",
+      "component": "Input",
       "props": {
         "value": { "$ref": "page.store:query" },
         "placeholder": "Search products…",
@@ -1367,16 +1388,16 @@ Selectors are evaluated once per state change using a dependency graph. If a sel
       }
     },
     {
-      "component": "Text",
-      "props": {
-        "content": {
+      "component": "P",
+      "children": [
+        {
           "$pipe": [
             { "$ref": "selectors:resultCount" },
             { "$string": "$$" },
             { "$concat": ["$$", " results"] }
           ]
         }
-      }
+      ]
     },
     {
       "component": "Grid",

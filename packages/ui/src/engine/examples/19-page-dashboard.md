@@ -168,13 +168,6 @@ Parallel data loading, live WebSocket subscription with cleanup, debounced chart
         {
           "component": "Button",
           "props": {
-            "label": {
-              "$if": {
-                "cond": { "$ref": "selectors:isDark" },
-                "then": "Light mode",
-                "else": "Dark mode"
-              }
-            },
             "variant": "ghost",
             "onClick": {
               "$action": [
@@ -191,7 +184,16 @@ Parallel data loading, live WebSocket subscription with cleanup, debounced chart
                 }
               ]
             }
-          }
+          },
+          "children": [
+            {
+              "$if": {
+                "cond": { "$ref": "selectors:isDark" },
+                "then": "Light mode",
+                "else": "Dark mode"
+              }
+            }
+          ]
         }
       ]
     },
@@ -207,21 +209,20 @@ Parallel data loading, live WebSocket subscription with cleanup, debounced chart
       "component": "Row",
       "children": [
         {
-          "component": "Select",
+          "component": "NativeSelect",
           "props": {
-            "label": "Time range",
             "value": { "$ref": "page.store:timeRange" },
-            "options": [
-              { "label": "Last 7 days",  "value": "7d" },
-              { "label": "Last 30 days", "value": "30d" },
-              { "label": "Last 90 days", "value": "90d" }
-            ],
             "onChange": {
               "$action": [
                 { "type": "page.store.update", "path": "timeRange", "payload": { "$ref": "event.value" } }
               ]
             }
-          }
+          },
+          "children": [
+            { "component": "NativeSelectOption", "props": { "value": "7d" }, "children": ["Last 7 days"] },
+            { "component": "NativeSelectOption", "props": { "value": "30d" }, "children": ["Last 30 days"] },
+            { "component": "NativeSelectOption", "props": { "value": "90d" }, "children": ["Last 90 days"] }
+          ]
         }
       ]
     },

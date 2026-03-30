@@ -75,10 +75,10 @@ Three-step onboarding wizard with per-step validation, progress indicator, back/
             "children": [
               {
                 "component": "Field",
-                "props": { "label": "Full name" },
                 "children": [
+                  { "component": "FieldLabel", "children": ["Full name"] },
                   {
-                    "component": "TextInput",
+                    "component": "Input",
                     "props": {
                       "value": { "$ref": "page.store:profile.name" },
                       "onChange": { "$action": [{ "type": "page.store.update", "path": "profile.name", "payload": { "$ref": "event.value" } }] }
@@ -88,31 +88,31 @@ Three-step onboarding wizard with per-step validation, progress indicator, back/
               },
               {
                 "component": "Field",
-                "props": { "label": "Role" },
                 "children": [
+                  { "component": "FieldLabel", "children": ["Role"] },
                   {
-                    "component": "Select",
+                    "component": "NativeSelect",
                     "props": {
                       "value": { "$ref": "page.store:profile.role" },
-                      "options": [
-                        { "label": "Developer",  "value": "dev" },
-                        { "label": "Designer",   "value": "design" },
-                        { "label": "Manager",    "value": "mgr" }
-                      ],
                       "onChange": { "$action": [{ "type": "page.store.update", "path": "profile.role", "payload": { "$ref": "event.value" } }] }
-                    }
+                    },
+                    "children": [
+                      { "component": "NativeSelectOption", "props": { "value": "dev" }, "children": ["Developer"] },
+                      { "component": "NativeSelectOption", "props": { "value": "design" }, "children": ["Designer"] },
+                      { "component": "NativeSelectOption", "props": { "value": "mgr" }, "children": ["Manager"] }
+                    ]
                   }
                 ]
               },
               {
                 "component": "Button",
                 "props": {
-                  "label": "Next",
                   "disabled": { "$not": { "$ref": "selectors:canNext" } },
                   "onClick": {
                     "$action": [{ "type": "page.store.update", "path": "step", "payload": 1 }]
                   }
-                }
+                },
+                "children": ["Next"]
               }
             ]
           },
@@ -121,30 +121,31 @@ Three-step onboarding wizard with per-step validation, progress indicator, back/
             "children": [
               {
                 "component": "Field",
-                "props": { "label": "Theme" },
                 "children": [
+                  { "component": "FieldLabel", "children": ["Theme"] },
                   {
                     "component": "ToggleGroup",
                     "props": {
+                      "type": "single",
                       "value": { "$ref": "page.store:prefs.theme" },
-                      "options": [
-                        { "label": "Light", "value": "light" },
-                        { "label": "Dark",  "value": "dark" }
-                      ],
-                      "onChange": { "$action": [{ "type": "page.store.update", "path": "prefs.theme", "payload": { "$ref": "event.value" } }] }
-                    }
+                      "onValueChange": { "$action": [{ "type": "page.store.update", "path": "prefs.theme", "payload": { "$ref": "event.value" } }] }
+                    },
+                    "children": [
+                      { "component": "ToggleGroupItem", "props": { "value": "light" }, "children": ["Light"] },
+                      { "component": "ToggleGroupItem", "props": { "value": "dark" }, "children": ["Dark"] }
+                    ]
                   }
                 ]
               },
               {
                 "component": "Field",
-                "props": { "label": "Email notifications" },
                 "children": [
+                  { "component": "FieldLabel", "children": ["Email notifications"] },
                   {
                     "component": "Switch",
                     "props": {
                       "checked": { "$ref": "page.store:prefs.notifications" },
-                      "onChange": { "$action": [{ "type": "page.store.update", "path": "prefs.notifications", "payload": { "$ref": "event.value" } }] }
+                      "onCheckedChange": { "$action": [{ "type": "page.store.update", "path": "prefs.notifications", "payload": { "$ref": "event.value" } }] }
                     }
                   }
                 ]
@@ -156,16 +157,17 @@ Three-step onboarding wizard with per-step validation, progress indicator, back/
                   {
                     "component": "Button",
                     "props": {
-                      "label": "Back", "variant": "ghost",
+                      "variant": "ghost",
                       "onClick": { "$action": [{ "type": "page.store.update", "path": "step", "payload": 0 }] }
-                    }
+                    },
+                    "children": ["Back"]
                   },
                   {
                     "component": "Button",
                     "props": {
-                      "label": "Next",
                       "onClick": { "$action": [{ "type": "page.store.update", "path": "step", "payload": 2 }] }
-                    }
+                    },
+                    "children": ["Next"]
                   }
                 ]
               }
@@ -188,15 +190,14 @@ Three-step onboarding wizard with per-step validation, progress indicator, back/
                   {
                     "component": "Button",
                     "props": {
-                      "label": "Back", "variant": "ghost",
+                      "variant": "ghost",
                       "onClick": { "$action": [{ "type": "page.store.update", "path": "step", "payload": 1 }] }
-                    }
+                    },
+                    "children": ["Back"]
                   },
                   {
                     "component": "Button",
                     "props": {
-                      "label": { "$if": { "cond": { "$ref": "page.store:submitting" }, "then": "Finishing…", "else": "Finish" } },
-                      "loading": { "$ref": "page.store:submitting" },
                       "onClick": {
                         "$action": [
                           { "type": "page.store.update", "path": "submitting", "payload": true },
@@ -227,7 +228,10 @@ Three-step onboarding wizard with per-step validation, progress indicator, back/
                           }
                         ]
                       }
-                    }
+                    },
+                    "children": [
+                      { "$if": { "cond": { "$ref": "page.store:submitting" }, "then": "Finishing…", "else": "Finish" } }
+                    ]
                   }
                 ]
               }

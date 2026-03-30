@@ -13,7 +13,7 @@ COMPONENT NODE SHAPE
 A ComponentNode has these optional fields:
 
 {
-  "component": "ComponentName",   // required — PascalCase, must exist in the component registry
+  "component": "ComponentName",   // required — registered component key (usually PascalCase, but some native tags like "div" may also be registered)
   "props": { ... },               // static or expression values passed as props
   "children": [ ...nodes... ],    // child ComponentNodes, $map results, or $if expressions
   "selectors": { ... },           // derived values, computed once per state change (see Selectors)
@@ -21,10 +21,40 @@ A ComponentNode has these optional fields:
   "effects": [ ...effects... ]    // side-effect triggers (like useEffect), see Effects
 }
 
+IMPORTANT:
+- "children" must always be an array when present.
+- For a single text child, write "children": ["Hello"].
+- Never write "children": "Hello" or "children": { ... }.
+- Only use component names that actually exist in the registry.
+- Do not invent generic names like "Text", "List", "ListItem", or "Stack" unless the registry explicitly contains them.
+- Native HTML tags such as "div" may be registered as low-priority fallbacks. Use them mainly for simple wrappers/layout when a library component is not a better fit.
+- Prefer styling and layout through className with Tailwind CSS v3 utilities.
+- Do NOT invent style-like props such as maxWidth, minWidth, width, height, margin, padding, gap, display, alignItems, justifyContent, or flexDirection unless the component context explicitly confirms that prop exists.
+- For sizing/spacing/layout constraints, prefer className values such as max-w-md, w-full, h-full, mx-auto, p-4, px-4, py-6, gap-4, flex, flex-col, grid, items-center, justify-between.
+
 Prop values can be:
 - A plain literal: "hello", 42, true, null
 - An expression object: { "$ref": "..." }, { "$if": ... }, { "$fn": ... }, etc.
 - An action array on event props: { "$action": [ ...actions... ] }
+
+CLASSNAME / TAILWIND GUIDANCE:
+- Prefer className for layout, spacing, sizing, alignment, borders, radius, colors, and responsive behavior.
+- Use Tailwind CSS v3 utility classes only.
+- Good sizing/layout examples:
+  w-full, h-full, min-h-screen, max-w-sm, max-w-md, max-w-lg, max-w-2xl, mx-auto
+  flex, inline-flex, flex-col, flex-row, flex-wrap, grid, grid-cols-1, grid-cols-2
+  items-start, items-center, items-stretch, justify-start, justify-center, justify-between
+  gap-2, gap-4, gap-6, p-4, p-6, px-4, py-3, mt-4, mb-6
+- Good surface examples:
+  rounded-md, rounded-lg, border, border-border, bg-background, bg-card, text-foreground, text-muted-foreground, shadow-sm
+- Good responsive examples:
+  sm:px-4, md:px-6, lg:px-8, sm:grid-cols-1, md:grid-cols-2, lg:grid-cols-3, xl:grid-cols-4
+  text-sm md:text-base lg:text-lg
+  flex-col md:flex-row
+- When centering a bounded form/card/page section, prefer patterns like:
+  "className": "w-full max-w-md mx-auto p-4"
+  "className": "flex min-h-screen items-center justify-center p-4"
+- Avoid Tailwind v4-only syntax or directives.
 
 ═══════════════════════════════════════════════════════════
 $ref NAMESPACES
@@ -263,8 +293,9 @@ Theme tokens are CSS custom properties injected by <GuiProvider theme={...} />.
 Set at host-app level — do NOT reference them in DSL config via $ref.
 
 Theme shape: { light: { ...tokens }, dark?: { ...tokens } }
-- "light" is required. "dark" is optional — omitted colour tokens get their lightness auto-inverted;
-  non-colour tokens (radius, etc.) are copied from light unchanged.
+- The provider merges these with built-in defaults.
+- light and dark may both be partial override maps when the host app supports defaults.
+- If dark is omitted, the built-in dark defaults are still used.
 
 Available tokens (pass WITHOUT -- prefix):
   background, foreground, primary, primary-foreground,
@@ -334,4 +365,6 @@ RULES AND GOTCHAS
 10. env block variables are accessed via var: — same namespace as $map iteration variables.
 11. All component names must be registered. Use get_all_components to see the full list, get_component_context for props/variants.
 12. Use get_all_fns to see available built-in functions, get_fn_context for signatures and examples.
+13. Prefer className with Tailwind CSS v3 utilities over guessed layout props like maxWidth, padding, margin, gap, or height.
+14. Build responsive layouts by default using Tailwind breakpoints for mobile, tablet, laptop, and desktop (typically base, md, lg, xl).
 `.trim()

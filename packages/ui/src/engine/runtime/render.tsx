@@ -14,6 +14,15 @@ import { isComponentNode, isActionExpression } from '../types';
 import { evaluateExpression } from '../compiler/expr';
 import { runActions } from '../compiler/actions';
 
+function hasPreventDefault(value: unknown): value is { preventDefault: () => void } {
+  return (
+    typeof value === 'object' &&
+    value !== null &&
+    'preventDefault' in value &&
+    typeof (value as { preventDefault?: unknown }).preventDefault === 'function'
+  );
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // DslNode — renders a single ComponentNode reactively
 // ─────────────────────────────────────────────────────────────────────────────
@@ -66,6 +75,9 @@ export const DslNode: React.FC<DslNodeProps> = ({ node, ctx }) => {
       if (isActionExpression(value)) {
         // Compile action to a handler function
         props[key] = (...args: unknown[]) => {
+          if (key === 'onSubmit' && hasPreventDefault(args[0])) {
+            args[0].preventDefault();
+          }
           const actions = Array.isArray(value.$action) ? value.$action : [value.$action];
           void runActions(actions as ActionSpec[], ctxWithSelectors, args);
         };
@@ -84,7 +96,7 @@ export const DslNode: React.FC<DslNodeProps> = ({ node, ctx }) => {
   }
 
   // ── 5. Render children ────────────────────────────────────────────────────
-  const renderedChildren = renderChildren(node.children ?? [], ctxWithSelectors);
+  const renderedChildren = renderChildren(normalizeChildren(node.children), ctxWithSelectors);
 
   // ── 6. Wrap with effects if needed ────────────────────────────────────────
   const content = (
@@ -123,6 +135,11 @@ const renderChildren = (
   }
 
   return nodes.length === 0 ? undefined : nodes.length === 1 ? nodes[0] : nodes;
+};
+
+const normalizeChildren = (children: ComponentNode['children'] | ChildNode): ChildNode[] => {
+  if (children === null || children === undefined) return [];
+  return Array.isArray(children) ? children : [children];
 };
 
 const renderChild = (child: ChildNode, ctx: RuntimeContext, key: number): React.ReactNode => {

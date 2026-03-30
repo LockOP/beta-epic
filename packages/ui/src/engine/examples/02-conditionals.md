@@ -160,23 +160,23 @@ state.loading
 {
   "component": "Badge",
   "props": {
-    "label": { "$ref": "page.store:status" },
-    "color": {
+    "variant": {
       "$switch": {
         "on": { "$ref": "page.store:status" },
         "cases": {
-          "active":  "green",
-          "pending": "amber",
-          "error":   "red"
+          "active":  "default",
+          "pending": "secondary",
+          "error":   "destructive"
         },
-        "default": "gray"
+        "default": "outline"
       }
     }
-  }
+  },
+  "children": [{ "$ref": "page.store:status" }]
 }
 ```
 
 ```jsx
-const colorMap = { active: "green", pending: "amber", error: "red" }
-<Badge label={state.status} color={colorMap[state.status] ?? "gray"} />
+const variantMap = { active: "default", pending: "secondary", error: "destructive" }
+<Badge variant={variantMap[state.status] ?? "outline"}>{state.status}</Badge>
 ```

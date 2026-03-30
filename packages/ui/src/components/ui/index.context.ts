@@ -33,6 +33,7 @@ import { JsonViewerContext } from "./json-viewer";
 import { KbdContext } from "./kbd";
 import { LabelContext } from "./label";
 import { MenubarContext } from "./menubar";
+import { NativeHtmlContext } from "./native-html.context";
 import { NativeSelectContext } from "./native-select";
 import { NavigationMenuContext } from "./navigation-menu";
 import { PaginationContext } from "./pagination";
@@ -96,6 +97,7 @@ export const UIComponentContext = {
   ...KbdContext,
   ...LabelContext,
   ...MenubarContext,
+  ...NativeHtmlContext,
   ...NativeSelectContext,
   ...NavigationMenuContext,
   ...PaginationContext,

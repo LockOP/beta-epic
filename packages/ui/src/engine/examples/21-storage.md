@@ -128,20 +128,20 @@ useEffect(() => {
 
 ```json
 {
-  "component": "Select",
+  "component": "NativeSelect",
   "props": {
     "value": { "$ref": "page.store:theme" },
-    "options": [
-      { "label": "Light", "value": "light" },
-      { "label": "Dark",  "value": "dark" }
-    ],
     "onChange": {
       "$action": [
         { "type": "page.store.update", "path": "theme", "payload": { "$ref": "event.value" } },
         { "type": "local.set",         "key": "theme",  "payload": { "$ref": "event.value" } }
       ]
     }
-  }
+  },
+  "children": [
+    { "component": "NativeSelectOption", "props": { "value": "light" }, "children": ["Light"] },
+    { "component": "NativeSelectOption", "props": { "value": "dark" }, "children": ["Dark"] }
+  ]
 }
 ```
 

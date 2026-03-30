@@ -28,21 +28,21 @@ This means you can declare selectors on any node — not just the root — keepi
 
 ```json
 {
-  "component": "Stack",
+  "component": "Card",
   "selectors": {
     "fullName": {
       "$concat": [{ "$ref": "page.store:firstName" }, " ", { "$ref": "page.store:lastName" }]
     }
   },
   "children": [
-    { "component": "Text", "props": { "content": { "$ref": "selectors:fullName" } } }
+    { "component": "P", "children": [{ "$ref": "selectors:fullName" }] }
   ]
 }
 ```
 
 ```js
 const fullName = `${state.firstName} ${state.lastName}`
-// available to Text and any other descendant of Stack
+// available to P and any other descendant of Card
 ```
 
 ---
@@ -51,12 +51,12 @@ const fullName = `${state.firstName} ${state.lastName}`
 
 ```json
 {
-  "component": "Stack",
+  "component": "Card",
   "selectors": {
     "itemCount": { "$count": { "$ref": "page.store:items" } }
   },
   "children": [
-    { "component": "Badge", "props": { "label": { "$ref": "selectors:itemCount" } } }
+    { "component": "Badge", "children": [{ "$ref": "selectors:itemCount" }] }
   ]
 }
 ```
@@ -71,7 +71,7 @@ const itemCount = state.items.length
 
 ```json
 {
-  "component": "Stack",
+  "component": "Card",
   "selectors": {
     "activeUsers": {
       "$filter": {
@@ -82,10 +82,7 @@ const itemCount = state.items.length
     }
   },
   "children": [
-    {
-      "component": "List",
-      "props": { "items": { "$ref": "selectors:activeUsers" } }
-    }
+    { "$map": { "over": { "$ref": "selectors:activeUsers" }, "as": "user", "return": { "component": "P", "children": [{ "$ref": "var:user.name" }] } } }
   ]
 }
 ```
@@ -102,7 +99,7 @@ Selectors can reference other selectors via `selectors:`. Evaluated in declarati
 
 ```json
 {
-  "component": "Stack",
+  "component": "Card",
   "selectors": {
     "filteredItems": {
       "$filter": {
@@ -117,7 +114,7 @@ Selectors can reference other selectors via `selectors:`. Evaluated in declarati
     "hasResults":    { "$gt": { "a": { "$ref": "selectors:filteredCount" }, "b": 0 } }
   },
   "children": [
-    { "component": "Text",    "props": { "content": { "$ref": "selectors:filteredCount" } } },
+    { "component": "P",       "children": [{ "$ref": "selectors:filteredCount" }] },
     { "component": "Results", "props": { "items":   { "$ref": "selectors:filteredItems" }, "empty": { "$not": { "$ref": "selectors:hasResults" } } } }
   ]
 }
@@ -228,7 +225,7 @@ const total    = subtotal + tax
     }
   },
   "children": [
-    { "component": "Button", "props": { "label": "Submit", "disabled": { "$not": { "$ref": "selectors:canSubmit" } } } }
+    { "component": "Button", "props": { "disabled": { "$not": { "$ref": "selectors:canSubmit" } } }, "children": ["Submit"] }
   ]
 }
 ```
@@ -259,7 +256,7 @@ If a child node declares a selector with the same name as an ancestor, the child
         "label": { "$concat": ["Widget: ", { "$ref": "page.store:widgetName" }] }
       },
       "children": [
-        { "component": "Text", "props": { "content": { "$ref": "selectors:label" } } }
+        { "component": "P", "children": [{ "$ref": "selectors:label" }] }
       ]
     }
   ]

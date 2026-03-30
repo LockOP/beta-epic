@@ -13,7 +13,7 @@
     "displayName": { "$nullish": { "value": { "$ref": "page.store:user.name" }, "default": "Guest" } }
   },
   "children": [
-    { "component": "Text", "props": { "content": { "$ref": "var:displayName" } } }
+    { "component": "P", "children": [{ "$ref": "var:displayName" }] }
   ]
 }
 ```
@@ -21,7 +21,7 @@
 ```jsx
 const displayName = state.user?.name ?? "Guest"
 <Card>
-  <Text content={displayName} />
+  <P>{displayName}</P>
 </Card>
 ```
 
@@ -41,8 +41,8 @@ const displayName = state.user?.name ?? "Guest"
     }
   },
   "children": [
-    { "component": "Text",  "props": { "content": { "$concat": ["$", { "$string": { "$ref": "var:discountedPrice" } }] } } },
-    { "component": "Badge", "props": { "label":   { "$concat": ["Save $", { "$string": { "$ref": "var:savings" } }] } } }
+    { "component": "P",     "children": [{ "$concat": ["$", { "$string": { "$ref": "var:discountedPrice" } }] }] },
+    { "component": "Badge", "children": [{ "$concat": ["Save $", { "$string": { "$ref": "var:savings" } }] }] }
   ]
 }
 ```
@@ -51,8 +51,8 @@ const displayName = state.user?.name ?? "Guest"
 const discountedPrice = Math.round(product.price * 0.85)
 const savings         = Math.round(product.price - discountedPrice)
 <ProductCard>
-  <Text content={`$${discountedPrice}`} />
-  <Badge label={`Save $${savings}`} />
+  <P>{`$${discountedPrice}`}</P>
+  <Badge>{`Save $${savings}`}</Badge>
 </ProductCard>
 ```
 
@@ -64,14 +64,14 @@ Inside `$map`, the `as` variable is automatically available as `var:<as>`.
 
 ```json
 {
-  "component": "List",
+  "component": "Card",
   "children": [
     {
       "$map": {
         "over": { "$ref": "page.store:orders" },
         "as": "order",
         "return": {
-          "component": "Row",
+          "component": "P",
           "env": {
             "total": {
               "$reduce": {
@@ -83,10 +83,9 @@ Inside `$map`, the `as` variable is automatically available as `var:<as>`.
               }
             }
           },
-          "props": {
-            "label": { "$ref": "var:order.id" },
-            "sub":   { "$concat": ["Total: $", { "$string": { "$ref": "var:total" } }] }
-          }
+          "children": [
+            { "$concat": [{ "$ref": "var:order.id" }, " - Total: $", { "$string": { "$ref": "var:total" } }] }
+          ]
         }
       }
     }
@@ -97,7 +96,7 @@ Inside `$map`, the `as` variable is automatically available as `var:<as>`.
 ```jsx
 state.orders.map(order => {
   const total = order.items.reduce((sum, item) => sum + item.price, 0)
-  return <Row label={order.id} sub={`Total: $${total}`} />
+  return <P>{`${order.id} - Total: $${total}`}</P>
 })
 ```
 
@@ -107,7 +106,7 @@ state.orders.map(order => {
 
 ```json
 {
-  "component": "Section",
+  "component": "Card",
   "env": {
     "isAdmin": { "$eq": { "a": { "$ref": "page.store:user.role" }, "b": "admin" } }
   },
@@ -124,7 +123,7 @@ state.orders.map(order => {
         }
       },
       "children": [
-        { "component": "Text", "props": { "content": { "$ref": "var:label" } } }
+        { "component": "P", "children": [{ "$ref": "var:label" }] }
       ]
     }
   ]
@@ -133,14 +132,14 @@ state.orders.map(order => {
 
 ```jsx
 const isAdmin = state.user.role === "admin"
-// isAdmin is in scope for the whole Section subtree
+// isAdmin is in scope for the whole Card subtree
 
 const label = isAdmin ? "Admin Dashboard" : "Dashboard"
-<Section>
+<Card>
   <Card>
-    <Text content={label} />
+    <P>{label}</P>
   </Card>
-</Section>
+</Card>
 ```
 
 ---
@@ -149,29 +148,29 @@ const label = isAdmin ? "Admin Dashboard" : "Dashboard"
 
 ```json
 {
-  "component": "StatusBadge",
+  "component": "Badge",
   "env": {
     "variant": {
       "$switch": {
         "on": { "$ref": "page.store:status" },
         "cases": {
-          "active":  "success",
-          "pending": "warning",
+          "active":  "default",
+          "pending": "secondary",
           "error":   "destructive"
         },
-        "default": "secondary"
+        "default": "outline"
       }
     }
   },
   "props": {
-    "label":   { "$ref": "page.store:status" },
     "variant": { "$ref": "var:variant" }
-  }
+  },
+  "children": [{ "$ref": "page.store:status" }]
 }
 ```
 
 ```jsx
-const variantMap = { active: "success", pending: "warning", error: "destructive" }
-const variant = variantMap[state.status] ?? "secondary"
-<StatusBadge label={state.status} variant={variant} />
+const variantMap = { active: "default", pending: "secondary", error: "destructive" }
+const variant = variantMap[state.status] ?? "outline"
+<Badge variant={variant}>{state.status}</Badge>
 ```

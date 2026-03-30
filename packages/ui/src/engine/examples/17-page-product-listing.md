@@ -25,11 +25,11 @@ Search + filter + sort + pagination + async fetch. Persists sort preference to l
 
 ## DSL config
 
-`selectors` are declared on the root `Stack` node — they flow down to all children but are invisible to anything above this node.
+`selectors` are declared on the root `Card` node — they flow down to all children but are invisible to anything above this node.
 
 ```json
 {
-  "component": "Stack",
+  "component": "Card",
   "selectors": {
     "filtered": {
       "$filter": {
@@ -146,25 +146,25 @@ Search + filter + sort + pagination + async fetch. Persists sort preference to l
       "props": { "justify": "space-between" },
       "children": [
         {
-          "component": "Text",
-          "props": { "content": { "$ref": "selectors:resultLabel" } }
+          "component": "P",
+          "children": [{ "$ref": "selectors:resultLabel" }]
         },
         {
-          "component": "Select",
+          "component": "NativeSelect",
           "props": {
             "value": { "$ref": "page.store:sortBy" },
-            "options": [
-              { "label": "Price",  "value": "price" },
-              { "label": "Name",   "value": "name" },
-              { "label": "Rating", "value": "rating" }
-            ],
             "onChange": {
               "$action": [
                 { "type": "page.store.update", "path": "sortBy", "payload": { "$ref": "event.value" } },
                 { "type": "page.store.update", "path": "page",   "payload": 0 }
               ]
             }
-          }
+          },
+          "children": [
+            { "component": "NativeSelectOption", "props": { "value": "price" }, "children": ["Price"] },
+            { "component": "NativeSelectOption", "props": { "value": "name" }, "children": ["Name"] },
+            { "component": "NativeSelectOption", "props": { "value": "rating" }, "children": ["Rating"] }
+          ]
         }
       ]
     },

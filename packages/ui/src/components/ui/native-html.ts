@@ -1,0 +1,5 @@
+export const div = "div"
+export const span = "span"
+export const section = "section"
+export const main = "main"
+export const form = "form"
