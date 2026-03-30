@@ -120,26 +120,42 @@ export const TableContext = {
   sub-components: TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption
   children: yes
   + all native <table> props
+  ---
+  example config: { component: "Table", children: [{ component: "TableHeader", children: ["Content"] }] }
   `.trim(),
   TableHeader: `
   Sub-component of Table.
+  ---
+  example config: { component: "TableHeader", children: ["Content"] }
   `.trim(),
   TableBody: `
   Sub-component of Table.
+  ---
+  example config: { component: "TableBody", children: ["Content"] }
   `.trim(),
   TableFooter: `
   Sub-component of Table.
+  ---
+  example config: { component: "TableFooter", children: ["Content"] }
   `.trim(),
   TableHead: `
   Sub-component of Table.
+  ---
+  example config: { component: "TableHead", children: ["Header"] }
   `.trim(),
   TableRow: `
   Sub-component of Table.
+  ---
+  example config: { component: "TableRow", children: ["Content"] }
   `.trim(),
   TableCell: `
   Sub-component of Table.
+  ---
+  example config: { component: "TableCell", children: ["Cell"] }
   `.trim(),
   TableCaption: `
   Sub-component of Table.
+  ---
+  example config: { component: "TableCaption", children: ["Table caption"] }
   `.trim(),
 }

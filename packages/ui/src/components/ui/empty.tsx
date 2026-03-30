@@ -109,20 +109,32 @@ export const EmptyContext = {
   EmptyMedia: variant?: "default"* | "icon"
   children: yes
   + all native <div> props
+  ---
+  example config: { component: "Empty", children: [{ component: "EmptyHeader", children: ["Content"] }] }
   `.trim(),
   EmptyHeader: `
   Sub-component of Empty.
+  ---
+  example config: { component: "EmptyHeader", children: ["Content"] }
   `.trim(),
   EmptyTitle: `
   Sub-component of Empty.
+  ---
+  example config: { component: "EmptyTitle", children: ["Title"] }
   `.trim(),
   EmptyDescription: `
   Sub-component of Empty.
+  ---
+  example config: { component: "EmptyDescription", children: ["Description text"] }
   `.trim(),
   EmptyContent: `
   Sub-component of Empty.
+  ---
+  example config: { component: "EmptyContent", children: ["Content"] }
   `.trim(),
   EmptyMedia: `
   EmptyMedia: variant?: "default"* | "icon"
+  ---
+  example config: { component: "EmptyMedia", props: { variant: "default" } }
   `.trim(),
 }

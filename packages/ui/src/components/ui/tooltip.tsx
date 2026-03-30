@@ -62,14 +62,22 @@ export const TooltipContext = {
   TooltipProvider: delayDuration?: number = 0
   TooltipContent: sideOffset?: number = 0
   children: yes
+  ---
+  example config: { component: "Tooltip", children: [{ component: "TooltipProvider", children: ["Content"] }] }
   `.trim(),
   TooltipProvider: `
   TooltipProvider: delayDuration?: number = 0
+  ---
+  example config: { component: "TooltipProvider", props: { delayDuration: 0 } }
   `.trim(),
   TooltipTrigger: `
   Sub-component of Tooltip.
+  ---
+  example config: { component: "TooltipTrigger", children: ["Open"] }
   `.trim(),
   TooltipContent: `
   TooltipContent: sideOffset?: number = 0
+  ---
+  example config: { component: "TooltipContent", props: { sideOffset: 0 } }
   `.trim(),
 }

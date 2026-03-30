@@ -57,11 +57,17 @@ export const NativeSelectContext = {
   size?: "default"* | "sm"
   children: yes
   + all native <select> props (value, onChange, disabled, multiple, …)
+  ---
+  example config: { component: "NativeSelect", props: { size: "default" }, children: [{ component: "NativeSelectOptGroup", children: ["Content"] }] }
   `.trim(),
   NativeSelectOptGroup: `
   Sub-component of NativeSelect.
+  ---
+  example config: { component: "NativeSelectOptGroup", children: ["Content"] }
   `.trim(),
   NativeSelectOption: `
   Sub-component of NativeSelect.
+  ---
+  example config: { component: "NativeSelectOption", children: ["Option"] }
   `.trim(),
 }

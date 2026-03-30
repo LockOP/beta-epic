@@ -87,14 +87,22 @@ export const AccordionContext = {
   collapsible?: boolean
   children: yes
   + all native <div> props
+  ---
+  example config: { component: "Accordion", props: { type: "single", collapsible: true }, children: [{ component: "AccordionItem", children: [{ component: "AccordionTrigger", children: ["Account"] }, { component: "AccordionContent", children: ["Manage your account settings."] }] }] }
   `.trim(),
   AccordionItem: `
   Sub-component of Accordion.
+  ---
+  example config: { component: "AccordionItem", children: ["Content"] }
   `.trim(),
   AccordionTrigger: `
   Sub-component of Accordion.
+  ---
+  example config: { component: "AccordionTrigger", children: ["Open"] }
   `.trim(),
   AccordionContent: `
   Sub-component of Accordion.
+  ---
+  example config: { component: "AccordionContent", children: ["Content"] }
   `.trim(),
 }

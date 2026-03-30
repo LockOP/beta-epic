@@ -136,5 +136,7 @@ export const JsonViewerContext = {
   collapsed?: boolean | number = 1
   enableClipboard?: boolean = true
   editable?: boolean = false
+  ---
+  example config: { component: "JsonViewer", props: { data: { ok: true }, name: "root", collapsed: 1, enableClipboard: true, editable: false } }
   `.trim(),
 }

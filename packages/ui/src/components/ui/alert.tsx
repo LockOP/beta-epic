@@ -81,14 +81,22 @@ export const AlertContext = {
   variant: "default"* | "destructive"
   children: yes
   + all native <div> props
+  ---
+  example config: { component: "Alert", props: { variant: "default" }, children: [{ component: "AlertTitle", children: ["Heads up"] }, { component: "AlertDescription", children: ["This action cannot be undone."] }] }
   `.trim(),
   AlertTitle: `
   Sub-component of Alert.
+  ---
+  example config: { component: "AlertTitle", children: ["Title"] }
   `.trim(),
   AlertDescription: `
   Sub-component of Alert.
+  ---
+  example config: { component: "AlertDescription", children: ["Description text"] }
   `.trim(),
   AlertAction: `
   Sub-component of Alert.
+  ---
+  example config: { component: "AlertAction", children: ["Action"] }
   `.trim(),
 }

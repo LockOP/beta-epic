@@ -1,11 +1,7 @@
-/**
- * Aggregates all tool executors into a single dispatcher.
- *
- * To add a new tool: create its file, import execute here, add a case to executeTool.
- */
-import { execute as executeGetUserInfo } from "./tool.get-user-info"
-import { execute as executeGetUserLocation } from "./tool.get-user-location"
-import { execute as executeCalculatePersonalLuck } from "./tool.calculate-personal-luck"
+import { execute as executeGetAllComponents } from "./tool.get-all-components"
+import { execute as executeGetComponentContext } from "./tool.get-component-context"
+import { execute as executeGetAllIcons } from "./tool.get-all-icons"
+import { execute as executeGetIconContext } from "./tool.get-icon-context"
 
 export interface ToolInteraction {
   callId: string
@@ -19,12 +15,14 @@ export function executeTool(
   args: Record<string, unknown>,
 ): Record<string, unknown> {
   switch (name) {
-    case "get_user_info":
-      return executeGetUserInfo()
-    case "get_user_location":
-      return executeGetUserLocation()
-    case "calculate_personal_luck":
-      return executeCalculatePersonalLuck(args.age as number)
+    case "get_all_components":
+      return executeGetAllComponents()
+    case "get_component_context":
+      return executeGetComponentContext(args.name as string)
+    case "get_all_icons":
+      return executeGetAllIcons()
+    case "get_icon_context":
+      return executeGetIconContext(args.name as string)
     default:
       return { error: `Unknown tool: ${name}` }
   }

@@ -248,17 +248,27 @@ export const CarouselContext = {
   CarouselPrevious/Next: variant?: string = "outline", size?: string = "icon-sm"
   children: yes
   + all native <div> props
+  ---
+  example config: { component: "Carousel", props: { orientation: "horizontal" }, children: [{ component: "CarouselContent", children: ["Content"] }] }
   `.trim(),
   CarouselContent: `
   Sub-component of Carousel.
+  ---
+  example config: { component: "CarouselContent", children: ["Content"] }
   `.trim(),
   CarouselItem: `
   Sub-component of Carousel.
+  ---
+  example config: { component: "CarouselItem", children: ["Content"] }
   `.trim(),
   CarouselPrevious: `
   CarouselPrevious/Next: variant?: string = "outline", size?: string = "icon-sm"
+  ---
+  example config: { component: "CarouselPrevious" }
   `.trim(),
   CarouselNext: `
   Sub-component of Carousel.
+  ---
+  example config: { component: "CarouselNext" }
   `.trim(),
 }

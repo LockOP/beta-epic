@@ -708,71 +708,117 @@ export const SidebarContext = {
   Sidebar: side?: "left"* | "right", variant?: "sidebar"* | "floating" | "inset", collapsible?: "offcanvas"* | "icon" | "none"
   SidebarMenuButton: isActive?: boolean = false, tooltip?: string, showOnHover?: boolean = false, variant?: "default"* | "outline"
   children: yes
+  ---
+  example config: { component: "Sidebar", props: { side: "left" }, children: [{ component: "SidebarProvider", children: ["Content"] }] }
   `.trim(),
   SidebarProvider: `
   SidebarProvider: defaultOpen?: boolean = true, open?: boolean, onOpenChange?: (open: boolean) => void
+  ---
+  example config: { component: "SidebarProvider" }
   `.trim(),
   SidebarContent: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarContent", children: ["Content"] }
   `.trim(),
   SidebarFooter: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarFooter", children: ["Content"] }
   `.trim(),
   SidebarGroup: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarGroup", children: ["Content"] }
   `.trim(),
   SidebarGroupAction: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarGroupAction", children: ["Action"] }
   `.trim(),
   SidebarGroupContent: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarGroupContent", children: ["Content"] }
   `.trim(),
   SidebarGroupLabel: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarGroupLabel", children: ["Label"] }
   `.trim(),
   SidebarHeader: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarHeader", children: ["Content"] }
   `.trim(),
   SidebarInput: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarInput", children: ["Content"] }
   `.trim(),
   SidebarInset: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarInset", children: ["Content"] }
   `.trim(),
   SidebarMenu: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarMenu", children: ["Content"] }
   `.trim(),
   SidebarMenuAction: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarMenuAction", children: ["Action"] }
   `.trim(),
   SidebarMenuBadge: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarMenuBadge", children: ["3"] }
   `.trim(),
   SidebarMenuButton: `
   SidebarMenuButton: isActive?: boolean = false, tooltip?: string, showOnHover?: boolean = false, variant?: "default"* | "outline"
+  ---
+  example config: { component: "SidebarMenuButton", props: { isActive: false, tooltip?: string, showOnHover?: boolean = false, variant?: "default"* | "outline" } }
   `.trim(),
   SidebarMenuItem: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarMenuItem", children: ["Content"] }
   `.trim(),
   SidebarMenuSkeleton: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarMenuSkeleton", children: ["Content"] }
   `.trim(),
   SidebarMenuSub: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarMenuSub", children: ["Content"] }
   `.trim(),
   SidebarMenuSubButton: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarMenuSubButton", children: ["Button"] }
   `.trim(),
   SidebarMenuSubItem: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarMenuSubItem", children: ["Content"] }
   `.trim(),
   SidebarRail: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarRail" }
   `.trim(),
   SidebarSeparator: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarSeparator" }
   `.trim(),
   SidebarTrigger: `
   Sub-component of Sidebar.
+  ---
+  example config: { component: "SidebarTrigger", children: ["Open"] }
   `.trim(),
 }

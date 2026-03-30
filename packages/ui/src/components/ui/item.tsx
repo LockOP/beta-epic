@@ -204,32 +204,52 @@ export const ItemContext = {
   ItemMedia: variant?: "default"* | "icon" | "image"
   children: yes
   + all native <div> props
+  ---
+  example config: { component: "Item", props: { variant: "default", size: "default", asChild: false }, children: [{ component: "ItemMedia", children: ["Content"] }] }
   `.trim(),
   ItemMedia: `
   ItemMedia: variant?: "default"* | "icon" | "image"
+  ---
+  example config: { component: "ItemMedia", props: { variant: "default" } }
   `.trim(),
   ItemContent: `
   Sub-component of Item.
+  ---
+  example config: { component: "ItemContent", children: ["Content"] }
   `.trim(),
   ItemActions: `
   Sub-component of Item.
+  ---
+  example config: { component: "ItemActions", children: ["Content"] }
   `.trim(),
   ItemGroup: `
   Sub-component of Item.
+  ---
+  example config: { component: "ItemGroup", children: ["Content"] }
   `.trim(),
   ItemSeparator: `
   Sub-component of Item.
+  ---
+  example config: { component: "ItemSeparator" }
   `.trim(),
   ItemTitle: `
   Sub-component of Item.
+  ---
+  example config: { component: "ItemTitle", children: ["Title"] }
   `.trim(),
   ItemDescription: `
   Sub-component of Item.
+  ---
+  example config: { component: "ItemDescription", children: ["Description text"] }
   `.trim(),
   ItemHeader: `
   Sub-component of Item.
+  ---
+  example config: { component: "ItemHeader", children: ["Content"] }
   `.trim(),
   ItemFooter: `
   Sub-component of Item.
+  ---
+  example config: { component: "ItemFooter", children: ["Content"] }
   `.trim(),
 }

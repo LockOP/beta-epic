@@ -203,29 +203,47 @@ export const AlertDialogContext = {
   sub-components: AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogFooter, AlertDialogTitle, AlertDialogDescription, AlertDialogAction, AlertDialogCancel
   AlertDialogContent: size?: "default"* | "sm"
   children: yes
+  ---
+  example config: { component: "AlertDialog", children: [{ component: "AlertDialogTrigger", children: ["Open"] }] }
   `.trim(),
   AlertDialogTrigger: `
   Sub-component of AlertDialog.
+  ---
+  example config: { component: "AlertDialogTrigger", children: ["Open"] }
   `.trim(),
   AlertDialogContent: `
   AlertDialogContent: size?: "default"* | "sm"
+  ---
+  example config: { component: "AlertDialogContent", props: { size: "default" } }
   `.trim(),
   AlertDialogHeader: `
   Sub-component of AlertDialog.
+  ---
+  example config: { component: "AlertDialogHeader", children: ["Content"] }
   `.trim(),
   AlertDialogFooter: `
   Sub-component of AlertDialog.
+  ---
+  example config: { component: "AlertDialogFooter", children: ["Content"] }
   `.trim(),
   AlertDialogTitle: `
   Sub-component of AlertDialog.
+  ---
+  example config: { component: "AlertDialogTitle", children: ["Title"] }
   `.trim(),
   AlertDialogDescription: `
   Sub-component of AlertDialog.
+  ---
+  example config: { component: "AlertDialogDescription", children: ["Description text"] }
   `.trim(),
   AlertDialogAction: `
   Sub-component of AlertDialog.
+  ---
+  example config: { component: "AlertDialogAction", children: ["Action"] }
   `.trim(),
   AlertDialogCancel: `
   Sub-component of AlertDialog.
+  ---
+  example config: { component: "AlertDialogCancel", children: ["Content"] }
   `.trim(),
 }

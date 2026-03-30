@@ -1,11 +1,11 @@
-/**
- * Aggregates all tool definitions into a single array injected into the
- * OpenAI Responses API `tools` parameter.
- *
- * To add a new tool: create its file, import the definition here, add to the array.
- */
-import { definition as getUserInfo } from "./tool.get-user-info"
-import { definition as getUserLocation } from "./tool.get-user-location"
-import { definition as calculatePersonalLuck } from "./tool.calculate-personal-luck"
+import { definition as getAllComponents } from "./tool.get-all-components"
+import { definition as getComponentContext } from "./tool.get-component-context"
+import { definition as getAllIcons } from "./tool.get-all-icons"
+import { definition as getIconContext } from "./tool.get-icon-context"
 
-export const TOOL_DEFINITIONS = [getUserInfo, getUserLocation, calculatePersonalLuck]
+export const TOOL_DEFINITIONS = [
+  getAllComponents,
+  getComponentContext,
+  getAllIcons,
+  getIconContext,
+]

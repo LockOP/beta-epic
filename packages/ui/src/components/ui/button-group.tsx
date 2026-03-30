@@ -89,11 +89,17 @@ export const ButtonGroupContext = {
   asChild?: boolean = false
   children: yes
   + all native <div> props
+  ---
+  example config: { component: "ButtonGroup", props: { orientation: "horizontal", asChild: false }, children: [{ component: "ButtonGroupSeparator" }] }
   `.trim(),
   ButtonGroupSeparator: `
   Sub-component of ButtonGroup.
+  ---
+  example config: { component: "ButtonGroupSeparator" }
   `.trim(),
   ButtonGroupText: `
   Sub-component of ButtonGroup.
+  ---
+  example config: { component: "ButtonGroupText", children: ["Text"] }
   `.trim(),
 }

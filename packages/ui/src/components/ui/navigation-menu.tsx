@@ -168,26 +168,42 @@ export const NavigationMenuContext = {
   sub-components: NavigationMenuList, NavigationMenuItem, NavigationMenuContent, NavigationMenuTrigger, NavigationMenuLink, NavigationMenuIndicator, NavigationMenuViewport
   viewport?: boolean = true
   children: yes
+  ---
+  example config: { component: "NavigationMenu", props: { viewport: true }, children: [{ component: "NavigationMenuList", children: ["Content"] }] }
   `.trim(),
   NavigationMenuList: `
   Sub-component of NavigationMenu.
+  ---
+  example config: { component: "NavigationMenuList", children: ["Content"] }
   `.trim(),
   NavigationMenuItem: `
   Sub-component of NavigationMenu.
+  ---
+  example config: { component: "NavigationMenuItem", children: ["Content"] }
   `.trim(),
   NavigationMenuContent: `
   Sub-component of NavigationMenu.
+  ---
+  example config: { component: "NavigationMenuContent", children: ["Content"] }
   `.trim(),
   NavigationMenuTrigger: `
   Sub-component of NavigationMenu.
+  ---
+  example config: { component: "NavigationMenuTrigger", children: ["Open"] }
   `.trim(),
   NavigationMenuLink: `
   Sub-component of NavigationMenu.
+  ---
+  example config: { component: "NavigationMenuLink", children: ["Link"] }
   `.trim(),
   NavigationMenuIndicator: `
   Sub-component of NavigationMenu.
+  ---
+  example config: { component: "NavigationMenuIndicator" }
   `.trim(),
   NavigationMenuViewport: `
   Sub-component of NavigationMenu.
+  ---
+  example config: { component: "NavigationMenuViewport", children: ["Content"] }
   `.trim(),
 }

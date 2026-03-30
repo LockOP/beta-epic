@@ -48,11 +48,17 @@ export const HoverCardContext = {
   sub-components: HoverCardTrigger, HoverCardContent
   HoverCardContent: align?: string = "center", sideOffset?: number = 4
   children: yes
+  ---
+  example config: { component: "HoverCard", children: [{ component: "HoverCardTrigger", children: ["Open"] }] }
   `.trim(),
   HoverCardTrigger: `
   Sub-component of HoverCard.
+  ---
+  example config: { component: "HoverCardTrigger", children: ["Open"] }
   `.trim(),
   HoverCardContent: `
   HoverCardContent: align?: string = "center", sideOffset?: number = 4
+  ---
+  example config: { component: "HoverCardContent", props: { align: "center", sideOffset?: number = 4 } }
   `.trim(),
 }

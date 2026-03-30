@@ -172,26 +172,42 @@ export const DialogContext = {
   sub-components: DialogTrigger, DialogContent, DialogHeader, DialogFooter, DialogTitle, DialogDescription, DialogClose
   DialogContent: showCloseButton?: boolean = true
   children: yes
+  ---
+  example config: { component: "Dialog", children: [{ component: "DialogTrigger", children: ["Open"] }] }
   `.trim(),
   DialogTrigger: `
   Sub-component of Dialog.
+  ---
+  example config: { component: "DialogTrigger", children: ["Open"] }
   `.trim(),
   DialogContent: `
   DialogContent: showCloseButton?: boolean = true
+  ---
+  example config: { component: "DialogContent", props: { showCloseButton: true } }
   `.trim(),
   DialogHeader: `
   Sub-component of Dialog.
+  ---
+  example config: { component: "DialogHeader", children: ["Content"] }
   `.trim(),
   DialogFooter: `
   Sub-component of Dialog.
+  ---
+  example config: { component: "DialogFooter", children: ["Content"] }
   `.trim(),
   DialogTitle: `
   Sub-component of Dialog.
+  ---
+  example config: { component: "DialogTitle", children: ["Title"] }
   `.trim(),
   DialogDescription: `
   Sub-component of Dialog.
+  ---
+  example config: { component: "DialogDescription", children: ["Description text"] }
   `.trim(),
   DialogClose: `
   Sub-component of Dialog.
+  ---
+  example config: { component: "DialogClose" }
   `.trim(),
 }

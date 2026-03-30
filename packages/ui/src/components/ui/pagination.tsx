@@ -134,23 +134,37 @@ export const PaginationContext = {
   PaginationLink: isActive?: boolean
   children: yes
   + all native <nav> props
+  ---
+  example config: { component: "Pagination", children: [{ component: "PaginationContent", children: ["Content"] }] }
   `.trim(),
   PaginationContent: `
   Sub-component of Pagination.
+  ---
+  example config: { component: "PaginationContent", children: ["Content"] }
   `.trim(),
   PaginationItem: `
   Sub-component of Pagination.
+  ---
+  example config: { component: "PaginationItem", children: ["Content"] }
   `.trim(),
   PaginationLink: `
   PaginationLink: isActive?: boolean
+  ---
+  example config: { component: "PaginationLink", props: { isActive: true } }
   `.trim(),
   PaginationPrevious: `
   Sub-component of Pagination.
+  ---
+  example config: { component: "PaginationPrevious" }
   `.trim(),
   PaginationNext: `
   Sub-component of Pagination.
+  ---
+  example config: { component: "PaginationNext" }
   `.trim(),
   PaginationEllipsis: `
   Sub-component of Pagination.
+  ---
+  example config: { component: "PaginationEllipsis" }
   `.trim(),
 }

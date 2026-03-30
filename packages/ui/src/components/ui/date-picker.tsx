@@ -53,5 +53,7 @@ export const DatePickerContext = {
   onChange?: (date: Date | undefined) => void
   placeholder?: string = "Pick a date"
   disabled?: boolean
+  ---
+  example config: { component: "DatePicker", props: { value: { $ref: "var:selectedDate" }, placeholder: "Pick a date", disabled: true } }
   `.trim(),
 }

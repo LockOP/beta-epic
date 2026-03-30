@@ -8,5 +8,7 @@ export const ToastContext = {
   duration?: number
   position?: string
   children: yes
+  ---
+  example config: { component: "ToastProvider", props: { duration: 1, position: "value" }, children: ["Content"] }
   `.trim(),
 }

@@ -22,5 +22,7 @@ export const InputContext = {
   Input: `
   type?: string
   + all native <input> props (value, onChange, placeholder, disabled, readOnly, …)
+  ---
+  example config: { component: "Input", props: { type: "value" } }
   `.trim(),
 }

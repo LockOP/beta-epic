@@ -25,5 +25,7 @@ export const DirectionContext = {
   DirectionProvider: `
   dir: "ltr" | "rtl"
   children: yes
+  ---
+  example config: { component: "DirectionProvider", props: { dir: "ltr" }, children: ["Content"] }
   `.trim(),
 }

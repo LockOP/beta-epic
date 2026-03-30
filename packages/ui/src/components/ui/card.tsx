@@ -108,23 +108,37 @@ export const CardContext = {
   size?: "default"* | "sm"
   children: yes
   + all native <div> props
+  ---
+  example config: { component: "Card", props: { size: "default" }, children: [{ component: "CardHeader", children: ["Content"] }] }
   `.trim(),
   CardHeader: `
   Sub-component of Card.
+  ---
+  example config: { component: "CardHeader", children: ["Content"] }
   `.trim(),
   CardTitle: `
   Sub-component of Card.
+  ---
+  example config: { component: "CardTitle", children: ["Title"] }
   `.trim(),
   CardDescription: `
   Sub-component of Card.
+  ---
+  example config: { component: "CardDescription", children: ["Description text"] }
   `.trim(),
   CardContent: `
   Sub-component of Card.
+  ---
+  example config: { component: "CardContent", children: ["Content"] }
   `.trim(),
   CardFooter: `
   Sub-component of Card.
+  ---
+  example config: { component: "CardFooter", children: ["Content"] }
   `.trim(),
   CardAction: `
   Sub-component of Card.
+  ---
+  example config: { component: "CardAction", children: ["Action"] }
   `.trim(),
 }

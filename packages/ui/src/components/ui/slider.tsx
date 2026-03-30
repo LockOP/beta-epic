@@ -68,5 +68,7 @@ export const SliderContext = {
   step?: number
   orientation?: "horizontal" | "vertical"
   disabled?: boolean
+  ---
+  example config: { component: "Slider", props: { value: [25], defaultValue: [25], min: 0, max: 100, step: 1, orientation: "horizontal", disabled: true } }
   `.trim(),
 }

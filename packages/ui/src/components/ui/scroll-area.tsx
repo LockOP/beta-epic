@@ -59,8 +59,12 @@ export const ScrollAreaContext = {
   sub-components: ScrollBar
   ScrollBar: orientation?: "vertical"* | "horizontal"
   children: yes
+  ---
+  example config: { component: "ScrollArea", children: [{ component: "ScrollBar", children: ["Content"] }] }
   `.trim(),
   ScrollBar: `
   ScrollBar: orientation?: "vertical"* | "horizontal"
+  ---
+  example config: { component: "ScrollBar", props: { orientation: "vertical" } }
   `.trim(),
 }

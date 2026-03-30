@@ -53,5 +53,7 @@ export const ToggleContext = {
   onPressedChange?: (pressed: boolean) => void
   children: yes
   + all native <button> props
+  ---
+  example config: { component: "Toggle", props: { variant: "default", size: "default", pressed: true }, children: ["Content"] }
   `.trim(),
 }

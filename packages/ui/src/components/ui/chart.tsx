@@ -379,20 +379,32 @@ export const ChartContext = {
   ChartTooltipContent: hideLabel?: boolean = false, hideIndicator?: boolean = false, indicator?: "line" | "dot"* | "dashed"
   children: yes
   + all native <div> props
+  ---
+  example config: { component: "ChartContainer", props: { config: { revenue: { label: "Revenue", color: "var(--chart-1)" } } }, children: [{ component: "ChartTooltip", children: ["Content"] }] }
   `.trim(),
   ChartTooltip: `
   Sub-component of ChartContainer.
+  ---
+  example config: { component: "ChartTooltip", children: ["Content"] }
   `.trim(),
   ChartTooltipContent: `
   ChartTooltipContent: hideLabel?: boolean = false, hideIndicator?: boolean = false, indicator?: "line" | "dot"* | "dashed"
+  ---
+  example config: { component: "ChartTooltipContent", props: { hideLabel: false, hideIndicator?: boolean = false, indicator?: "line" | "dot"* | "dashed" } }
   `.trim(),
   ChartLegend: `
   Sub-component of ChartContainer.
+  ---
+  example config: { component: "ChartLegend", children: ["Legend"] }
   `.trim(),
   ChartLegendContent: `
   Sub-component of ChartContainer.
+  ---
+  example config: { component: "ChartLegendContent", children: ["Content"] }
   `.trim(),
   ChartStyle: `
   Sub-component of ChartContainer.
+  ---
+  example config: { component: "ChartStyle", children: ["Content"] }
   `.trim(),
 }

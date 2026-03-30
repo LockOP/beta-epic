@@ -1,5 +1,6 @@
 import type { ComponentType } from '../types';
 import * as uiComponents from '../../components/ui';
+import * as iconComponents from '../../components/icons';
 
 const { cn: _cn, useCarousel: _useCarousel, ...dslComponents } = uiComponents;
 
@@ -12,4 +13,7 @@ const { cn: _cn, useCarousel: _useCarousel, ...dslComponents } = uiComponents;
  *   <GuiProvider components={{ MyCard, MyTable }}>
  */
 export const defaultComponentRegistry: Record<string, ComponentType> =
-  dslComponents as unknown as Record<string, ComponentType>;
+  {
+    ...(dslComponents as unknown as Record<string, ComponentType>),
+    ...(iconComponents as unknown as Record<string, ComponentType>),
+  };

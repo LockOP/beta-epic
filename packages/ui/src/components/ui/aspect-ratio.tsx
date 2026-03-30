@@ -14,5 +14,7 @@ export const AspectRatioContext = {
   AspectRatio: `
   ratio?: number
   children: yes
+  ---
+  example config: { component: "AspectRatio", props: { ratio: 1 }, children: ["Content"] }
   `.trim(),
 }

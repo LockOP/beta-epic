@@ -55,11 +55,17 @@ export const ResizableContext = {
   direction: "horizontal" | "vertical" (required)
   ResizableHandle: withHandle?: boolean
   children: yes
+  ---
+  example config: { component: "ResizablePanelGroup", props: { direction: "horizontal" }, children: [{ component: "ResizablePanel", children: ["Content"] }] }
   `.trim(),
   ResizablePanel: `
   Sub-component of ResizablePanelGroup.
+  ---
+  example config: { component: "ResizablePanel", children: ["Content"] }
   `.trim(),
   ResizableHandle: `
   ResizableHandle: withHandle?: boolean
+  ---
+  example config: { component: "ResizableHandle", props: { withHandle: true } }
   `.trim(),
 }

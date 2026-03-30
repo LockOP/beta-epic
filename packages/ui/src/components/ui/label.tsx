@@ -28,5 +28,7 @@ export const LabelContext = {
   htmlFor?: string
   children: yes
   + all native <label> props
+  ---
+  example config: { component: "Label", props: { htmlFor: "value" }, children: ["Label"] }
   `.trim(),
 }

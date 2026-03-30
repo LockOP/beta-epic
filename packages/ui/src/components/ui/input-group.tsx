@@ -162,20 +162,32 @@ export const InputGroupContext = {
   InputGroupButton: type?: string = "button", variant?: string = "ghost", size?: "xs"* | "sm" | "icon-xs" | "icon-sm"
   children: yes
   + all native <div> props
+  ---
+  example config: { component: "InputGroup", children: [{ component: "InputGroupAddon", children: ["Content"] }] }
   `.trim(),
   InputGroupAddon: `
   InputGroupAddon: align?: "inline-start"* | "inline-end" | "block-start" | "block-end"
+  ---
+  example config: { component: "InputGroupAddon", props: { align: "inline-start" } }
   `.trim(),
   InputGroupButton: `
   InputGroupButton: type?: string = "button", variant?: string = "ghost", size?: "xs"* | "sm" | "icon-xs" | "icon-sm"
+  ---
+  example config: { component: "InputGroupButton", props: { type: "button", variant?: string = "ghost", size?: "xs"* | "sm" | "icon-xs" | "icon-sm" } }
   `.trim(),
   InputGroupText: `
   Sub-component of InputGroup.
+  ---
+  example config: { component: "InputGroupText", children: ["Text"] }
   `.trim(),
   InputGroupInput: `
   Sub-component of InputGroup.
+  ---
+  example config: { component: "InputGroupInput", children: ["Content"] }
   `.trim(),
   InputGroupTextarea: `
   Sub-component of InputGroup.
+  ---
+  example config: { component: "InputGroupTextarea", children: ["Content"] }
   `.trim(),
 }

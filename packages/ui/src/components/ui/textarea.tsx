@@ -20,5 +20,7 @@ export { Textarea }
 export const TextareaContext = {
   Textarea: `
   + all native <textarea> props (value, onChange, placeholder, rows, disabled, readOnly, …)
+  ---
+  example config: { component: "Textarea", children: ["Content"] }
   `.trim(),
 }

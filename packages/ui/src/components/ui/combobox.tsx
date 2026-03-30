@@ -306,41 +306,67 @@ export const ComboboxContext = {
   disabled?: boolean = false
   showRemove?: boolean = true
   children: yes
+  ---
+  example config: { component: "Combobox", props: { showTrigger: true, showClear: false, disabled: false, showRemove: true }, children: [{ component: "ComboboxInput", children: ["Content"] }] }
   `.trim(),
   ComboboxInput: `
   Sub-component of Combobox.
+  ---
+  example config: { component: "ComboboxInput", children: ["Content"] }
   `.trim(),
   ComboboxContent: `
   Sub-component of Combobox.
+  ---
+  example config: { component: "ComboboxContent", children: ["Content"] }
   `.trim(),
   ComboboxList: `
   Sub-component of Combobox.
+  ---
+  example config: { component: "ComboboxList", children: ["Content"] }
   `.trim(),
   ComboboxItem: `
   Sub-component of Combobox.
+  ---
+  example config: { component: "ComboboxItem", children: ["Content"] }
   `.trim(),
   ComboboxGroup: `
   Sub-component of Combobox.
+  ---
+  example config: { component: "ComboboxGroup", children: ["Content"] }
   `.trim(),
   ComboboxLabel: `
   Sub-component of Combobox.
+  ---
+  example config: { component: "ComboboxLabel", children: ["Label"] }
   `.trim(),
   ComboboxEmpty: `
   Sub-component of Combobox.
+  ---
+  example config: { component: "ComboboxEmpty", children: ["Content"] }
   `.trim(),
   ComboboxSeparator: `
   Sub-component of Combobox.
+  ---
+  example config: { component: "ComboboxSeparator" }
   `.trim(),
   ComboboxChips: `
   Sub-component of Combobox.
+  ---
+  example config: { component: "ComboboxChips", children: ["Content"] }
   `.trim(),
   ComboboxChip: `
   Sub-component of Combobox.
+  ---
+  example config: { component: "ComboboxChip", children: ["Content"] }
   `.trim(),
   ComboboxTrigger: `
   Sub-component of Combobox.
+  ---
+  example config: { component: "ComboboxTrigger", children: ["Open"] }
   `.trim(),
   ComboboxValue: `
   Sub-component of Combobox.
+  ---
+  example config: { component: "ComboboxValue", children: ["Selected value"] }
   `.trim(),
 }

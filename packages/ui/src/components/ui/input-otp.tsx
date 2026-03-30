@@ -92,14 +92,22 @@ export const InputOTPContext = {
   maxLength: number (required)
   containerClassName?: string
   children: yes
+  ---
+  example config: { component: "InputOTP", props: { maxLength: 6, containerClassName: "value" }, children: [{ component: "InputOTPGroup", children: ["Content"] }] }
   `.trim(),
   InputOTPGroup: `
   Sub-component of InputOTP.
+  ---
+  example config: { component: "InputOTPGroup", children: ["Content"] }
   `.trim(),
   InputOTPSlot: `
   Sub-component of InputOTP.
+  ---
+  example config: { component: "InputOTPSlot", children: ["Content"] }
   `.trim(),
   InputOTPSeparator: `
   Sub-component of InputOTP.
+  ---
+  example config: { component: "InputOTPSeparator" }
   `.trim(),
 }

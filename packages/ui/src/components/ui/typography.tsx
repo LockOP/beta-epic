@@ -112,38 +112,62 @@ export const TypographyContext = {
   Each renders the appropriate semantic HTML element
   children: yes
   + all native element props
+  ---
+  example config: { component: "Typography", children: [{ component: "H1", children: ["Heading"] }] }
   `.trim(),
   H1: `
   Component in Typography family.
+  ---
+  example config: { component: "H1", children: ["Heading"] }
   `.trim(),
   H2: `
   Component in Typography family.
+  ---
+  example config: { component: "H2", children: ["Heading"] }
   `.trim(),
   H3: `
   Component in Typography family.
+  ---
+  example config: { component: "H3", children: ["Heading"] }
   `.trim(),
   H4: `
   Component in Typography family.
+  ---
+  example config: { component: "H4", children: ["Heading"] }
   `.trim(),
   P: `
   Component in Typography family.
+  ---
+  example config: { component: "P", children: ["Paragraph copy"] }
   `.trim(),
   Blockquote: `
   Component in Typography family.
+  ---
+  example config: { component: "Blockquote", children: ["Quoted text"] }
   `.trim(),
   InlineCode: `
   Component in Typography family.
+  ---
+  example config: { component: "InlineCode", children: ["npm run dev"] }
   `.trim(),
   Lead: `
   Component in Typography family.
+  ---
+  example config: { component: "Lead", children: ["Lead copy"] }
   `.trim(),
   Large: `
   Component in Typography family.
+  ---
+  example config: { component: "Large", children: ["Large text"] }
   `.trim(),
   Small: `
   Component in Typography family.
+  ---
+  example config: { component: "Small", children: ["Small text"] }
   `.trim(),
   Muted: `
   Component in Typography family.
+  ---
+  example config: { component: "Muted", children: ["Muted text"] }
   `.trim(),
 }

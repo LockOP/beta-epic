@@ -93,23 +93,37 @@ export const PopoverContext = {
   sub-components: PopoverTrigger, PopoverAnchor, PopoverContent, PopoverHeader, PopoverTitle, PopoverDescription
   PopoverContent: align?: string = "center", sideOffset?: number = 4
   children: yes
+  ---
+  example config: { component: "Popover", children: [{ component: "PopoverTrigger", children: ["Open"] }] }
   `.trim(),
   PopoverTrigger: `
   Sub-component of Popover.
+  ---
+  example config: { component: "PopoverTrigger", children: ["Open"] }
   `.trim(),
   PopoverAnchor: `
   Sub-component of Popover.
+  ---
+  example config: { component: "PopoverAnchor", children: ["Content"] }
   `.trim(),
   PopoverContent: `
   PopoverContent: align?: string = "center", sideOffset?: number = 4
+  ---
+  example config: { component: "PopoverContent", props: { align: "center", sideOffset?: number = 4 } }
   `.trim(),
   PopoverHeader: `
   Sub-component of Popover.
+  ---
+  example config: { component: "PopoverHeader", children: ["Content"] }
   `.trim(),
   PopoverTitle: `
   Sub-component of Popover.
+  ---
+  example config: { component: "PopoverTitle", children: ["Title"] }
   `.trim(),
   PopoverDescription: `
   Sub-component of Popover.
+  ---
+  example config: { component: "PopoverDescription", children: ["Description text"] }
   `.trim(),
 }

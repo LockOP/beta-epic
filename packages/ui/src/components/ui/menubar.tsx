@@ -284,47 +284,77 @@ export const MenubarContext = {
   sub-components: MenubarMenu, MenubarTrigger, MenubarContent, MenubarGroup, MenubarSeparator, MenubarLabel, MenubarItem, MenubarShortcut, MenubarCheckboxItem, MenubarRadioGroup, MenubarRadioItem, MenubarSub, MenubarSubTrigger, MenubarSubContent
   MenubarItem: inset?: boolean, variant?: "default"* | "destructive"
   children: yes
+  ---
+  example config: { component: "Menubar", children: [{ component: "MenubarMenu", children: ["Content"] }] }
   `.trim(),
   MenubarMenu: `
   Sub-component of Menubar.
+  ---
+  example config: { component: "MenubarMenu", children: ["Content"] }
   `.trim(),
   MenubarTrigger: `
   Sub-component of Menubar.
+  ---
+  example config: { component: "MenubarTrigger", children: ["Open"] }
   `.trim(),
   MenubarContent: `
   Sub-component of Menubar.
+  ---
+  example config: { component: "MenubarContent", children: ["Content"] }
   `.trim(),
   MenubarGroup: `
   Sub-component of Menubar.
+  ---
+  example config: { component: "MenubarGroup", children: ["Content"] }
   `.trim(),
   MenubarSeparator: `
   Sub-component of Menubar.
+  ---
+  example config: { component: "MenubarSeparator" }
   `.trim(),
   MenubarLabel: `
   Sub-component of Menubar.
+  ---
+  example config: { component: "MenubarLabel", children: ["Label"] }
   `.trim(),
   MenubarItem: `
   MenubarItem: inset?: boolean, variant?: "default"* | "destructive"
+  ---
+  example config: { component: "MenubarItem", props: { inset: "default" } }
   `.trim(),
   MenubarShortcut: `
   Sub-component of Menubar.
+  ---
+  example config: { component: "MenubarShortcut", children: ["Cmd+K"] }
   `.trim(),
   MenubarCheckboxItem: `
   Sub-component of Menubar.
+  ---
+  example config: { component: "MenubarCheckboxItem", children: ["Content"] }
   `.trim(),
   MenubarRadioGroup: `
   Sub-component of Menubar.
+  ---
+  example config: { component: "MenubarRadioGroup", children: ["Content"] }
   `.trim(),
   MenubarRadioItem: `
   Sub-component of Menubar.
+  ---
+  example config: { component: "MenubarRadioItem", children: ["Content"] }
   `.trim(),
   MenubarSub: `
   Sub-component of Menubar.
+  ---
+  example config: { component: "MenubarSub", children: ["Content"] }
   `.trim(),
   MenubarSubTrigger: `
   Sub-component of Menubar.
+  ---
+  example config: { component: "MenubarSubTrigger", children: ["Open"] }
   `.trim(),
   MenubarSubContent: `
   Sub-component of Menubar.
+  ---
+  example config: { component: "MenubarSubContent", children: ["Content"] }
   `.trim(),
 }

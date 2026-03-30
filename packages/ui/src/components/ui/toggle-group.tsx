@@ -96,8 +96,12 @@ export const ToggleGroupContext = {
   onValueChange?: (value: string | string[]) => void
   orientation?: "horizontal"* | "vertical"
   children: yes
+  ---
+  example config: { component: "ToggleGroup", props: { type: "single", value: ["item-1"], orientation: "horizontal" }, children: [{ component: "ToggleGroupItem", children: ["Content"] }] }
   `.trim(),
   ToggleGroupItem: `
   Sub-component of ToggleGroup.
+  ---
+  example config: { component: "ToggleGroupItem", children: ["Content"] }
   `.trim(),
 }

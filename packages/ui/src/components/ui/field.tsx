@@ -243,32 +243,52 @@ export const FieldContext = {
   orientation?: "vertical"* | "horizontal" | "responsive"
   children: yes
   + all native <div> props
+  ---
+  example config: { component: "Field", props: { orientation: "vertical" }, children: [{ component: "FieldLabel", children: ["Label"] }] }
   `.trim(),
   FieldLabel: `
   Sub-component of Field.
+  ---
+  example config: { component: "FieldLabel", children: ["Label"] }
   `.trim(),
   FieldDescription: `
   Sub-component of Field.
+  ---
+  example config: { component: "FieldDescription", children: ["Description text"] }
   `.trim(),
   FieldError: `
   Sub-component of Field.
+  ---
+  example config: { component: "FieldError", children: ["Required field"] }
   `.trim(),
   FieldGroup: `
   Sub-component of Field.
+  ---
+  example config: { component: "FieldGroup", children: ["Content"] }
   `.trim(),
   FieldLegend: `
   Sub-component of Field.
+  ---
+  example config: { component: "FieldLegend", children: ["Legend"] }
   `.trim(),
   FieldSeparator: `
   Sub-component of Field.
+  ---
+  example config: { component: "FieldSeparator" }
   `.trim(),
   FieldSet: `
   Sub-component of Field.
+  ---
+  example config: { component: "FieldSet", children: ["Content"] }
   `.trim(),
   FieldContent: `
   Sub-component of Field.
+  ---
+  example config: { component: "FieldContent", children: ["Content"] }
   `.trim(),
   FieldTitle: `
   Sub-component of Field.
+  ---
+  example config: { component: "FieldTitle", children: ["Title"] }
   `.trim(),
 }

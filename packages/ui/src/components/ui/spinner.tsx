@@ -12,5 +12,7 @@ export { Spinner }
 export const SpinnerContext = {
   Spinner: `
   + all native <svg> props (className for size/color)
+  ---
+  example config: { component: "Spinner", children: ["Content"] }
   `.trim(),
 }

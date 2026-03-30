@@ -30,8 +30,12 @@ export const KbdContext = {
   sub-components: KbdGroup
   children: yes
   + all native <kbd> props
+  ---
+  example config: { component: "Kbd", children: [{ component: "KbdGroup", children: ["Content"] }] }
   `.trim(),
   KbdGroup: `
   Sub-component of Kbd.
+  ---
+  example config: { component: "KbdGroup", children: ["Content"] }
   `.trim(),
 }

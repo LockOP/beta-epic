@@ -50,8 +50,12 @@ export const RadioGroupContext = {
   onValueChange?: (value: string) => void
   orientation?: "horizontal" | "vertical"
   children: yes
+  ---
+  example config: { component: "RadioGroup", props: { value: "value", orientation: "horizontal" }, children: [{ component: "RadioGroupItem", children: ["Content"] }] }
   `.trim(),
   RadioGroupItem: `
   Sub-component of RadioGroup.
+  ---
+  example config: { component: "RadioGroupItem", children: ["Content"] }
   `.trim(),
 }

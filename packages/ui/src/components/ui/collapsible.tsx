@@ -39,11 +39,17 @@ export const CollapsibleContext = {
   onOpenChange?: (open: boolean) => void
   defaultOpen?: boolean
   children: yes
+  ---
+  example config: { component: "Collapsible", props: { open: true, defaultOpen: true }, children: [{ component: "CollapsibleTrigger", children: ["Open"] }] }
   `.trim(),
   CollapsibleTrigger: `
   Sub-component of Collapsible.
+  ---
+  example config: { component: "CollapsibleTrigger", children: ["Open"] }
   `.trim(),
   CollapsibleContent: `
   Sub-component of Collapsible.
+  ---
+  example config: { component: "CollapsibleContent", children: ["Content"] }
   `.trim(),
 }

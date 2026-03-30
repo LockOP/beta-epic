@@ -267,44 +267,72 @@ export const ContextMenuContext = {
   sub-components: ContextMenuTrigger, ContextMenuContent, ContextMenuItem, ContextMenuCheckboxItem, ContextMenuRadioItem, ContextMenuLabel, ContextMenuSeparator, ContextMenuShortcut, ContextMenuGroup, ContextMenuSub, ContextMenuSubContent, ContextMenuSubTrigger, ContextMenuRadioGroup
   ContextMenuItem: inset?: boolean, variant?: "default"* | "destructive"
   children: yes
+  ---
+  example config: { component: "ContextMenu", children: [{ component: "ContextMenuTrigger", children: ["Open"] }] }
   `.trim(),
   ContextMenuTrigger: `
   Sub-component of ContextMenu.
+  ---
+  example config: { component: "ContextMenuTrigger", children: ["Open"] }
   `.trim(),
   ContextMenuContent: `
   Sub-component of ContextMenu.
+  ---
+  example config: { component: "ContextMenuContent", children: ["Content"] }
   `.trim(),
   ContextMenuItem: `
   ContextMenuItem: inset?: boolean, variant?: "default"* | "destructive"
+  ---
+  example config: { component: "ContextMenuItem", props: { inset: "default" } }
   `.trim(),
   ContextMenuCheckboxItem: `
   Sub-component of ContextMenu.
+  ---
+  example config: { component: "ContextMenuCheckboxItem", children: ["Content"] }
   `.trim(),
   ContextMenuRadioItem: `
   Sub-component of ContextMenu.
+  ---
+  example config: { component: "ContextMenuRadioItem", children: ["Content"] }
   `.trim(),
   ContextMenuLabel: `
   Sub-component of ContextMenu.
+  ---
+  example config: { component: "ContextMenuLabel", children: ["Label"] }
   `.trim(),
   ContextMenuSeparator: `
   Sub-component of ContextMenu.
+  ---
+  example config: { component: "ContextMenuSeparator" }
   `.trim(),
   ContextMenuShortcut: `
   Sub-component of ContextMenu.
+  ---
+  example config: { component: "ContextMenuShortcut", children: ["Cmd+K"] }
   `.trim(),
   ContextMenuGroup: `
   Sub-component of ContextMenu.
+  ---
+  example config: { component: "ContextMenuGroup", children: ["Content"] }
   `.trim(),
   ContextMenuSub: `
   Sub-component of ContextMenu.
+  ---
+  example config: { component: "ContextMenuSub", children: ["Content"] }
   `.trim(),
   ContextMenuSubContent: `
   Sub-component of ContextMenu.
+  ---
+  example config: { component: "ContextMenuSubContent", children: ["Content"] }
   `.trim(),
   ContextMenuSubTrigger: `
   Sub-component of ContextMenu.
+  ---
+  example config: { component: "ContextMenuSubTrigger", children: ["Open"] }
   `.trim(),
   ContextMenuRadioGroup: `
   Sub-component of ContextMenu.
+  ---
+  example config: { component: "ContextMenuRadioGroup", children: ["Content"] }
   `.trim(),
 }

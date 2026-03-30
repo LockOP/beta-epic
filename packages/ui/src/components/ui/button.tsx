@@ -77,5 +77,7 @@ export const ButtonContext = {
   asChild?: boolean = false
   children: yes
   + all native <button> props (onClick, disabled, type, form, name, value, …)
+  ---
+  example config: { component: "Button", props: { variant: "default", size: "default", asChild: false }, children: ["Button"] }
   `.trim(),
 }

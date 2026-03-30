@@ -15,5 +15,7 @@ export { Skeleton }
 export const SkeletonContext = {
   Skeleton: `
   + all native <div> props (className for sizing)
+  ---
+  example config: { component: "Skeleton", children: ["Content"] }
   `.trim(),
 }

@@ -54,5 +54,7 @@ export const BadgeContext = {
   asChild?: boolean = false
   children: yes
   + all native <span> props
+  ---
+  example config: { component: "Badge", props: { variant: "default", asChild: false }, children: ["3"] }
   `.trim(),
 }

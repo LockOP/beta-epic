@@ -38,5 +38,7 @@ export const SwitchContext = {
   checked?: boolean
   onCheckedChange?: (checked: boolean) => void
   disabled?: boolean
+  ---
+  example config: { component: "Switch", props: { size: "default", checked: true, disabled: true } }
   `.trim(),
 }

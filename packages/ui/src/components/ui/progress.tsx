@@ -35,5 +35,7 @@ export const ProgressContext = {
   value?: number
   max?: number
   + all native <div> props
+  ---
+  example config: { component: "Progress", props: { value: 1, max: 1 } }
   `.trim(),
 }

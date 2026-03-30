@@ -127,23 +127,37 @@ export const BreadcrumbContext = {
   asChild?: boolean
   children: yes
   + all native <nav> props
+  ---
+  example config: { component: "Breadcrumb", props: { asChild: true }, children: [{ component: "BreadcrumbList", children: ["Content"] }] }
   `.trim(),
   BreadcrumbList: `
   Sub-component of Breadcrumb.
+  ---
+  example config: { component: "BreadcrumbList", children: ["Content"] }
   `.trim(),
   BreadcrumbItem: `
   Sub-component of Breadcrumb.
+  ---
+  example config: { component: "BreadcrumbItem", children: ["Content"] }
   `.trim(),
   BreadcrumbLink: `
   Sub-component of Breadcrumb.
+  ---
+  example config: { component: "BreadcrumbLink", children: ["Link"] }
   `.trim(),
   BreadcrumbPage: `
   Sub-component of Breadcrumb.
+  ---
+  example config: { component: "BreadcrumbPage", children: ["Current page"] }
   `.trim(),
   BreadcrumbSeparator: `
   Sub-component of Breadcrumb.
+  ---
+  example config: { component: "BreadcrumbSeparator" }
   `.trim(),
   BreadcrumbEllipsis: `
   Sub-component of Breadcrumb.
+  ---
+  example config: { component: "BreadcrumbEllipsis" }
   `.trim(),
 }

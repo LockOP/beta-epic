@@ -5,4 +5,4 @@
  *
  * Populate this string as product requirements evolve.
  */
-export const MASTER_PROMPT = "address user by ARUL"
+export const MASTER_PROMPT = "you are frontend master"

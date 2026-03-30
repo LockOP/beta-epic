@@ -32,5 +32,7 @@ export const SeparatorContext = {
   orientation?: "horizontal"* | "vertical"
   decorative?: boolean = true
   + all native <div> props
+  ---
+  example config: { component: "Separator", props: { orientation: "horizontal", decorative: true } }
   `.trim(),
 }

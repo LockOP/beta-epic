@@ -199,29 +199,47 @@ export const CommandContext = {
   sub-components: CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandShortcut, CommandSeparator
   CommandDialog: title?: string = "Command Palette", description?: string = "Search for a command to run...", showCloseButton?: boolean = false
   children: yes
+  ---
+  example config: { component: "Command", children: [{ component: "CommandDialog", children: ["Content"] }] }
   `.trim(),
   CommandDialog: `
   CommandDialog: title?: string = "Command Palette", description?: string = "Search for a command to run...", showCloseButton?: boolean = false
+  ---
+  example config: { component: "CommandDialog", props: { title: "Command Palette", description?: string = "Search for a command to run...", showCloseButton?: boolean = false } }
   `.trim(),
   CommandInput: `
   Sub-component of Command.
+  ---
+  example config: { component: "CommandInput", children: ["Content"] }
   `.trim(),
   CommandList: `
   Sub-component of Command.
+  ---
+  example config: { component: "CommandList", children: ["Content"] }
   `.trim(),
   CommandEmpty: `
   Sub-component of Command.
+  ---
+  example config: { component: "CommandEmpty", children: ["Content"] }
   `.trim(),
   CommandGroup: `
   Sub-component of Command.
+  ---
+  example config: { component: "CommandGroup", children: ["Content"] }
   `.trim(),
   CommandItem: `
   Sub-component of Command.
+  ---
+  example config: { component: "CommandItem", children: ["Content"] }
   `.trim(),
   CommandShortcut: `
   Sub-component of Command.
+  ---
+  example config: { component: "CommandShortcut", children: ["Cmd+K"] }
   `.trim(),
   CommandSeparator: `
   Sub-component of Command.
+  ---
+  example config: { component: "CommandSeparator" }
   `.trim(),
 }

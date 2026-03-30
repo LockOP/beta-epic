@@ -95,5 +95,7 @@ export const SonnerContext = {
   richColors?: boolean
   expand?: boolean
   duration?: number
+  ---
+  example config: { component: "Toaster", props: { position: "top-left", richColors: true, expand: true, duration: 1 } }
   `.trim(),
 }

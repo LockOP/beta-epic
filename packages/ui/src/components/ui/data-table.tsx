@@ -67,5 +67,7 @@ export const DataTableContext = {
   data: T[] (required)
   columns: ColumnDef<T>[] (required)
   emptyMessage?: ReactNode = "No results."
+  ---
+  example config: { component: "DataTable", props: { data: [{ id: "row-1" }], columns: [{ accessorKey: "name", header: "Name" }], emptyMessage: "No results." } }
   `.trim(),
 }

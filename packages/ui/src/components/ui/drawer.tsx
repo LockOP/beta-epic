@@ -138,26 +138,42 @@ export const DrawerContext = {
   sub-components: DrawerTrigger, DrawerContent, DrawerHeader, DrawerFooter, DrawerTitle, DrawerDescription, DrawerClose
   direction?: "top" | "right" | "bottom" | "left"
   children: yes
+  ---
+  example config: { component: "Drawer", props: { direction: "top" }, children: [{ component: "DrawerTrigger", children: ["Open"] }] }
   `.trim(),
   DrawerTrigger: `
   Sub-component of Drawer.
+  ---
+  example config: { component: "DrawerTrigger", children: ["Open"] }
   `.trim(),
   DrawerContent: `
   Sub-component of Drawer.
+  ---
+  example config: { component: "DrawerContent", children: ["Content"] }
   `.trim(),
   DrawerHeader: `
   Sub-component of Drawer.
+  ---
+  example config: { component: "DrawerHeader", children: ["Content"] }
   `.trim(),
   DrawerFooter: `
   Sub-component of Drawer.
+  ---
+  example config: { component: "DrawerFooter", children: ["Content"] }
   `.trim(),
   DrawerTitle: `
   Sub-component of Drawer.
+  ---
+  example config: { component: "DrawerTitle", children: ["Title"] }
   `.trim(),
   DrawerDescription: `
   Sub-component of Drawer.
+  ---
+  example config: { component: "DrawerDescription", children: ["Description text"] }
   `.trim(),
   DrawerClose: `
   Sub-component of Drawer.
+  ---
+  example config: { component: "DrawerClose" }
   `.trim(),
 }

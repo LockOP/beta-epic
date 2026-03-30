@@ -58,6 +58,7 @@ import { ToggleContext } from "./toggle";
 import { ToggleGroupContext } from "./toggle-group";
 import { TooltipContext } from "./tooltip";
 import { TypographyContext } from "./typography";
+import { IconComponentContext } from "../icons/index.context";
 
 export const UIComponentContext = {
   ...AccordionContext,
@@ -120,4 +121,5 @@ export const UIComponentContext = {
   ...ToggleGroupContext,
   ...TooltipContext,
   ...TypographyContext,
+  ...IconComponentContext,
 } as const;

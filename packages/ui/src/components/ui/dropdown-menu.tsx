@@ -274,44 +274,72 @@ export const DropdownMenuContext = {
   DropdownMenuContent: align?: string = "start", sideOffset?: number = 4
   DropdownMenuItem: inset?: boolean, variant?: "default"* | "destructive"
   children: yes
+  ---
+  example config: { component: "DropdownMenu", children: [{ component: "DropdownMenuTrigger", children: ["Open"] }] }
   `.trim(),
   DropdownMenuTrigger: `
   Sub-component of DropdownMenu.
+  ---
+  example config: { component: "DropdownMenuTrigger", children: ["Open"] }
   `.trim(),
   DropdownMenuContent: `
   DropdownMenuContent: align?: string = "start", sideOffset?: number = 4
+  ---
+  example config: { component: "DropdownMenuContent", props: { align: "start", sideOffset?: number = 4 } }
   `.trim(),
   DropdownMenuGroup: `
   Sub-component of DropdownMenu.
+  ---
+  example config: { component: "DropdownMenuGroup", children: ["Content"] }
   `.trim(),
   DropdownMenuLabel: `
   Sub-component of DropdownMenu.
+  ---
+  example config: { component: "DropdownMenuLabel", children: ["Label"] }
   `.trim(),
   DropdownMenuItem: `
   DropdownMenuItem: inset?: boolean, variant?: "default"* | "destructive"
+  ---
+  example config: { component: "DropdownMenuItem", props: { inset: "default" } }
   `.trim(),
   DropdownMenuCheckboxItem: `
   Sub-component of DropdownMenu.
+  ---
+  example config: { component: "DropdownMenuCheckboxItem", children: ["Content"] }
   `.trim(),
   DropdownMenuRadioGroup: `
   Sub-component of DropdownMenu.
+  ---
+  example config: { component: "DropdownMenuRadioGroup", children: ["Content"] }
   `.trim(),
   DropdownMenuRadioItem: `
   Sub-component of DropdownMenu.
+  ---
+  example config: { component: "DropdownMenuRadioItem", children: ["Content"] }
   `.trim(),
   DropdownMenuSeparator: `
   Sub-component of DropdownMenu.
+  ---
+  example config: { component: "DropdownMenuSeparator" }
   `.trim(),
   DropdownMenuShortcut: `
   Sub-component of DropdownMenu.
+  ---
+  example config: { component: "DropdownMenuShortcut", children: ["Cmd+K"] }
   `.trim(),
   DropdownMenuSub: `
   Sub-component of DropdownMenu.
+  ---
+  example config: { component: "DropdownMenuSub", children: ["Content"] }
   `.trim(),
   DropdownMenuSubTrigger: `
   Sub-component of DropdownMenu.
+  ---
+  example config: { component: "DropdownMenuSubTrigger", children: ["Open"] }
   `.trim(),
   DropdownMenuSubContent: `
   Sub-component of DropdownMenu.
+  ---
+  example config: { component: "DropdownMenuSubContent", children: ["Content"] }
   `.trim(),
 }

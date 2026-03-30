@@ -151,26 +151,42 @@ export const SheetContext = {
   sub-components: SheetTrigger, SheetContent, SheetHeader, SheetFooter, SheetTitle, SheetDescription, SheetClose
   SheetContent: side?: "top" | "right"* | "bottom" | "left", showCloseButton?: boolean = true
   children: yes
+  ---
+  example config: { component: "Sheet", children: [{ component: "SheetTrigger", children: ["Open"] }] }
   `.trim(),
   SheetTrigger: `
   Sub-component of Sheet.
+  ---
+  example config: { component: "SheetTrigger", children: ["Open"] }
   `.trim(),
   SheetContent: `
   SheetContent: side?: "top" | "right"* | "bottom" | "left", showCloseButton?: boolean = true
+  ---
+  example config: { component: "SheetContent", props: { side: true } }
   `.trim(),
   SheetHeader: `
   Sub-component of Sheet.
+  ---
+  example config: { component: "SheetHeader", children: ["Content"] }
   `.trim(),
   SheetFooter: `
   Sub-component of Sheet.
+  ---
+  example config: { component: "SheetFooter", children: ["Content"] }
   `.trim(),
   SheetTitle: `
   Sub-component of Sheet.
+  ---
+  example config: { component: "SheetTitle", children: ["Title"] }
   `.trim(),
   SheetDescription: `
   Sub-component of Sheet.
+  ---
+  example config: { component: "SheetDescription", children: ["Description text"] }
   `.trim(),
   SheetClose: `
   Sub-component of Sheet.
+  ---
+  example config: { component: "SheetClose" }
   `.trim(),
 }

@@ -230,8 +230,12 @@ export const CalendarContext = {
   mode?: "single" | "multiple" | "range"
   selected?: Date | Date[] | DateRange
   onSelect?: (date) => void
+  ---
+  example config: { component: "Calendar", props: { showOutsideDays: true, captionLayout: "label", buttonVariant: "value", mode: "single", selected: { from: { $ref: "var:startDate" }, to: { $ref: "var:endDate" } } }, children: [{ component: "CalendarDayButton", children: ["Button"] }] }
   `.trim(),
   CalendarDayButton: `
   Sub-component of Calendar.
+  ---
+  example config: { component: "CalendarDayButton", children: ["Button"] }
   `.trim(),
 }
