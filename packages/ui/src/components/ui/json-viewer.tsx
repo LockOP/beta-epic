@@ -10,6 +10,7 @@ export interface JsonViewerProps {
   value?: unknown;
   name?: string;
   collapsed?: boolean | number;
+  compact?: boolean;
   className?: string;
   contentClassName?: string;
   enableClipboard?: boolean;
@@ -25,6 +26,7 @@ export function JsonViewer({
   value,
   name = 'root',
   collapsed = 1,
+  compact = false,
   className,
   contentClassName,
   enableClipboard = true,
@@ -86,16 +88,41 @@ export function JsonViewer({
   };
 
   return (
-    <div className={cn('rounded-lg border bg-card text-card-foreground flex flex-col', className)}>
-      <div className="flex shrink-0 items-center justify-between border-b px-3 py-2">
-        <p className="text-xs font-medium text-muted-foreground">{title ?? (editable ? 'JSON Editor' : 'JSON Viewer')}</p>
+    <div
+      className={cn(
+        'flex flex-col border bg-card text-card-foreground',
+        compact ? 'rounded-md' : 'rounded-lg',
+        className,
+      )}
+    >
+      <div
+        className={cn(
+          'flex shrink-0 items-center justify-between border-b',
+          compact ? 'px-2 py-1.5' : 'px-3 py-2',
+        )}
+      >
+        <p className={cn('font-medium text-muted-foreground', compact ? 'text-[11px]' : 'text-xs')}>
+          {title ?? (editable ? 'JSON Editor' : 'JSON Viewer')}
+        </p>
         {enableClipboard && (
-          <Button type="button" variant="ghost" size="icon" className="h-7 w-7" onClick={handleCopy}>
-            <Copy className="h-3.5 w-3.5" />
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            className={compact ? 'h-6 w-6' : 'h-7 w-7'}
+            onClick={handleCopy}
+          >
+            <Copy className={compact ? 'h-3 w-3' : 'h-3.5 w-3.5'} />
           </Button>
         )}
       </div>
-      <div className={cn('overflow-auto flex-1 p-3 font-mono text-xs leading-5', contentClassName)}>
+      <div
+        className={cn(
+          'overflow-auto flex-1 font-mono',
+          compact ? 'p-2 text-[11px] leading-[18px]' : 'p-3 text-xs leading-5',
+          contentClassName,
+        )}
+      >
         <div className="min-w-max">
           {ReactJsonComponent ? (
             <ReactJsonComponent
@@ -110,7 +137,7 @@ export function JsonViewer({
               theme="rjv-default"
               style={{
                 backgroundColor: 'transparent',
-                fontSize: '12px',
+                fontSize: compact ? '11px' : '12px',
                 fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
               }}
               onEdit={editable ? handleInlineUpdate : false}
@@ -118,7 +145,7 @@ export function JsonViewer({
               onDelete={editable ? handleInlineUpdate : false}
             />
           ) : (
-            <pre className="whitespace-pre text-[12px] leading-5">
+            <pre className={cn('whitespace-pre', compact ? 'text-[11px] leading-[18px]' : 'text-[12px] leading-5')}>
               {copyValue}
             </pre>
           )}

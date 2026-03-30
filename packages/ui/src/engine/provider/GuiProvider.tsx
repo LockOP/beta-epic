@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useRef } from 'react';
+import React, { useId, useMemo, useRef } from 'react';
 import { GuiContext } from './context';
 import { defaultComponentRegistry } from '../defaults/component-registry';
 import { defaultFnRegistry } from '../defaults/fn-registry';
@@ -48,8 +48,14 @@ export interface GuiProviderProps {
   globalStore?: { getState: () => Record<string, unknown> };
 
   // ── Theme ─────────────────────────────────────────────────────────────────
-  /** CSS custom properties injected as inline style. See 14-theme.md. */
-  theme?: Record<string, string>;
+  /**
+   * Theme tokens split by mode.
+   * - `light` tokens are always applied.
+   * - `dark` tokens override under `.dark` (any ancestor with that class).
+   *   Omitted dark tokens are auto-generated: HSL colours have their lightness
+   *   inverted, non-colour values (radius, etc.) are copied unchanged.
+   */
+  theme?: { light: Record<string, string>; dark?: Partial<Record<string, string>> };
 }
 
 const useDefaultNavigate = (): ((to: string) => void) =>
@@ -97,6 +103,40 @@ const useDefaultToast = (): ((message: string, variant?: ToastVariant) => void) 
 // Component
 // ─────────────────────────────────────────────────────────────────────────────
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Theme helpers
+// ─────────────────────────────────────────────────────────────────────────────
+
+/** Matches "H S% L%" HSL channel strings (no hsl() wrapper). */
+const HSL_RE = /^\d+(\.\d+)?\s+\d+(\.\d+)?%\s+\d+(\.\d+)?%$/
+
+function isHslColor(value: string): boolean {
+  return HSL_RE.test(value.trim())
+}
+
+function invertLightness(hsl: string): string {
+  const [h, s, l] = hsl.trim().split(/\s+/)
+  return `${h} ${s} ${Math.round(100 - parseFloat(l))}%`
+}
+
+/** Build a resolved dark token map, auto-filling anything not provided. */
+function resolveDarkTokens(
+  light: Record<string, string>,
+  userDark: Partial<Record<string, string>> = {},
+): Record<string, string> {
+  const dark: Record<string, string> = {}
+  for (const [key, value] of Object.entries(light)) {
+    dark[key] = key in userDark
+      ? userDark[key]!
+      : isHslColor(value) ? invertLightness(value) : value
+  }
+  return dark
+}
+
+function toCssVars(tokens: Record<string, string>): string {
+  return Object.entries(tokens).map(([k, v]) => `  --${k}: ${v};`).join('\n')
+}
+
 export const GuiProvider: React.FC<GuiProviderProps> = ({
   children,
   components,
@@ -109,6 +149,10 @@ export const GuiProvider: React.FC<GuiProviderProps> = ({
   globalStore,
   theme,
 }) => {
+  const rawId = useId()
+  // useId returns ":r0:" style strings — sanitise for use in CSS selectors
+  const scopeId = rawId.replace(/:/g, '-').replace(/^-|-$/g, '')
+
   const defaultNavigate = useDefaultNavigate();
   const defaultToast = useDefaultToast();
 
@@ -150,16 +194,19 @@ export const GuiProvider: React.FC<GuiProviderProps> = ({
   }), [registries, baseUrl, getToken, handleNavigate, handleToast, globalStore]);
 
   // ── Theme injection ───────────────────────────────────────────────────────
-  const themeStyle = theme
-    ? Object.fromEntries(Object.entries(theme).map(([k, v]) => [`--${k}`, v]))
-    : undefined;
+  const themeCSS = useMemo(() => {
+    if (!theme) return null
+    const dark = resolveDarkTokens(theme.light, theme.dark)
+    return [
+      `[data-epic-root="${scopeId}"] {\n${toCssVars(theme.light)}\n}`,
+      `.dark [data-epic-root="${scopeId}"] {\n${toCssVars(dark)}\n}`,
+    ].join('\n')
+  }, [theme, scopeId])
 
   return (
     <GuiContext.Provider value={contextValue}>
-      <div
-        data-epic-root
-        style={themeStyle as React.CSSProperties | undefined}
-      >
+      {themeCSS && <style>{themeCSS}</style>}
+      <div data-epic-root={scopeId}>
         {children}
         <ToastProvider />
       </div>
