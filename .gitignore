@@ -3,6 +3,8 @@ node_modules
 dist
 .turbo
 coverage
+.DS_Store
+*.tsbuildinfo
 .env
 .env.local
 .pnp.caches

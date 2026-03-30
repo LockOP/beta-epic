@@ -1,0 +1,13 @@
+# Next.js generated
+next-env.d.ts
+.next/
+
+# Local SQLite databases
+*.db
+*.db-shm
+*.db-wal
+
+# Drizzle migration SQL should be tracked, but local snapshots can stay ignored
+drizzle/*
+!drizzle/*.sql
+drizzle/meta/
