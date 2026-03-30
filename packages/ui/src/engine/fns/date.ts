@@ -21,3 +21,16 @@ export const dateFns: Record<string, (...args: unknown[]) => unknown> = {
     }
   },
 };
+
+export const dateFnsContext = {
+  dateFns: `
+  now() → number (epoch ms)
+  today() → string ("YYYY-MM-DD")
+  formatDate(value, fmt?) → string — tokens: YYYY MM DD HH mm ss, default fmt "YYYY-MM-DD"
+  ---
+  example config:
+    { "$fn": "now" }
+    { "$fn": "today" }
+    { "$fn": "formatDate", "args": [{ "$ref": "page.store:createdAt" }, "DD/MM/YYYY"] }
+  `.trim(),
+};

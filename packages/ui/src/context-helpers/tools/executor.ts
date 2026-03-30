@@ -2,6 +2,8 @@ import { execute as executeGetAllComponents } from "./tool.get-all-components"
 import { execute as executeGetComponentContext } from "./tool.get-component-context"
 import { execute as executeGetAllIcons } from "./tool.get-all-icons"
 import { execute as executeGetIconContext } from "./tool.get-icon-context"
+import { execute as executeGetAllFns } from "./tool.get-all-fns"
+import { execute as executeGetFnContext } from "./tool.get-fn-context"
 
 export interface ToolInteraction {
   callId: string
@@ -23,6 +25,10 @@ export function executeTool(
       return executeGetAllIcons()
     case "get_icon_context":
       return executeGetIconContext(args.name as string)
+    case "get_all_fns":
+      return executeGetAllFns()
+    case "get_fn_context":
+      return executeGetFnContext(args.name as string)
     default:
       return { error: `Unknown tool: ${name}` }
   }

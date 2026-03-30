@@ -10,9 +10,7 @@
  *   <GuiProvider functions={{ myAnalytics, fetchUser }}>
  */
 
-import { dateFns }   from '../utils/date';
-import { formatFns } from '../utils/format';
-import { cssFns }    from '../utils/css';
+import { dateFns, formatFns, cssFns } from '../fns';
 
 export const defaultFnRegistry: Record<string, (...args: unknown[]) => unknown> = {
   ...dateFns,

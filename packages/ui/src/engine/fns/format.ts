@@ -21,3 +21,15 @@ export const formatFns: Record<string, (...args: unknown[]) => unknown> = {
     });
   },
 };
+
+export const formatFnsContext = {
+  formatFns: `
+  formatNumber(value, decimals?, locale?) → string — e.g. formatNumber(1234.5, 2) → "1,234.50"
+  formatCurrency(value, currency?, locale?) → string — e.g. formatCurrency(1234, "USD") → "$1,234.00"
+  ---
+  example config:
+    { "$fn": "formatNumber", "args": [{ "$ref": "page.store:price" }, 2] }
+    { "$fn": "formatCurrency", "args": [{ "$ref": "page.store:total" }, "USD"] }
+    { "$fn": "formatCurrency", "args": [{ "$ref": "page.store:amount" }, "EUR", "de-DE"] }
+  `.trim(),
+};
