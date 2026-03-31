@@ -209,6 +209,15 @@ interface ChatData {
   messages: Message[]
 }
 
+interface FigmaOAuthStatus {
+  configured: boolean
+  connected: boolean
+  hasStoredToken: boolean
+  expiresAt: string | null
+  scopes: string[]
+  error?: string | null
+}
+
 interface WorkspaceFile {
   id: string
   chatId: string
@@ -458,6 +467,8 @@ export default function ChatPage() {
   const [previewReady, setPreviewReady] = useState(false)
   const [previewImage, setPreviewImage] = useState<{ src: string; alt: string } | null>(null)
   const [expandedToolCalls, setExpandedToolCalls] = useState<Record<string, boolean>>({})
+  const [figmaStatus, setFigmaStatus] = useState<FigmaOAuthStatus | null>(null)
+  const [figmaStatusLoading, setFigmaStatusLoading] = useState(true)
   // Track pending tool_call args so tool_output can apply optimistic updates
   const pendingToolCalls = useRef<Map<string, PendingToolCall>>(new Map())
   const pendingFocusedFileId = useRef<string | null>(null)
@@ -469,6 +480,25 @@ export default function ChatPage() {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const previewScrollRef = useRef<HTMLDivElement>(null)
   const previewSurfaceRef = useRef<HTMLDivElement>(null)
+
+  async function refreshFigmaStatus() {
+    setFigmaStatusLoading(true)
+    try {
+      const response = await fetch("/api/figma/oauth/status", { cache: "no-store" })
+      const data = (await response.json()) as FigmaOAuthStatus
+      setFigmaStatus(data)
+    } catch {
+      setFigmaStatus(null)
+    } finally {
+      setFigmaStatusLoading(false)
+    }
+  }
+
+  function handleConnectFigma() {
+    if (typeof window === "undefined") return
+    const returnTo = `${window.location.pathname}${window.location.search}`
+    window.location.href = `/api/figma/oauth/start?return_to=${encodeURIComponent(returnTo)}`
+  }
 
   useEffect(() => {
     setLoading(true)
@@ -494,7 +524,37 @@ export default function ChatPage() {
         }
       })
       .finally(() => setFilesLoading(false))
+
+    void refreshFigmaStatus()
   }, [id])
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const url = new URL(window.location.href)
+    const oauthStatus = url.searchParams.get("figma_oauth")
+    const oauthMessage = url.searchParams.get("figma_message")
+
+    if (!oauthStatus) return
+
+    void refreshFigmaStatus()
+
+    if (oauthStatus === "error") {
+      const message = oauthMessage || "Could not connect to Figma."
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `figma-oauth-error-${Date.now()}`,
+          role: "system",
+          content: message,
+        },
+      ])
+    }
+
+    url.searchParams.delete("figma_oauth")
+    url.searchParams.delete("figma_message")
+    window.history.replaceState({}, "", url.toString())
+  }, [])
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -766,7 +826,7 @@ export default function ChatPage() {
           useCORS: true,
           width: fullWidth,
           height: fullHeight,
-          windowWidth: fullWidth,
+          windowWidth: window.innerWidth,
           windowHeight: fullHeight,
           scrollX: 0,
           scrollY: 0,
@@ -1098,6 +1158,22 @@ export default function ChatPage() {
               (chatTitle ?? "Chat")
             )}
           </span>
+
+          <Button
+            variant="outline"
+            size="sm"
+            className="h-7 px-2 text-[11px]"
+            onClick={handleConnectFigma}
+            disabled={figmaStatusLoading || !figmaStatus?.configured}
+          >
+            {figmaStatusLoading
+              ? "Figma…"
+              : figmaStatus?.connected
+                ? "Figma connected"
+                : figmaStatus?.configured
+                  ? "Connect Figma"
+                  : "Figma OAuth missing"}
+          </Button>
 
           <Tooltip>
             <TooltipTrigger asChild>

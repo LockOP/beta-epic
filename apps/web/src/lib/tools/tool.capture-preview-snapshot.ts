@@ -71,7 +71,7 @@ export const definition = {
   type: "function" as const,
   name: "capture_preview_snapshot",
   description:
-    "Get the latest captured workspace preview snapshots (including tall previews split into multiple images) and optionally run a UI/UX review against recent user-provided reference images.",
+    "Get the latest captured workspace preview snapshots and optionally run a visual review comparing the rendered UI against the Figma reference (if one was fetched) and any user-provided images. IMPORTANT: Only call this after all workspace files have been written and at least one tool round has passed — the browser needs time to render the new config before a snapshot is available.",
   parameters: {
     type: "object",
     properties: {
@@ -111,11 +111,20 @@ export async function execute(
   const captures = snapshotCaptures.map(sanitizePreviewCapture).filter(isDefined)
 
   if (captures.length === 0) {
-    return { error: "No preview snapshots are available yet. Open the preview and wait for it to render before reviewing it." }
+    return { error: "No preview snapshot is available yet. The browser captures the preview after a short delay — call get_resolved_config first to confirm all files are healthy, then retry capture_preview_snapshot in the next round." }
   }
+
+  // Guard against stale snapshots: if the snapshot is older than 10 seconds and a review
+  // was requested, warn the model so it doesn't act on outdated data.
+  const snapshotAge = snapshotDoc?.updatedAt
+    ? Date.now() - new Date(snapshotDoc.updatedAt as Date).getTime()
+    : null
+  const snapshotIsStale = snapshotAge !== null && snapshotAge > 10_000
 
   const basePayload = {
     capturedAt: snapshotDoc?.updatedAt ?? null,
+    snapshotAgeMs: snapshotAge,
+    staleWarning: snapshotIsStale ? "Snapshot may be stale — it was captured before the latest file write. Results may not reflect the current config." : undefined,
     captureCount: captures.length,
     captures: captures.map((capture, index) => ({
       index: capture.index ?? index,
@@ -137,6 +146,15 @@ export async function execute(
     }
   }
 
+  // Always pull the stored Figma reference image for visual comparison.
+  // This is persisted by get_figma_screenshot so it's available even without a user attachment.
+  const figmaRef = await context.db
+    .collection("chat_figma_references")
+    .findOne({ chatId: context.chatId })
+
+  const figmaReferenceDataUrl =
+    figmaRef && isImageDataUrl(figmaRef.dataUrl) ? (figmaRef.dataUrl as string) : null
+
   const recentMessages = args.compare_to_user_images
     ? await context.db
         .collection("messages")
@@ -146,13 +164,16 @@ export async function execute(
         .toArray()
     : []
 
-  const referenceImages = recentMessages
+  const userReferenceImages = recentMessages
     .flatMap((message) =>
       Array.isArray(message.attachments)
         ? message.attachments.map(sanitizeImageAttachment).filter(isDefined)
         : [],
     )
     .slice(0, 6)
+
+  const hasFigmaRef = figmaReferenceDataUrl !== null
+  const hasUserImages = userReferenceImages.length > 0
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const content: any[] = [
@@ -162,10 +183,12 @@ export async function execute(
         "Review this Studio workspace preview for UI/UX quality.",
         "The preview may be split into multiple captures from top to bottom to cover the full height.",
         args.focus ? `Focus on: ${args.focus}.` : "Focus on layout, spacing, visual hierarchy, alignment, responsiveness, and polish.",
-        args.compare_to_user_images && referenceImages.length > 0
-          ? "Compare the preview against the provided reference images and call out mismatches."
+        hasFigmaRef
+          ? "A Figma design reference is provided at the end. Compare the preview against it and call out every layout, component, spacing, or visual mismatch."
+          : hasUserImages
+          ? "Reference images are provided at the end. Compare the preview against them and call out mismatches."
           : "Review the preview on its own merits.",
-        "Respond concisely with strengths, issues, and concrete improvement directions.",
+        "Respond concisely with: what matches, what doesn't match (be specific about each diff), and concrete DSL changes needed.",
       ].join("\n"),
     },
   ]
@@ -181,11 +204,16 @@ export async function execute(
     })
   })
 
-  if (args.compare_to_user_images && referenceImages.length > 0) {
-    referenceImages.forEach((attachment, index) => {
+  if (hasFigmaRef) {
+    content.push({ type: "input_text", text: "Figma design reference (source of truth):" })
+    content.push({ type: "input_image", image_url: figmaReferenceDataUrl })
+  }
+
+  if (args.compare_to_user_images && hasUserImages) {
+    userReferenceImages.forEach((attachment, index) => {
       content.push({
         type: "input_text",
-        text: `Reference image ${index + 1}${attachment.name ? `: ${attachment.name}` : ""}.`,
+        text: `User reference image ${index + 1}${attachment.name ? `: ${attachment.name}` : ""}.`,
       })
       content.push({
         type: "input_image",
@@ -204,12 +232,13 @@ export async function execute(
       },
     ],
     instructions:
-      "You are a product design reviewer. Evaluate UI/UX quality from screenshots. Prefer practical, implementation-oriented feedback. Be concise but specific.",
+      "You are a product design reviewer. Evaluate UI/UX quality from screenshots. When a Figma reference is provided, compare every section of the preview against it and list concrete mismatches. Prefer specific, actionable feedback over generic praise.",
   })
 
   return {
     ...basePayload,
-    comparedToUserImages: args.compare_to_user_images ? referenceImages.length : 0,
+    comparedToFigmaReference: hasFigmaRef,
+    comparedToUserImages: args.compare_to_user_images ? userReferenceImages.length : 0,
     review: response.output_text || "No review text returned.",
   }
 }

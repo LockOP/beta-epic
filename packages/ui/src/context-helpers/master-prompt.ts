@@ -27,6 +27,7 @@ IMPORTANT:
 - Never write "children": "Hello" or "children": { ... }.
 - Only use component names that actually exist in the registry.
 - Do not invent generic names like "Text", "List", "ListItem", or "Stack" unless the registry explicitly contains them.
+- If the UI is tabular (column headers + repeated rows), you MUST use the Table component family (TableHeader/TableBody/TableRow/TableHead/TableCell). Never simulate a table with div + grid-cols-* for headers/rows.
 - Native HTML tags such as "div" may be registered as low-priority fallbacks. Use them mainly for simple wrappers/layout when a library component is not a better fit.
 - Prefer styling and layout through className with Tailwind CSS v3 utilities.
 - Do NOT invent style-like props such as maxWidth, minWidth, width, height, margin, padding, gap, display, alignItems, justifyContent, or flexDirection unless the component context explicitly confirms that prop exists.
@@ -39,6 +40,9 @@ Prop values can be:
 
 CLASSNAME / TAILWIND GUIDANCE:
 - Prefer className for layout, spacing, sizing, alignment, borders, radius, colors, and responsive behavior.
+- Put Tailwind utilities ONLY in className strings. Never put Tailwind utilities in prop keys.
+  BAD:  { "props": { "w-[360px]": "w-[360px]" } }
+  GOOD: { "props": { "className": "w-[360px]" } }
 - Use Tailwind CSS v3 utility classes only.
 - Good sizing/layout examples:
   w-full, h-full, min-h-screen, max-w-sm, max-w-md, max-w-lg, max-w-2xl, mx-auto
@@ -80,7 +84,7 @@ $ref reads a value at runtime. The prefix before ":" determines the source:
 
 IMPORTANT: Use { "$arg": 0 } (not $ref) to read raw handler arguments by index.
   { "$arg": 0 }                          // first handler argument as-is
-  { "$arg": 0, "path": "target.value" } // dot-path into first argument
+  { "$arg": 0, "path": "currentTarget.value" } // dot-path into first argument
 
 ═══════════════════════════════════════════════════════════
 EXPRESSIONS (OPERATORS)
@@ -123,7 +127,7 @@ STRING:
   { "$upper": <expr> }
   { "$lower": <expr> }
   { "$split": { "value": <expr>, "sep": <expr> } }
-  { "$replace": { "value": <expr>, "search": <expr>, "replace": <expr> } }
+  { "$replace": { "value": <expr>, "from": <expr>, "to": <expr> } }
   { "$includes": { "value": <expr>, "search": <expr> } }
   { "$contains": { "value": <expr>, "search": <expr> } }
   { "$startsWith": { "value": <expr>, "prefix": <expr> } }
@@ -135,15 +139,14 @@ STRING:
 TYPE COERCION:
   { "$string": <expr> }
   { "$number": <expr> }
-  { "$boolean": <expr> }
+  { "$bool": <expr> }
   { "$nullish": { "value": <expr>, "default": <expr> } }
 
 TYPE CHECKS:
-  { "$isNull": <expr> }
-  { "$isDefined": <expr> }
+  { "$isEmpty": <expr> }
+  { "$isNil": <expr> }
+  { "$isNotNil": <expr> }
   { "$isArray": <expr> }
-  { "$isString": <expr> }
-  { "$isNumber": <expr> }
 
 ARRAY:
   { "$map":    { "over": <expr>, "as": "var", "return": <node/expr> } }
@@ -161,7 +164,8 @@ ARRAY:
   { "$uniq":   <expr> }
   { "$flatten": <expr> }
   { "$join":   { "arr": <expr>, "sep": <expr> } }
-  { "$push":   { "arr": <expr>, "item": <expr> } }
+  { "$append": { "to": <expr>, "item": <expr> } }
+  { "$prepend": { "to": <expr>, "item": <expr> } }
 
 OBJECT:
   { "$get":   { "from": <expr>, "key": <expr> } }
@@ -341,7 +345,7 @@ CONTROLLED INPUT:
     "props": {
       "value": { "$ref": "page.store:query" },
       "onChange": { "$action": [
-        { "type": "page.store.update", "path": "query", "payload": { "$arg": 0, "path": "target.value" } }
+        { "type": "page.store.update", "path": "query", "payload": { "$arg": 0, "path": "currentTarget.value" } }
       ]}
     }
   }
@@ -363,8 +367,20 @@ RULES AND GOTCHAS
 8. $concat produces a string — don't use JS template literals.
 9. Selectors can reference earlier selectors via selectors: — only ones declared above them in the same object.
 10. env block variables are accessed via var: — same namespace as $map iteration variables.
-11. All component names must be registered. Use get_all_components to see the full list, get_component_context for props/variants.
+11. All component names must be registered. Use get_all_components to see the full list, get_components_context (bulk) for props/variants.
 12. Use get_all_fns to see available built-in functions, get_fn_context for signatures and examples.
 13. Prefer className with Tailwind CSS v3 utilities over guessed layout props like maxWidth, padding, margin, gap, or height.
 14. Build responsive layouts by default using Tailwind breakpoints for mobile, tablet, laptop, and desktop (typically base, md, lg, xl).
+15. ALWAYS prefer registered library components over custom div/grid constructions:
+    - Tabular data → Table / TableHeader / TableBody / TableHead / TableRow / TableCell. NEVER build a table using div + grid-cols or any custom grid layout.
+      Column widths are controlled via className on TableHead: "w-12", "w-32", "w-48", "min-w-[200px]", "max-w-xs", etc.
+      NEVER switch to div+grid just because you need fixed column widths — TableHead className handles this.
+    - Badges/chips  → Badge component.
+    - Action buttons → Button component with correct variant (default, outline, ghost, destructive, secondary).
+    - Search field  → Input component (not a styled div).
+    - Select/dropdown → Select / SelectTrigger / SelectContent / SelectItem.
+    - Tabs          → Tabs / TabsList / TabsTrigger / TabsContent.
+    - Cards/panels  → Card / CardHeader / CardContent / CardFooter.
+    - Checkboxes    → Checkbox component.
+    Using a registered component for its semantic purpose is ALWAYS preferred over reimplementing it with raw divs.
 `.trim()

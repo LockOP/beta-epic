@@ -8,7 +8,6 @@ import clientPromise, { DB_NAME } from "@/lib/mongodb"
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
 
 const MAX_TOOL_ROUNDS = 16
-
 type ChatImageAttachment = {
   id?: string
   name?: string
@@ -75,6 +74,10 @@ function sanitizeAttachments(value: unknown): ChatImageAttachment[] {
   })
 }
 
+function hasFigmaUrl(value: unknown): boolean {
+  return typeof value === "string" && /https?:\/\/(?:www\.)?figma\.com\//i.test(value)
+}
+
 export async function POST(
   req: Request,
   { params }: { params: Promise<{ id: string }> },
@@ -94,6 +97,7 @@ export async function POST(
     : []
   const previewSystemContent =
     previewIssueList.length > 0 ? buildPreviewIssuesContext(previewIssueList) : null
+  const userProvidedFigmaUrl = hasFigmaUrl(content)
 
   const client = await clientPromise
   const db = client.db(DB_NAME)
@@ -151,6 +155,9 @@ export async function POST(
       "When writing code, always include the language identifier in fenced code blocks. " +
       "When you need to answer questions about the user's personal details — age, location, " +
       "date of birth, or luck — always call the appropriate tool rather than guessing.",
+    userProvidedFigmaUrl
+      ? "The user has provided a Figma URL. You MUST call get_figma_context then get_figma_screenshot (in that order) before writing any workspace files. The screenshot will be provided to you as a vision image — examine it carefully and generate DSL that is pixel-faithful to the design, not a generic interpretation. CRITICAL: if the screenshot shows a table (column headers + repeated rows), you MUST use the Table component family (TableHeader/TableBody/TableRow/TableHead/TableCell). NEVER simulate a table with div + grid-cols-*."
+      : null,
   ]
     .filter(Boolean)
     .join("\n\n")
@@ -211,8 +218,31 @@ export async function POST(
 
         const toolInteractions: ToolInteraction[] = []
         let finalContent = ""
+        // Track the last Figma screenshot so we can re-inject it each round as a reminder.
+        // Without this, the image gets buried under dozens of tool output messages and the
+        // model loses visual context by the time it generates the DSL.
+        let figmaScreenshotDataUrl: string | null = null
 
         for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
+          // Re-inject the Figma screenshot as a compact visual reminder at the top of every
+          // round after it was first fetched. This keeps the design reference fresh in context
+          // regardless of how many component-context tool calls have stacked up since.
+          if (figmaScreenshotDataUrl && round > 0) {
+            inputList.push({
+              role: "user",
+              content: [
+                {
+                  type: "input_text",
+                  text: "[FIGMA REFERENCE — keep this in view] Your DSL must match this design. Check layout structure, column arrangement, spacing density, and component types before every write.",
+                },
+                {
+                  type: "input_image",
+                  image_url: figmaScreenshotDataUrl,
+                },
+              ],
+            })
+          }
+
           const response = await openai.responses.create({ ...baseParams, input: inputList })
           const responseData = response as Awaited<ReturnType<typeof openai.responses.create>> & {
             // Narrow away the streaming branch for this non-streaming call.
@@ -243,11 +273,35 @@ export async function POST(
             toolInteractions.push({ callId: toolCall.call_id, name: toolCall.name, arguments: args, output })
             emit({ type: "tool_output", callId: toolCall.call_id, output })
 
+            // Strip dataUrl from the function_call_output to avoid huge token blobs —
+            // the image is injected as a proper input_image block below instead.
+            const outputForModel = toolCall.name === "get_figma_screenshot" && typeof output.dataUrl === "string"
+              ? { ...output, dataUrl: "[image injected as input_image below]" }
+              : output
+
             inputList.push({
               type: "function_call_output",
               call_id: toolCall.call_id,
-              output: JSON.stringify(output),
+              output: JSON.stringify(outputForModel),
             })
+
+            // Inject Figma screenshot as a real vision input so the model can see the design.
+            if (toolCall.name === "get_figma_screenshot" && typeof output.dataUrl === "string") {
+              figmaScreenshotDataUrl = output.dataUrl
+              inputList.push({
+                role: "user",
+                content: [
+                  {
+                    type: "input_text",
+                    text: "Figma design screenshot — use this image as the primary visual reference. Your DSL output must match this design as closely as possible: layout structure, spacing, typography hierarchy, component choice, and visual weight.",
+                  },
+                  {
+                    type: "input_image",
+                    image_url: output.dataUrl,
+                  },
+                ],
+              })
+            }
           }
         }
 

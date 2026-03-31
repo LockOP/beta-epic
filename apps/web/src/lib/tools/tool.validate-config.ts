@@ -127,6 +127,43 @@ function collectEventHandlerIssues(
   }
 }
 
+/** Components that accept a value prop and need onChange to be interactive */
+const CONTROLLED_INPUT_COMPONENTS = new Set([
+  "Input", "Textarea", "Select", "SelectTrigger",
+  "Checkbox", "Switch", "RadioGroup", "Slider",
+])
+
+function collectControlledInputIssues(
+  node: unknown,
+  path: string,
+  issues: string[],
+): void {
+  if (!isPlainObject(node)) return
+
+  const component = typeof node.component === "string" ? node.component : null
+  const props = isPlainObject(node.props) ? node.props : null
+
+  if (component && CONTROLLED_INPUT_COMPONENTS.has(component) && props) {
+    const hasValue = "value" in props
+    const hasOnChange = "onChange" in props || "onValueChange" in props || "onCheckedChange" in props
+    const hasReadOnly = props.readOnly === true || props.disabled === true
+    if (hasValue && !hasOnChange && !hasReadOnly) {
+      issues.push(
+        `${path}: "${component}" has a "value" prop but no onChange/onValueChange/onCheckedChange handler. Add an onChange action or set readOnly/disabled to avoid a read-only field warning.`,
+      )
+    }
+  }
+
+  const children = node.children
+  if (Array.isArray(children)) {
+    children.forEach((child, index) => {
+      collectControlledInputIssues(child, `${path}.children[${index}]`, issues)
+    })
+  } else if (children !== undefined && children !== null) {
+    collectControlledInputIssues(children, `${path}.children`, issues)
+  }
+}
+
 function collectUnknownDslOperatorIssues(
   value: unknown,
   path: string,
@@ -233,6 +270,7 @@ export function execute(
         }).map((issue) => `${issue.path}: ${issue.message}`),
       )
       collectEventHandlerIssues(parsed, "root", issues)
+      collectControlledInputIssues(parsed, "root", issues)
       collectUnknownDslOperatorIssues(parsed, "root", issues)
       break
     }

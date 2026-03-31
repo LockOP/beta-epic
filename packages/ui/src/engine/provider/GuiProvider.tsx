@@ -132,7 +132,7 @@ function mergeThemeTokens(
 function buildBaseCSS(scopeId: string): string {
   const root = `[data-epic-root="${scopeId}"]`
   return [
-    `${root} *, ${root} *::before, ${root} *::after {`,
+    `${root} :where(*, *::before, *::after) {`,
     `  border-color: hsl(var(--border));`,
     `}`,
     `${root} {`,

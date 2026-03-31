@@ -13,6 +13,7 @@ export const IconComponentContext = {
   ArrowLeft: iconContext("ArrowLeft"),
   BarChart2: iconContext("BarChart2"),
   Bell: iconContext("Bell"),
+  Bookmark: iconContext("Bookmark"),
   Bot: iconContext("Bot"),
   CalendarIcon: iconContext("CalendarIcon"),
   Check: iconContext("Check"),

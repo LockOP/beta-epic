@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { substituteSubConfigs } from '../compiler/substitute';
-import type { ComponentNode, RefConfigs } from '../types';
+import type { ComponentNode, RefConfigs, Expression } from '../types';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Helpers
@@ -116,7 +116,7 @@ describe('nested substitution', () => {
       children: [{
         $if: {
           cond: true,
-          then: { $subConfig: 'card' } as unknown as ComponentNode,
+          then: { $subConfig: 'card' } as unknown as Expression,
           else: null,
         },
       }],
@@ -138,21 +138,21 @@ describe('props and selectors walkthrough', () => {
     const btn: ComponentNode = { component: 'Button' };
     const root: ComponentNode = {
       component: 'Root',
-      props: { icon: { $subConfig: 'btn' } as unknown as ComponentNode },
+      props: { icon: { $subConfig: 'btn' } as unknown as Expression },
     };
     const result = sub(root, { btn });
-    expect((result.props!.icon as ComponentNode).component).toBe('Button');
+    expect((result.props!.icon as unknown as ComponentNode).component).toBe('Button');
   });
 
   it('walks selectors and substitutes inside', () => {
     const root: ComponentNode = {
       component: 'Root',
       selectors: {
-        val: { $subConfig: 'someExpr' } as unknown as null,
+        val: { $subConfig: 'someExpr' } as unknown as Expression,
       },
     };
     // Expression-type fragment (not ComponentNode)
-    const result = sub(root, { someExpr: 42 as unknown as ComponentNode });
+    const result = sub(root, { someExpr: 42 });
     expect(result.selectors!.val).toBe(42);
   });
 });

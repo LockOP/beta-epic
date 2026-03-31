@@ -2,6 +2,7 @@ export {
   ArrowLeft,
   BarChart2,
   Bell,
+  Bookmark,
   Bot,
   CalendarIcon,
   Check,

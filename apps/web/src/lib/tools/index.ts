@@ -1,7 +1,7 @@
 import type { Db } from "mongodb"
 import {
   toolGetAllComponents,
-  toolGetComponentContext,
+  toolGetComponentsContext,
   toolGetAllIcons,
   toolGetIconContext,
   toolGetAllFns,
@@ -17,6 +17,8 @@ import * as validateConfig     from "./tool.validate-config"
 import * as renameFile         from "./tool.rename-file"
 import * as deleteFile         from "./tool.delete-file"
 import * as capturePreviewSnapshot from "./tool.capture-preview-snapshot"
+import * as getFigmaContext    from "./tool.get-figma-context"
+import * as getFigmaScreenshot from "./tool.get-figma-screenshot"
 
 export interface ToolInteraction {
   callId: string
@@ -33,7 +35,7 @@ export interface ToolContext {
 export const TOOL_DEFINITIONS = [
   // UI / component exploration tools (from @beta-epic/ui)
   toolGetAllComponents.definition,
-  toolGetComponentContext.definition,
+  toolGetComponentsContext.definition,
   toolGetAllIcons.definition,
   toolGetIconContext.definition,
   toolGetAllFns.definition,
@@ -45,6 +47,8 @@ export const TOOL_DEFINITIONS = [
   getResolvedConfig.definition,
   validateConfig.definition,
   capturePreviewSnapshot.definition,
+  getFigmaContext.definition,
+  getFigmaScreenshot.definition,
   createFile.definition,
   updateFile.definition,
   renameFile.definition,
@@ -60,8 +64,8 @@ export async function executeTool(
     // UI exploration — sync, no context needed
     case "get_all_components":
       return toolGetAllComponents.execute()
-    case "get_component_context":
-      return toolGetComponentContext.execute(args.name as string)
+    case "get_components_context":
+      return toolGetComponentsContext.execute(args.names as string[])
     case "get_all_icons":
       return toolGetAllIcons.execute()
     case "get_icon_context":
@@ -88,6 +92,10 @@ export async function executeTool(
         compare_to_user_images?: boolean
         focus?: string
       })
+    case "get_figma_context":
+      return getFigmaContext.execute(context, args as { url: string })
+    case "get_figma_screenshot":
+      return getFigmaScreenshot.execute(context, args as { url: string; scale?: number })
     case "create_file":
       return createFile.execute(context, args as { name: string; content?: string })
     case "update_file":

@@ -13,7 +13,7 @@ import { evaluateExpression } from '../compiler/expr';
 import { runActions } from '../compiler/actions';
 import { substituteSubConfigs } from '../compiler/substitute';
 import { makeCtx, getDispatched } from './setup';
-import type { RuntimeContext, ComponentNode, RefConfigs } from '../types';
+import type { RuntimeContext, ComponentNode, RefConfigs, Expression } from '../types';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Shared helpers
@@ -1193,10 +1193,10 @@ describe('24-config-ref — $subConfig', () => {
     const badge: ComponentNode = { component: 'Badge' };
     const root: ComponentNode = {
       component: 'Container',
-      props: { icon: { $subConfig: 'badge' } as unknown as ComponentNode },
+      props: { icon: { $subConfig: 'badge' } as unknown as Expression },
     };
     const result = substituteSubConfigs(root, { badge });
-    expect((result.props!.icon as ComponentNode).component).toBe('Badge');
+    expect((result.props!.icon as unknown as ComponentNode).component).toBe('Badge');
   });
 
   it('$subConfig substitution is recursive (nested fragments)', () => {
@@ -1234,10 +1234,10 @@ describe('24-config-ref — $subConfig', () => {
   });
 
   it('expression-type fragment in a prop value position returns the value', () => {
-    const refs: RefConfigs = { answer: 42 as unknown as ComponentNode };
+    const refs: RefConfigs = { answer: 42 };
     const root: ComponentNode = {
       component: 'Root',
-      props: { val: { $subConfig: 'answer' } as unknown as ComponentNode },
+      props: { val: { $subConfig: 'answer' } as unknown as Expression },
     };
     const result = substituteSubConfigs(root, refs);
     expect(result.props!.val).toBe(42);
