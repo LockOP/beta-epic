@@ -1,4 +1,26 @@
 import { UIComponentContext } from "../../components/ui/index.context"
+import { defaultComponentRegistry } from "../../engine/defaults/component-registry"
+
+const REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref")
+const REACT_MEMO_TYPE = Symbol.for("react.memo")
+
+function isValidDslComponentValue(value: unknown): boolean {
+  if (typeof value === "string") return true // native tag
+  if (typeof value === "function") return true // function component
+  if (typeof value === "object" && value !== null && "$$typeof" in value) {
+    const t = (value as { $$typeof?: unknown }).$$typeof
+    return t === REACT_FORWARD_REF_TYPE || t === REACT_MEMO_TYPE
+  }
+  return false
+}
+
+function shouldIncludeRegistryKey(key: string, value: unknown): boolean {
+  // Exclude docs/context objects and hooks/utilities from the registry list.
+  if (key.endsWith("Context")) return false
+  if (key.startsWith("use")) return false
+  if (key === "toast") return false
+  return isValidDslComponentValue(value)
+}
 
 // Components that are important to call out explicitly so the model uses them
 // instead of reimplementing with divs. Grouped by semantic purpose.
@@ -51,7 +73,7 @@ export const definition = {
   type: "function" as const,
   name: "get_all_components",
   description:
-    "Get all registered component keys from the combined UI component and icon context map, grouped by semantic purpose.",
+    "Get all registered DSL component keys from the default component registry (UI barrel + icons), grouped by semantic purpose.",
   parameters: {
     type: "object",
     properties: {},
@@ -61,7 +83,12 @@ export const definition = {
 }
 
 export function execute(): Record<string, unknown> {
-  const allKeys = new Set(Object.keys(UIComponentContext))
+  // Authoritative source of what the DSL can render is the component registry.
+  // UIComponentContext is best-effort documentation and may be incomplete (RSC boundary).
+  const registryKeys = Object.keys(defaultComponentRegistry).filter((key) =>
+    shouldIncludeRegistryKey(key, defaultComponentRegistry[key]),
+  )
+  const allKeys = new Set(registryKeys)
 
   // Mark which components in our groups actually exist in the registry
   const groups: Record<string, string[]> = {}
@@ -81,6 +108,11 @@ export function execute(): Record<string, unknown> {
     instruction: "Always prefer registered components for their semantic purpose. Check the group labels — they tell you WHEN to use each group. Use get_components_context (bulk) to get props/variants for any component before using it.",
     groups,
     other,
+    notes: [
+      `This list is derived from the actual component registry (authoritative).`,
+      `Some components may not have context docs (get_components_context) due to server/client module boundaries; if a key appears here, it is registered and can be used.`,
+      `Native HTML tags may appear (div/span/section/main/form). Prefer using only "div" for layout wrappers unless the user explicitly asks for more semantic tags.`,
+    ],
     // Pre-built examples — use these directly, no get_components_context call needed
     table_example: {
       note: "ALWAYS use this pattern for tabular data. NEVER use div+grid to simulate a table. Column widths go on TableHead via className.",

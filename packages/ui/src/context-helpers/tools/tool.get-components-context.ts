@@ -1,4 +1,5 @@
 import { UIComponentContext } from "../../components/ui/index.context"
+import { defaultComponentRegistry } from "../../engine/defaults/component-registry"
 
 export const definition = {
   type: "function" as const,
@@ -33,9 +34,12 @@ export function execute(names: string[]): Record<string, unknown> {
     const context = UIComponentContext[safeName as keyof typeof UIComponentContext]
 
     if (!context) {
+      const isRegistered = safeName in defaultComponentRegistry
       return {
         name: safeName,
-        error: `Unknown component: ${safeName}`,
+        error: isRegistered
+          ? `Context missing for registered component: ${safeName} (use defaults / reference examples)`
+          : `Unknown component: ${safeName}`,
       }
     }
 

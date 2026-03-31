@@ -130,8 +130,14 @@ export const evaluateExpression = (expr: Expression, ctx: RuntimeContext): unkno
   // Math
   // ─────────────────────────────────────────────────────────────────────────────
 
-  if ('$add' in e) { const items = e['$add'] as Expression[]; return (items as Expression[]).reduce<number>((s,i) => s + (evaluateExpression(i,ctx) as number), 0); }
-  if ('$sub' in e) { const [a,b] = e['$sub'] as Expression[]; return (evaluateExpression(a,ctx) as number) - (evaluateExpression(b,ctx) as number); }
+  if ('$add' in e) {
+    const items = e['$add'] as Expression[];
+    return (items as Expression[]).reduce<number>((s, i) => s + Number(evaluateExpression(i, ctx) ?? 0), 0);
+  }
+  if ('$sub' in e) {
+    const [a, b] = e['$sub'] as Expression[];
+    return Number(evaluateExpression(a, ctx) ?? 0) - Number(evaluateExpression(b, ctx) ?? 0);
+  }
   if ('$mul' in e) { const items = e['$mul'] as Expression[]; return (items as Expression[]).reduce<number>((p,i) => p * (evaluateExpression(i,ctx) as number), 1); }
   if ('$div' in e) { const [a,b] = e['$div'] as Expression[]; const d = evaluateExpression(b,ctx) as number; return d === 0 ? 0 : (evaluateExpression(a,ctx) as number) / d; }
   if ('$mod' in e) { const [a,b] = e['$mod'] as Expression[]; return (evaluateExpression(a,ctx) as number) % (evaluateExpression(b,ctx) as number); }
@@ -153,11 +159,14 @@ export const evaluateExpression = (expr: Expression, ctx: RuntimeContext): unkno
   }
   if ('$sum' in e) {
     const inner = e['$sum'];
-    if (Array.isArray(inner)) return (inner as Expression[]).reduce<number>((s,i) => s + (evaluateExpression(i,ctx) as number), 0);
+    if (Array.isArray(inner)) return (inner as Expression[]).reduce<number>((s,i) => s + Number(evaluateExpression(i,ctx) ?? 0), 0);
     const { over, as: asN, return: ret } = inner as { over: Expression; as: string; return: Expression };
     const arr = evaluateExpression(over, ctx);
     if (!Array.isArray(arr)) return 0;
-    return arr.reduce((s, item) => { const c = mapCtx(ctx,asN,item,0); return (s as number) + (evaluateExpression(ret,c) as number); }, 0);
+    return arr.reduce((s, item) => {
+      const c = mapCtx(ctx, asN, item, 0);
+      return (s as number) + Number(evaluateExpression(ret, c) ?? 0);
+    }, 0);
   }
   if ('$min' in e) { const items = (e['$min'] as Expression[]).map(i => evaluateExpression(i,ctx) as number); return Math.min(...items); }
   if ('$max' in e) { const items = (e['$max'] as Expression[]).map(i => evaluateExpression(i,ctx) as number); return Math.max(...items); }

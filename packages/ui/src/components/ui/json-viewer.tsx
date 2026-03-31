@@ -8,6 +8,8 @@ type ReactJsonComponentType = React.ComponentType<any>;
 export interface JsonViewerProps {
   src?: unknown;
   value?: unknown;
+  /** Alias for src/value (preferred for DSL configs) */
+  data?: unknown;
   name?: string;
   collapsed?: boolean | number;
   compact?: boolean;
@@ -24,6 +26,7 @@ export interface JsonViewerProps {
 export function JsonViewer({
   src,
   value,
+  data: dataProp,
   name = 'root',
   collapsed = 1,
   compact = false,
@@ -38,7 +41,7 @@ export function JsonViewer({
 }: JsonViewerProps) {
   const [ReactJsonComponent, setReactJsonComponent] =
     React.useState<ReactJsonComponentType | null>(null);
-  const data = src ?? value ?? {};
+  const data = src ?? value ?? dataProp ?? {};
   const copyValue = editable ? (editValue ?? '') : JSON.stringify(data, null, 2);
 
   React.useEffect(() => {

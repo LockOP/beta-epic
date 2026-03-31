@@ -43,6 +43,10 @@ CLASSNAME / TAILWIND GUIDANCE:
 - Put Tailwind utilities ONLY in className strings. Never put Tailwind utilities in prop keys.
   BAD:  { "props": { "w-[360px]": "w-[360px]" } }
   GOOD: { "props": { "className": "w-[360px]" } }
+- Avoid arbitrary bracketed pixel utilities for typography/height/radius by default (text-[...], h-[...], rounded-[...]).
+  Prefer semantic, shadcn-friendly classes (text-sm/text-base, h-8/h-9, rounded-md/rounded-lg).
+  Use bracketed values sparingly and only when they are clearly required for Figma-exact constraints
+  (common safe examples: p-[3px], rounded-[9px], min-w-[320px]).
 - Use Tailwind CSS v3 utility classes only.
 - Good sizing/layout examples:
   w-full, h-full, min-h-screen, max-w-sm, max-w-md, max-w-lg, max-w-2xl, mx-auto
@@ -365,9 +369,11 @@ RULES AND GOTCHAS
 6. page.store.reset with no "path" resets the ENTIRE store. Use "path" to reset one field.
 7. Action field is "payload" (not "value"): { "type": "page.store.update", "path": "x", "payload": ... }
 8. $concat produces a string — don't use JS template literals.
+8b. $add is numeric-only (adds numbers). Never use $add for string concatenation — use $concat instead.
 9. Selectors can reference earlier selectors via selectors: — only ones declared above them in the same object.
 10. env block variables are accessed via var: — same namespace as $map iteration variables.
 11. All component names must be registered. Use get_all_components to see the full list, get_components_context (bulk) for props/variants.
+    Never use module/family names as component keys (example: do NOT use "Typography" — use "H1"/"H2"/"P"/"Muted"/etc if they are registered).
 12. Use get_all_fns to see available built-in functions, get_fn_context for signatures and examples.
 13. Prefer className with Tailwind CSS v3 utilities over guessed layout props like maxWidth, padding, margin, gap, or height.
 14. Build responsive layouts by default using Tailwind breakpoints for mobile, tablet, laptop, and desktop (typically base, md, lg, xl).

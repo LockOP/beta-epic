@@ -24,6 +24,11 @@ You do NOT respond with raw JSON to the user. Instead:
    - HARD RULE: Call get_all_components at the start of EVERY generation/edit session (before any update_file/create_file).
      Use ONLY component keys from that output. If a component/icon name is not listed, DO NOT use it.
      If the design calls for an unavailable icon (for example "Bookmark"), use a text fallback (like a small "BM" span) or omit the icon — never invent a component.
+   - HARD RULE (module-name trap): Never use file/module/family names as DSL component keys.
+     Example: typography exports "H1", "H2", "H3", "H4", "P", "Muted", "Small", "Lead", "Large", "Blockquote", "InlineCode" — there is NO component named "Typography".
+     Always use the exact keys from get_all_components, even if docs or intuition suggest a wrapper exists.
+   - HARD RULE (coverage requests / smoke tests): If the user provides an explicit list of components/modules to include, you MUST include every item.
+     Only omit an item if get_all_components confirms it is not registered. Never invent a "registry gap" list without proving it from tool output.
    - Prefer get_components_context to inspect the exact supported props / children patterns for components.
      Pass ALL needed component keys in ONE call (an array) instead of calling per-component repeatedly.
      Example: get_components_context({ names: ["Button", "Input", "Tabs", "Table", "ChevronDownIcon"] }).
@@ -74,14 +79,38 @@ You do NOT respond with raw JSON to the user. Instead:
    - Use className overrides primarily for layout/structure (flex, grid, spacing, width constraints) and only for styling when the design clearly differs from defaults.
    - If matching a different shadcn theme or palette, prefer Theme Tokens (or minimal className tweaks for bg/text/border) rather than changing radii/typography/spacing on individual controls.
    - Put emphasis on correct layout, alignment, spacing rhythm, and section structure over micro-restyling of shadcn components.
+   - COMPACT SHADCN ADMIN PROFILE (default for Obra-style admin list pages like Users/Groups):
+     Treat this as the baseline unless the screenshot VERY clearly shows a larger / more spacious scale.
+     - Top bars: py-3; brand text should be modest (text-base / text-lg) — never huge.
+     - Admin nav: text-sm; selected pill is subtle; other items are muted/ghost.
+     - Page title: use a compact shadcn-like title (text-4xl font-semibold tracking-tight). Do NOT use text-[56px].
+     - Controls (Input/Button/Tabs): default to h-9 sizing, rounded-lg, icon size-4.
+     - Segmented controls: TabsList should look like a compact segmented control (h-9 rounded-lg bg-muted p-[3px]); triggers should keep px-3+.
+     - Table card: compact surface (rounded-[9px] with p-4) unless Figma clearly shows a larger card.
+     - Table headings: keep default TableHead styling; do not make headers text-xl/text-2xl.
    - Avoid arbitrary pixel-based overrides on controls (common bad-UI source in shadcn UIs):
      - Avoid text-[15px], text-[18px], text-[46px] for general UI. Prefer text-sm/text-base and Typography components (H1/H2/H3/Muted/etc).
      - Avoid h-14 + rounded-2xl + px-8 style "big UI" controls unless the screenshot VERY clearly shows that scale. If you see yourself overriding many controls, stop and revert to defaults.
      - Keep radii consistent across the page. Default to rounded-lg / rounded-xl and avoid mixing many custom radii like rounded-[18px] unless required.
      - Avoid adding shadow classes to individual controls (especially Buttons/Inputs). Use shadow mainly for containers/surfaces (Card) when needed.
+     - HARD RULE: Do not use bracketed pixel utilities to size controls (text-[...], h-[...], rounded-[...]) in normal UI.
+       Use semantic Tailwind sizes instead: text-xs/text-sm/text-base, h-8/h-9, rounded-md/rounded-lg.
+       Allowed exceptions (rare): p-[3px] for segmented controls, rounded-[9px] for compact cards, and w/min-w bracket widths for table columns.
    - Breakpoints: do not use xl:* as the FIRST breakpoint for critical alignment (toolbars, header rows). Prefer md:* or lg:* so layouts don't collapse in typical Studio preview widths.
    - Do not use unicode/ASCII placeholders for icons or sort indicators (for example "↑↓" or "..."). Use registered icon components (ChevronDownIcon, MoreHorizontalIcon, etc). If an icon is unavailable, omit it or use a tiny text fallback inside a span as a last resort.
    - Toolbars: keep primary actions (for example "Download CSV") on the same row as search/filters at lg:*; do not push them into their own stacked row just because you used xl:*.
+   - ICON SEMANTICS (hard rule): do not rotate or misuse unrelated icons to fake meaning (e.g., do not rotate ArrowLeft to represent Download). Prefer a semantically correct registered icon (Copy works well for "Download CSV" export in the reference examples) or omit the icon.
+   - DATA SHAPE FIDELITY (hard rules for list/table pages):
+     - Never implement "Favorited" by comparing ids (or other hacks like $lte on strings). If the UI has Favorited/All, ensure records contain a boolean field (favorite) and filter on it.
+     - Never use $lt/$lte/$gt/$gte comparisons on non-numeric values (ids, labels, emails). Those operators are for numeric comparisons.
+   - PREFLIGHT (mandatory before finishing any Figma-driven page):
+     - Scan the final config for obvious "big UI" drift tokens and remove them unless the screenshot explicitly shows them:
+       text-[, h-14, rounded-2xl, rounded-[18px], text-xl, text-2xl, xl:flex-row, p-6 on compact cards.
+     - If any of the above appear without a screenshot reason, revise back to the Compact Shadcn Admin Profile defaults.
+     - Scan for cramped horizontal groups: any wrapper using flex/inline-flex with multiple children should have an explicit gap-* (gap-1/2/3/4). If you see "flex items-center" with no gap in icon+label groups (table headers, toolbar groups), add gap-2.
+     - Scan for accidental "empty space" layouts on single-screen table pages: avoid mt-auto, pt-16/pt-20/pt-24, mt-12/mt-14 unless the screenshot clearly shows that much whitespace. Prefer a tighter flow and place footer text directly under the table (mt-2/mt-3).
+    - Scan for oversized table typography/row height: if you see text-lg or py-5 in TableHead/TableCell, it is almost always wrong for shadcn tables — revert to text-sm defaults and py-2/py-3.
+    - Scan for bracketed spacing hacks (almost always wrong): mt-[...], mb-[...], pt-[...], pb-[...], gap-[...]. Use semantic spacing (mt-2/mt-4/mt-6) instead.
    - Props hygiene: Tailwind utilities belong ONLY in "className". Never create accidental props like "w-[360px]": "w-[360px]". If a prop key looks like a Tailwind class (especially contains "[" or "]"), it is a bug — move it into className.
    - Input onChange payload paths: prefer { "$arg": 0, "path": "currentTarget.value" } (not target.value).
 
@@ -115,6 +144,34 @@ You do NOT respond with raw JSON to the user. Instead:
    - Ghost/borderless controls: removing borders is fine (border-0 shadow-none), but keep padding. Do not strip both border and padding.
    - Tabs/segmented controls: never collapse TabsTrigger padding to zero. Keep a consistent height and visible horizontal padding (px-3+ for segmented toggles unless the design is truly compact).
    - Avatars: use the Avatar size prop ("sm" | "default" | "lg") instead of shrinking via custom classes; keep avatar sizing consistent with surrounding control heights.
+   - Gap discipline (small but important polish): whenever you build a horizontal group yourself (div/span with flex/inline-flex), always include gap-*.
+     Use gap-2 as the default for icon+label or label+chevron pairs; use gap-3/4 for toolbar groups. This prevents "stuck together" controls and makes the UI feel shadcn-polished.
+   - Badge sizing (hard rule): do NOT resize badges (no h-*, rounded-full, text-[..], px-4 on Badge). Use Badge variants (outline/secondary/destructive) and minimal className only for small color tweaks if absolutely required.
+   - Filter controls (hard preference): if the UI shows dropdown-like filters (Category/Price/Status), use the shadcn popover-based Select family:
+     Select → SelectTrigger (size="sm") → SelectValue + SelectContent → SelectItem(s).
+     Avoid NativeSelect (native <select>) unless the user explicitly asks for native selects or Select is not registered in get_all_components.
+     Keep filters compact (h-8/h-9, text-sm). Do not hardcode huge widths by default; only use w-[...] when the screenshot clearly constrains width.
+     - Correct SelectTrigger pattern (prevents "dropdown doesn't open / feels wrong"):
+       - Always include a SelectValue inside SelectTrigger so Radix can wire up value + a11y correctly.
+       - If you need a label like "Category:", render it as a small muted span BEFORE SelectValue.
+       - Do NOT hand-render the selected value with $switch inside a span; let SelectValue display the selected item.
+       - SelectItem MUST have a props.value string; Select MUST have onValueChange with payload { "$arg": 0 }.
+  - Table density (hard rule for shadcn tables): keep tables compact unless the screenshot VERY clearly shows spacious rows.
+    - Do NOT put text-lg/text-xl (or any larger text) on TableHead/TableCell/TableRow.
+    - Do NOT use py-5/py-6 (or larger) on TableHead/TableCell. Prefer py-2/py-3 and let the Table defaults do the work.
+    - Avoid manually setting text size on TableHead/TableCell at all; only set widths/alignment (w-*, min-w-*, text-right) when needed.
+    - If you need emphasis, prefer font-medium, not larger text sizes.
+
+   INTERACTIVITY SCAFFOLDING (recommended — even if the Figma is a static screenshot):
+   - Implement minimal state-driven interactions for common admin/table pages so the preview feels real:
+     - Search input updates page.store:query and filters rows via selectors.
+     - Favorited/All tabs actually filter on a boolean field (favorite) — do not fake it.
+     - Table sort toggles update page.store:sortBy + sortDir and drive a selectors:sortedRecords result.
+     - Row selection: keep page.store:selectedRecordIds and wire checkbox interactions (row + header select-all).
+     - Segmented Users/Groups (or similar) toggles page.store:entityView and resets selection/query via an effect.
+   - For actions without backend wiring (Edit, More actions, Download CSV, Filters), use snackbar actions as placeholders so interactions are still demonstrable.
+   - Prefer selectors/effects for derived behavior (filteredRecords, sortedRecords, visibleCount, allVisibleSelected) instead of duplicating logic inside event actions.
+   - Footer/meta text: default to Muted (text-sm text-muted-foreground). Avoid text-base/text-lg for "Showing X-Y of Z" style summaries.
 
 3. WRITE via tools — use update_file with the id from step 1 to write each file.
    If update_file returns { ok: true }, move on immediately — do NOT call it again for the same file.
@@ -583,48 +640,66 @@ export const pageRootConfig: ComponentNode = {
                   ],
                 },
                 {
-                  component: "NativeSelect",
+                  component: "Select",
                   props: {
                     value: { $ref: "page.store:statusFilter" },
-                    className: "w-[132px]",
-                    onChange: {
+                    onValueChange: {
                       $action: [
                         {
                           type: "page.store.update",
                           path: "statusFilter",
-                          payload: { $arg: 0, path: "currentTarget.value" },
+                          payload: { $arg: 0 },
                         },
                       ],
                     },
                   },
                   children: [
-                    { component: "NativeSelectOption", props: { value: "all" }, children: ["Status"] },
-                    { component: "NativeSelectOption", props: { value: "In Progress" }, children: ["In Progress"] },
-                    { component: "NativeSelectOption", props: { value: "Review" }, children: ["Review"] },
-                    { component: "NativeSelectOption", props: { value: "Blocked" }, children: ["Blocked"] },
-                    { component: "NativeSelectOption", props: { value: "Todo" }, children: ["Todo"] },
+                    {
+                      component: "SelectTrigger",
+                      props: { size: "sm", className: "w-[132px]" },
+                      children: [{ component: "SelectValue", props: { placeholder: "Status" } }],
+                    },
+                    {
+                      component: "SelectContent",
+                      children: [
+                        { component: "SelectItem", props: { value: "all" }, children: ["All"] },
+                        { component: "SelectItem", props: { value: "In Progress" }, children: ["In Progress"] },
+                        { component: "SelectItem", props: { value: "Review" }, children: ["Review"] },
+                        { component: "SelectItem", props: { value: "Blocked" }, children: ["Blocked"] },
+                        { component: "SelectItem", props: { value: "Todo" }, children: ["Todo"] },
+                      ],
+                    },
                   ],
                 },
                 {
-                  component: "NativeSelect",
+                  component: "Select",
                   props: {
                     value: { $ref: "page.store:priorityFilter" },
-                    className: "w-[132px]",
-                    onChange: {
+                    onValueChange: {
                       $action: [
                         {
                           type: "page.store.update",
                           path: "priorityFilter",
-                          payload: { $arg: 0, path: "currentTarget.value" },
+                          payload: { $arg: 0 },
                         },
                       ],
                     },
                   },
                   children: [
-                    { component: "NativeSelectOption", props: { value: "all" }, children: ["Priority"] },
-                    { component: "NativeSelectOption", props: { value: "High" }, children: ["High"] },
-                    { component: "NativeSelectOption", props: { value: "Medium" }, children: ["Medium"] },
-                    { component: "NativeSelectOption", props: { value: "Low" }, children: ["Low"] },
+                    {
+                      component: "SelectTrigger",
+                      props: { size: "sm", className: "w-[132px]" },
+                      children: [{ component: "SelectValue", props: { placeholder: "Priority" } }],
+                    },
+                    {
+                      component: "SelectContent",
+                      children: [
+                        { component: "SelectItem", props: { value: "all" }, children: ["All"] },
+                        { component: "SelectItem", props: { value: "High" }, children: ["High"] },
+                        { component: "SelectItem", props: { value: "Medium" }, children: ["Medium"] },
+                        { component: "SelectItem", props: { value: "Low" }, children: ["Low"] },
+                      ],
+                    },
                   ],
                 },
                 {

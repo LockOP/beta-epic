@@ -1499,7 +1499,7 @@ export default function ChatPage() {
               {activeRightPane === "preview" ? (
                 <div
                   ref={previewScrollRef}
-                  className={cn("h-full overflow-auto bg-background p-3", previewExpanded && "p-0")}
+                  className="h-full overflow-auto bg-background p-3"
                 >
                   {filesLoading ? (
                     <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
@@ -1528,7 +1528,7 @@ export default function ChatPage() {
                   ) : previewData.rootConfig ? (
                     <div
                       ref={previewSurfaceRef}
-                      className={cn("min-h-full rounded-lg border bg-card p-4", previewExpanded && "min-h-full rounded-none border-0 p-0")}
+                      className="min-h-full rounded-lg border bg-card p-4"
                     >
                       {!previewReady && (
                         <div className="mb-3 rounded-md border border-dashed bg-muted/20 px-3 py-2 text-xs text-muted-foreground">

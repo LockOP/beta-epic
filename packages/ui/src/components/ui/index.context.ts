@@ -42,7 +42,7 @@ import { ProgressContext } from "./progress";
 import { RadioGroupContext } from "./radio-group";
 import { ResizableContext } from "./resizable";
 import { ScrollAreaContext } from "./scroll-area";
-import { SelectContext } from "./select";
+import { SelectContext } from "./select.context";
 import { SeparatorContext } from "./separator";
 import { SheetContext } from "./sheet";
 import { SidebarContext } from "./sidebar";

@@ -192,6 +192,131 @@ function collectUnknownDslOperatorIssues(
   }
 }
 
+const STYLE_ALLOWED_BRACKETED_CLASSNAMES = new Set([
+  // Common safe shadcn DSL exceptions used for segmented controls + compact cards.
+  "p-[3px]",
+  "rounded-[9px]",
+])
+
+function containsComponent(
+  value: unknown,
+  componentName: string,
+): boolean {
+  if (Array.isArray(value)) {
+    return value.some((entry) => containsComponent(entry, componentName))
+  }
+
+  if (!isPlainObject(value)) return false
+
+  if (value.component === componentName) return true
+
+  for (const childValue of Object.values(value)) {
+    if (containsComponent(childValue, componentName)) return true
+  }
+
+  return false
+}
+
+function collectStyleIssues(
+  value: unknown,
+  path: string,
+  issues: string[],
+): void {
+  if (!isPlainObject(value)) return
+
+  const component = typeof value.component === "string" ? value.component : null
+  const props = isPlainObject(value.props) ? value.props : null
+
+  if (component === "Select") {
+    const children = Array.isArray(value.children) ? value.children : []
+    const hasTrigger = containsComponent(children, "SelectTrigger")
+    const hasContent = containsComponent(children, "SelectContent")
+    if (!hasTrigger || !hasContent) {
+      issues.push(
+        `${path}: "Select" must include both "SelectTrigger" and "SelectContent" as descendants (shadcn popover select pattern).`,
+      )
+    }
+
+    // Heuristic: ensure SelectValue exists somewhere inside the trigger subtree.
+    // Missing SelectValue is a common cause of broken/inert selects in generated configs.
+    const triggerNode = children.find(
+      (child) => isPlainObject(child) && typeof child.component === "string" && child.component === "SelectTrigger",
+    )
+    if (triggerNode && !containsComponent(triggerNode.children, "SelectValue")) {
+      issues.push(
+        `${path}: "SelectTrigger" should include a "SelectValue" child so the Select value + a11y wiring works correctly.`,
+      )
+    }
+  }
+
+  if (
+    component === "NativeSelect" ||
+    component === "NativeSelectOption" ||
+    component === "NativeSelectOptGroup"
+  ) {
+    issues.push(
+      `${path}: Avoid "NativeSelect" (native <select>) for shadcn-style dropdown filters. Prefer the popover-based Select family (Select → SelectTrigger/SelectValue + SelectContent/SelectItem).`,
+    )
+  }
+
+  const className = props && typeof props.className === "string" ? props.className : null
+  if (className) {
+    const bracketed = className.match(/\b(?:text|h|rounded)-\[[^\]]+\]/g) ?? []
+    for (const token of bracketed) {
+      if (STYLE_ALLOWED_BRACKETED_CLASSNAMES.has(token)) continue
+
+      issues.push(
+        `${path}.props.className: Avoid bracketed pixel sizing utilities like "${token}". Prefer semantic shadcn-friendly classes (text-xs/text-sm/text-base, h-8/h-9, rounded-md/rounded-lg). Allowed exceptions: ${Array.from(STYLE_ALLOWED_BRACKETED_CLASSNAMES).join(", ")}.`,
+      )
+    }
+
+    const bracketedSpacing = className.match(/\b(?:m|mt|mb|ml|mr|mx|my|p|pt|pb|pl|pr|px|py|gap)-\[[^\]]+\]/g) ?? []
+    for (const token of bracketedSpacing) {
+      if (STYLE_ALLOWED_BRACKETED_CLASSNAMES.has(token)) continue
+      issues.push(
+        `${path}.props.className: Avoid bracketed spacing utilities like "${token}". Use semantic spacing classes (mt-2/mt-4/mt-6, pt-4/pt-6, gap-2/gap-3) instead. The only common safe exception is p-[3px] for segmented controls.`,
+      )
+    }
+
+    if (/\bmt-auto\b/.test(className) || /\bpt-(?:72|80|96)\b/.test(className) || /\bpb-(?:72|80|96)\b/.test(className)) {
+      issues.push(
+        `${path}.props.className: Avoid using huge spacer utilities (mt-auto, pt-72/80/96, pb-72/80/96) to push footers/content. This is usually a layout bug (creates large empty space). Keep a tighter flow and place footers directly under content.`,
+      )
+    }
+
+    if (component === "TableHead" || component === "TableCell") {
+      if (/\btext-(?:lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)\b/.test(className)) {
+        issues.push(
+          `${path}.props.className: Avoid oversized table typography (text-lg or larger) on "${component}". Shadcn tables are compact by default; prefer text-sm/text-base or omit text sizing entirely.`,
+        )
+      }
+      if (/\bpy-(?:5|6|7|8|9|10|11|12)\b/.test(className)) {
+        issues.push(
+          `${path}.props.className: Avoid tall table rows (py-5 or larger) on "${component}". Prefer py-2/py-3 or let the Table defaults handle row height.`,
+        )
+      }
+    }
+
+    if (component === "Badge") {
+      // Badge already has compact sizing (h-5 px-2 text-xs). Resizing it is a common drift cause.
+      if (/\b(?:h-\d+|rounded-full|px-\d+|text-(?:xl|2xl|3xl|4xl)|text-\[[^\]]+\])\b/.test(className)) {
+        issues.push(
+          `${path}.props.className: Do not resize "Badge" (avoid h-*, rounded-full, px-*, text-* overrides). Use Badge variants (outline/secondary/destructive) and keep className minimal.`,
+        )
+      }
+    }
+  }
+
+  const children = value.children
+  if (Array.isArray(children)) {
+    children.forEach((child, index) => {
+      collectStyleIssues(child, `${path}.children[${index}]`, issues)
+    })
+  } else if (children !== undefined && children !== null) {
+    collectStyleIssues(children, `${path}.children`, issues)
+  }
+}
+
 export const definition = {
   type: "function" as const,
   name: "validate_config",
@@ -272,6 +397,7 @@ export function execute(
       collectEventHandlerIssues(parsed, "root", issues)
       collectControlledInputIssues(parsed, "root", issues)
       collectUnknownDslOperatorIssues(parsed, "root", issues)
+      collectStyleIssues(parsed, "root", issues)
       break
     }
   }

@@ -107,14 +107,6 @@ export function Muted({
 }
 
 export const TypographyContext = {
-  Typography: `
-  components: H1, H2, H3, H4, P, Blockquote, InlineCode, Lead, Large, Small, Muted
-  Each renders the appropriate semantic HTML element
-  children: yes
-  + all native element props
-  ---
-  example config: { component: "Typography", children: [{ component: "H1", children: ["Heading"] }] }
-  `.trim(),
   H1: `
   Component in Typography family.
   ---
