@@ -4,6 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Eg1Page } from "./pages/eg1/page";
 import { Eg2Page } from "./pages/eg2/page";
 import { Eg3Page } from "./pages/eg3/page";
+import { Eg4Page } from "./pages/eg4/page";
 
 function ExampleProvider({ children }: { children: ReactNode }) {
   return <GuiProvider components={{}}>{children}</GuiProvider>;
@@ -18,6 +19,7 @@ function ExampleShell() {
           <Route path="/eg1" element={<Eg1Page />} />
           <Route path="/eg2" element={<Eg2Page />} />
           <Route path="/eg3" element={<Eg3Page />} />
+          <Route path="/eg4" element={<Eg4Page />} />
         </Routes>
       </main>
     </div>

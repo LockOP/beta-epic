@@ -1,3 +1,4 @@
+// apps/example/src/pages/eg2/page.tsx
 import { GuiComponent } from "@beta-epic/ui";
 import { eg2InitialState } from "./initial-state";
 import { eg2RootConfig } from "./root-config";

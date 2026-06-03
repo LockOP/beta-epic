@@ -1,0 +1,88 @@
+Objective
+
+Recreate the given Figma design as a fully functional, pixel-perfect UI using the SDUI engine in the Preview 3 route.
+
+⸻
+
+Figma Reference
+
+https://www.figma.com/design/smTwK0p03s0TPrmozRfuaF/shadcn-ui-components-with-variables---Tailwind-classes---Updated-January-2026--Community-?node-id=135-7587&m=dev
+⸻
+
+Requirements
+
+1. Page Implementation
+	•	Recreate the exact page from the Figma design in Preview 3.
+	•	Ensure pixel-perfect accuracy:
+	•	Layout
+	•	Spacing
+	•	Typography
+	•	Colors
+	•	Component alignment
+
+⸻
+
+2. SDUI Config Usage
+	•	Implement using the config pattern defined in:
+@packages/ui/src/engine/examples/README.md:1-32
+	•	Follow SDUI conventions:
+	•	Node structure
+	•	$ref, $fn, $merge
+	•	Action handling (dispatch, service.call)
+	•	Proper data binding
+
+⸻
+
+3. Component Usage
+	•	Use only components from:
+@packages/ui/src/engine/defaults/component-registry.ts:1-20
+	•	Ensure correct usage of registered chart components to match Figma visuals.
+
+⸻
+
+4. Layout Behavior
+	•	Sidebar and header must be fixed (non-scrolling).
+	•	Only the main content area should scroll.
+	•	Maintain correct layout hierarchy and responsiveness.
+
+⸻
+
+5. Interactivity & State
+	•	Use page.store / initialState for dynamic behavior.
+	•	Ensure the UI is:
+	•	Interactive
+	•	Reactive
+	•	State-driven
+
+Include:
+	•	Click interactions (buttons, tabs, menu items)
+	•	Input handling (forms, filters, search)
+	•	Toggle/selection states
+	•	Conditional rendering via state
+	•	Dynamic updates via actions (dispatch / state mutations)
+
+⸻
+
+6. Responsiveness
+	•	UI should adapt across screen sizes while preserving design fidelity.
+	•	Maintain spacing and alignment consistency across breakpoints.
+
+⸻
+
+7. Validation
+	•	Open and verify in the browser (Preview 3 route).
+	•	Ensure:
+	•	Visual match with Figma
+	•	Charts render correctly
+	•	Interactions work as expected
+	•	No runtime/rendering issues
+	•	Smooth scrolling behavior (only content scrolls)
+
+⸻
+
+Output Expectation
+	•	Complete SDUI config
+	•	Fully working in Preview 3
+	•	Pixel-perfect UI
+	•	Dynamic, interactive, and responsive
+	•	Proper usage of registry components and state-driven updates

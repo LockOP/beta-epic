@@ -51,7 +51,7 @@ export default function ChatsPage() {
   useEffect(() => {
     fetch("/api/chats")
       .then((r) => r.json())
-      .then(setChats)
+      .then((data) => setChats(Array.isArray(data) ? data : []))
       .catch(() => setChats([]))
       .finally(() => setLoading(false))
   }, [])

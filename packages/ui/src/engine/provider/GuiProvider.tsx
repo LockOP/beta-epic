@@ -130,7 +130,10 @@ function mergeThemeTokens(
 
 /** Scoped base styles equivalent to the @layer base block in index.css */
 function buildBaseCSS(scopeId: string): string {
-  const root = `[data-epic-root="${scopeId}"]`
+  // IMPORTANT: Keep specificity at 0 so Tailwind utilities (e.g. border-transparent)
+  // always win even though this CSS is injected later than the compiled stylesheet.
+  // This prevents subtle “extra borders” and focus/active state drift in shadcn components.
+  const root = `:where([data-epic-root="${scopeId}"])`
   return [
     `${root} :where(*, *::before, *::after) {`,
     `  border-color: hsl(var(--border));`,

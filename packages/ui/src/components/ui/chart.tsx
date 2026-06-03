@@ -271,6 +271,15 @@ function ChartTooltipContent({
 }
 
 const ChartLegend = RechartsPrimitive.Legend
+const AreaChart = RechartsPrimitive.AreaChart
+const Area = RechartsPrimitive.Area
+const BarChart = RechartsPrimitive.BarChart
+const Bar = RechartsPrimitive.Bar
+const LineChart = RechartsPrimitive.LineChart
+const Line = RechartsPrimitive.Line
+const CartesianGrid = RechartsPrimitive.CartesianGrid
+const XAxis = RechartsPrimitive.XAxis
+const YAxis = RechartsPrimitive.YAxis
 
 function ChartLegendContent({
   className,
@@ -370,6 +379,15 @@ export {
   ChartLegend,
   ChartLegendContent,
   ChartStyle,
+  AreaChart,
+  Area,
+  BarChart,
+  Bar,
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
 }
 
 export const ChartContext = {

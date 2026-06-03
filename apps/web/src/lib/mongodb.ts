@@ -12,7 +12,10 @@ let clientPromise: Promise<MongoClient>
 if (process.env.NODE_ENV === "development") {
   if (!global._mongoClientPromise) {
     const client = new MongoClient(uri)
-    global._mongoClientPromise = client.connect()
+    global._mongoClientPromise = client.connect().catch((err) => {
+      global._mongoClientPromise = undefined
+      throw err
+    })
   }
   clientPromise = global._mongoClientPromise
 } else {

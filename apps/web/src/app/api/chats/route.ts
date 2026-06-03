@@ -2,25 +2,30 @@ import { NextResponse } from "next/server"
 import clientPromise, { DB_NAME } from "@/lib/mongodb"
 
 export async function GET() {
-  const client = await clientPromise
-  const db = client.db(DB_NAME)
+  try {
+    const client = await clientPromise
+    const db = client.db(DB_NAME)
 
-  const chats = await db
-    .collection("chats")
-    .find({})
-    .sort({ updatedAt: -1 })
-    .toArray()
+    const chats = await db
+      .collection("chats")
+      .find({})
+      .sort({ updatedAt: -1 })
+      .toArray()
 
-  return NextResponse.json(
-    chats.map((c) => ({
-      id: c._id.toString(),
-      title: c.title,
-      model: c.model,
-      reasoningEffort: c.reasoningEffort ?? "medium",
-      createdAt: c.createdAt,
-      updatedAt: c.updatedAt,
-    })),
-  )
+    return NextResponse.json(
+      chats.map((c) => ({
+        id: c._id.toString(),
+        title: c.title,
+        model: c.model,
+        reasoningEffort: c.reasoningEffort ?? "medium",
+        createdAt: c.createdAt,
+        updatedAt: c.updatedAt,
+      })),
+    )
+  } catch (err) {
+    console.error("[GET /api/chats]", err)
+    return NextResponse.json({ error: String(err) }, { status: 500 })
+  }
 }
 
 export async function POST(req: Request) {
